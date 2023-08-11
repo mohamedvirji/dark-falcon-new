@@ -46,13 +46,13 @@ export default function App() {
       }
 
       if (route.route) {
-        if (route.protected) {
-          return (
-            <Route key={route.key} element={<ProtectedRoute />}>
-              <Route path={route.route} element={route.component} />
-            </Route>
-          );
-        }
+        // if (route.protected) {
+        //   return (
+        //     <Route key={route.key} element={<ProtectedRoute />}>
+        //       <Route path={route.route} element={route.component} />
+        //     </Route>
+        //   );
+        // }
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
 
@@ -64,7 +64,7 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
+        <Route path="/" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>

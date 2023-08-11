@@ -44,37 +44,20 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-presentation.jpg";
+//import bgImage from "assets/images/bg-presentation.jpg";
+import bgImage from "assets/images/df-bg.jpeg"
 
-import { useAuth } from "auth-context/auth.context";
+//import { useAuth } from "auth-context/auth.context";
 
 function Presentation() {
-  const { user } = useAuth();
+  //const { user } = useAuth();
   return (
     <>
-      {user && user.token ? (
         <DefaultNavbar
           routes={routes}
-          action={{
-            type: "internal",
-            route: "/pages/authentication/sign-out",
-            label: "logout",
-            color: "info",
-          }}
           sticky
         />
-      ) : (
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://appseed.us/product/material-kit/api-server-nodejs/react/",
-            label: "download",
-            color: "info",
-          }}
-          sticky
-        />
-      )}
+      
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -87,7 +70,7 @@ function Presentation() {
         }}
       >
         <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
+          <Grid container item xs={12} lg={7} justifyContent="left" mx="auto">
             <MKTypography
               variant="h1"
               color="white"
@@ -99,17 +82,16 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              Discover The Falcon{" "}
             </MKTypography>
             <MKTypography
               variant="body1"
               color="white"
-              textAlign="center"
+              textAlign="left"
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+              Where great minds think different.
             </MKTypography>
           </Grid>
         </Container>
