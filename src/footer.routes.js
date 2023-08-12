@@ -1,90 +1,71 @@
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedIn from "@mui/icons-material/LinkedIn";
+import Instagram from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 // Material Kit 2 React components
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-ct-dark.png";
+// import logoCT from "assets/images/logo-ct-dark.png";
+import dfLogo from "assets/images/df-logo_1.png";
 
 const date = new Date().getFullYear();
 
 export default {
   brand: {
     name: "Dark Falcon Productions",
-    image: logoCT,
+    image: dfLogo,
     route: "/",
   },
   socials: [
     {
       icon: <FacebookIcon />,
-      link: "https://www.facebook.com/CreativeTim/",
+      link: "https://www.facebook.com/darkfalconproductions/",
     },
     {
-      icon: <TwitterIcon />,
-      link: "https://twitter.com/creativetim",
+      icon: <LinkedIn />,
+      link: "https://www.linkedin.com/company/dark-falcon-productions/",
     },
     {
-      icon: <GitHubIcon />,
-      link: "https://github.com/creativetimofficial",
+      icon: <Instagram />,
+      link: "https://www.instagram.com/darkfalconproductions/",
     },
     {
       icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      link: "https://www.youtube.com/user/darkfalconprod",
     },
   ],
   menus: [
     {
-      name: "company",
+      name: "",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
-        { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
-        { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
-        { name: "blog", href: "https://www.creative-tim.com/blog" },
+        
       ],
     },
     {
-      name: "resources",
+      name: "contact us",
       items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
-        { name: "affiliate program", href: "https://www.creative-tim.com/affiliates/new" },
+        { name: "info@darkfalconproductions.com", href: "mailto:info@darkfalconproductions.com" },
+        { name: "+ 44 (0) 208 194 6178", href: "tel:+442081946178" },
       ],
     },
     {
-      name: "help & support",
+      name: " ",
       items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "custom development", href: "https://services.creative-tim.com/" },
-        { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
       ],
     },
     {
-      name: "legal",
+      name: "quick quote",
       items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
-        { name: "licenses (EULA)", href: "https://www.creative-tim.com/license" },
+        
       ],
     },
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
-      <MKTypography
-        component="a"
-        href="https://www.creative-tim.com"
-        target="_blank"
-        rel="noreferrer"
-        variant="button"
-        fontWeight="regular"
-      >
-        Creative Tim
-      </MKTypography>
+      All rights reserved. Copyright &copy; {date} Dark Falcon Productions{" "}
       .
     </MKTypography>
   ),

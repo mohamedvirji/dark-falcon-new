@@ -27,7 +27,7 @@ import MKTypography from "components/MKTypography";
 function DefaultReviewCard({ color, image, name, date, review, rating }) {
   const ratings = {
     0.5: [
-      <Icon key={1}>star_outline</Icon>,
+      <Icon color="warning" key={1}>star_outline</Icon>,
       <Icon key={2}>star_outline</Icon>,
       <Icon key={3}>star_outline</Icon>,
       <Icon key={4}>star_outline</Icon>,
@@ -90,11 +90,11 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
       <Icon key={5}>star_half</Icon>,
     ],
     5: [
-      <Icon key={1}>star</Icon>,
-      <Icon key={2}>star</Icon>,
-      <Icon key={3}>star</Icon>,
-      <Icon key={4}>star</Icon>,
-      <Icon key={5}>star</Icon>,
+      <Icon color="warning" key={1}>star</Icon>,
+      <Icon color="warning" key={2}>star</Icon>,
+      <Icon color="warning" key={3}>star</Icon>,
+      <Icon color="warning" key={4}>star</Icon>,
+      <Icon color="warning" key={5}>star</Icon>,
     ],
   };
 
@@ -133,7 +133,7 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
           color={color === "transparent" || color === "light" ? "text" : "white"}
           sx={{ display: "flex", alignItems: "center" }}
         >
-          <Icon>schedule</Icon>&nbsp;
+          <Icon>business</Icon>&nbsp;
           {date}
         </MKTypography>
       </MKBox>

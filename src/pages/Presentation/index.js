@@ -22,6 +22,7 @@ import Card from "@mui/material/Card";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
+import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -50,14 +51,18 @@ import bgImage from "assets/images/df-bg.jpeg"
 //import { useAuth } from "auth-context/auth.context";
 
 function Presentation() {
-  //const { user } = useAuth();
   return (
     <>
         <DefaultNavbar
           routes={routes}
           sticky
+          action={{
+            type: "internal",
+            route: "/pages/quick-quote",
+            label: "meet us",
+            color: "default",
+          }}
         />
-      
       <MKBox
         minHeight="75vh"
         width="100%"

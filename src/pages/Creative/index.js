@@ -28,10 +28,10 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
 // About Us page sections
-import Information from "pages/LandingPages/AboutUs/sections/Information";
-import Team from "pages/LandingPages/AboutUs/sections/Team";
-import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
-import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
+import Information from "pages/Creative/sections/Information";
+import Team from "pages/Creative/sections/Team";
+import Featuring from "pages/Creative/sections/Featuring";
+import Newsletter from "pages/Creative/sections/Newsletter";
 
 // Routes
 import routes from "routes";
@@ -42,17 +42,18 @@ import bgImage from "assets/images/bg-about-us.jpg";
 
 // import { useAuth } from "auth-context/auth.context";
 
-function AboutUs() {
+function Creative() {
   return (
     <>
         <DefaultNavbar
           routes={routes}
           action={{
             type: "internal",
-            route: "/pages/authentication/sign-out",
-            label: "logout",
+            route: "/pages/quick-quote",
+            label: "meet us",
             color: "default",
           }}
+          
           transparent
           light
         />
@@ -97,7 +98,7 @@ function AboutUs() {
               We&apos;re constantly trying to express ourselves and actualize our dreams. If you
               have the opportunity to play this game
             </MKTypography>
-            <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
+            <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
               create account
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
@@ -141,4 +142,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Creative;

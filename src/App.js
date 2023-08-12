@@ -24,11 +24,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 React themes
 import theme from "assets/theme";
-import Presentation from "layouts/pages/presentation";
+import Home from "layouts/pages/home";
 
 // Material Kit 2 React routes
 import routes from "routes";
-import { ProtectedRoute } from "./ProtectedRoute";
+// import { ProtectedRoute } from "./ProtectedRoute";
+
+//Custom Components
+import 'assets/css/App.css'
 
 export default function App() {
   const { pathname } = useLocation();
@@ -64,7 +67,7 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/" element={<Presentation />} />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>

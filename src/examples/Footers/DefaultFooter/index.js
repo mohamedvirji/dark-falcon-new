@@ -25,6 +25,7 @@ import Grid from "@mui/material/Grid";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
+import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 function DefaultFooter({ content }) {
@@ -37,9 +38,9 @@ function DefaultFooter({ content }) {
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
               <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
+                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="10rem" mb={-2} />
               </Link>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
+              {/* <MKTypography variant="h6">{brand.name}</MKTypography> */}
             </MKBox>
             <MKBox display="flex" alignItems="center" mt={3}>
               {socials.map(({ icon, link }, key) => (
@@ -50,7 +51,7 @@ function DefaultFooter({ content }) {
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
-                  color="dark"
+                  color="primary"
                   opacity={0.8}
                   mr={key === socials.length - 1 ? 0 : 2.5}
                 >
@@ -81,7 +82,7 @@ function DefaultFooter({ content }) {
                         rel="noreferrer"
                         variant="button"
                         fontWeight="regular"
-                        textTransform="capitalize"
+                        textTransform="lowercase"
                       >
                         {name}
                       </MKTypography>
