@@ -43,6 +43,8 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+import brandImage from 'assets/images/df-logo_2.png'
+
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -452,19 +454,19 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   return (
     <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
       <MKBox
-        py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
-        my={relative ? 0 : 2}
-        mx={relative ? 0 : 3}
-        width={relative ? "100%" : "calc(100% - 48px)"}
-        borderRadius="xl"
+        py={0}
+        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 5 : 2 }}
+        mx={0}
+        my={relative ? 0 : 0.5}
+        borderRadius="20px"
         shadow={transparent ? "none" : "md"}
         color={light ? "white" : "dark"}
-        position={relative ? "relative" : "absolute"}
+        position={"absolute"}
         left={0}
+        right={0}
         zIndex={3}
         sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
+          backgroundColor: transparent ? transparentColor.two : rgba(white.main, 0.8),
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
@@ -477,7 +479,8 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
+              {/* {brand} */}
+              <img src={brandImage} width={"50%"} />
             </MKTypography>
           </MKBox>
           <MKBox
@@ -491,6 +494,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           <MKBox ml={{ xs: "auto", lg: 0 }}>
             {action &&
               (action.type === "internal" ? (
+                
                 <MKButton
                   component={Link}
                   to={action.route}
@@ -517,6 +521,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                   }
                   color={action.color ? action.color : "info"}
                   size="small"
+                  
                 >
                   {action.label}
                 </MKButton>

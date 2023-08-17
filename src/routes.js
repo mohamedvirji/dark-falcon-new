@@ -79,7 +79,7 @@ const routes = [
     component: <Creative/>,
   },
   {
-    name: "about us",
+    name: "about",
         collapse: [
           {
             name: "meet the team",
@@ -182,9 +182,14 @@ const routes = [
                     ],
                   },
                   {
-                    name: "meet us",
-                    route: "/presentation",
-                    component: <PresentationPage/>,
+                    name: "",
+                    route: "",
+                    component: <AboutUs/>,
+                  },
+                  {
+                    name: "",
+                    route: "",
+                    component: <AboutUs/>,
                   },
   //     // {
   //     //   name: "account",

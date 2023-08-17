@@ -1,1 +1,9 @@
 @import "three-steps.css";
+
+.testBorder {
+    /* max-width: 250px; */
+    padding: 0.5rem;
+    position: relative;
+    background: linear-gradient(to right, rgba(255,255,255,0.2), #D81B60);
+    padding: 3px;
+  }

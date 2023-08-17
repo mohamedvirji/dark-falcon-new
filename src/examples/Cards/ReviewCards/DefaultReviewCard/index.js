@@ -99,10 +99,11 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
   };
 
   return (
+    <div className="testBorder">
     <MKBox
-      variant={color === "transparent" ? "contained" : "gradient"}
+      variant={color}
       bgColor={color}
-      borderRadius="xl"
+      borderRadius="0"
       shadow={color === "transparent" ? "none" : "md"}
       p={3}
     >
@@ -160,6 +161,7 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
         {ratings[rating]}
       </MKTypography>
     </MKBox>
+    </div>
   );
 }
 

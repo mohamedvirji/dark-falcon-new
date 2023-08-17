@@ -18,6 +18,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -58,12 +60,12 @@ function Home() {
             label: "quick quote",
             color: "primary",
           }}
-          
-          transparent
           light
+          transparent
+          sticky
         />
       <MKBox
-        minHeight="75vh"
+        minHeight="100vh"
         width="100%"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
@@ -98,10 +100,10 @@ function Home() {
                 },
               })}
             >
-              Dark Falcon Productions
+              Discover The <br/>Falcon
             </MKTypography>
             <MKButton color="primary" style={{width:'25%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
-              create account
+              Get a Quote
             </MKButton>
           </Grid>
         </Container>
@@ -116,6 +118,8 @@ function Home() {
           backgroundColor: "#212529 !important"
         }}
       >
+        <h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1>
+        
         <Counters/>
         <Testimonials/>
         <MasonryImageList/>

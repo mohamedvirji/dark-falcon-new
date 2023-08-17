@@ -9,7 +9,7 @@ import MKTypography from "components/MKTypography";
 
 // Images
 // import logoCT from "assets/images/logo-ct-dark.png";
-import dfLogo from "assets/images/df-logo_1.png";
+import dfLogo from "assets/images/df-logo_2.png";
 
 const date = new Date().getFullYear();
 
@@ -39,12 +39,6 @@ export default {
   ],
   menus: [
     {
-      name: "",
-      items: [
-        
-      ],
-    },
-    {
       name: "contact us",
       items: [
         { name: "info@darkfalconproductions.com", href: "mailto:info@darkfalconproductions.com" },
@@ -52,7 +46,7 @@ export default {
       ],
     },
     {
-      name: " ",
+      name: "",
       items: [
       ],
     },
@@ -60,6 +54,11 @@ export default {
       name: "quick quote",
       items: [
         
+      ],
+    },
+    {
+      name: "",
+      items: [
       ],
     },
   ],

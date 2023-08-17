@@ -31,6 +31,7 @@ export default {
 
   transparent: {
     main: "transparent",
+    two: "rgba(0,0,0,0.4)",
   },
 
   white: {
@@ -100,6 +101,10 @@ export default {
   },
 
   gradients: {
+    black: {
+      main: "#000000",
+      state: "#000000",
+    },
     primary: {
       main: "#EC407A",
       state: "#D81B60",

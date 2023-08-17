@@ -21,6 +21,7 @@ import Divider from "@mui/material/Divider";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import MKAvatar from "components/MKAvatar";
 
 // Material Kit 2 React examples
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
@@ -56,7 +57,7 @@ function Information() {
         <Grid container spacing={3} sx={{ mt: 0 }}>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-            color="primary"
+            color="#212529"
               name="Owen Hutchins"
               date="My Vital Metrics"
               review="Working with Dark Falcon was really easy from the very beginning. They had reviewed the footage to be filmed, quickly got comfortable with the space, and had real creative flair for understanding what footage was going to be good and useful, and versatile. Absolutely 10/10 for the shooting day."
@@ -65,7 +66,7 @@ function Information() {
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-              color="primary"
+              color="#212529"
               name="Rob Foster"
               date="GoTo"
               review="The team is one of the most agile, focused and creative that I have worked with.
@@ -76,11 +77,12 @@ function Information() {
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-            color="primary"
+            color="#212529"
               name="Hollie Smith"
               date="Grayce"
               review="We're really pleased with the videos that Dark Falcon have produced for us. A very approachable, professional team who worked closely with us to ensure we championed our brief. Highly recommend."
               rating={5}
+              image={appleLogo}
             />
           </Grid>
         </Grid>
