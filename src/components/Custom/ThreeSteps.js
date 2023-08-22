@@ -1,5 +1,7 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import {Container, Grid} from '@mui/material';
 import MKBox from "components/MKBox";
+import 'assets/css/three-steps.css'
 
 function ThreeSteps() {
   return (

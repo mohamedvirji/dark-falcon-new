@@ -33,34 +33,25 @@ import footerRoutes from "footer.routes";
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
-import { useAuth } from "auth-context/auth.context";
+// import { useAuth } from "auth-context/auth.context";
 
 function ContactUs() {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
-        {user && user.token ? (
           <DefaultNavbar
             routes={routes}
             action={{
               type: "internal",
               route: "/pages/authentication/sign-out",
-              label: "logout",
-              color: "info",
+              label: "quick quote",
+              color: "primary",
             }}
+            light
+          transparent
+          sticky
           />
-        ) : (
-          <DefaultNavbar
-            routes={routes}
-            action={{
-              type: "external",
-              route: "https://appseed.us/product/material-kit/api-server-nodejs/react/",
-              label: "download",
-              color: "info",
-            }}
-          />
-        )}
       </MKBox>
       <Grid container spacing={3} alignItems="center">
         <Grid item xs={12} lg={6}>

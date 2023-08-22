@@ -45,12 +45,13 @@ Coded by www.creative-tim.com
 // Pages
 import Creative from "layouts/pages/creative";
 import AboutUs from "layouts/pages/landing-pages/about-us";
-// import ContactUs from "layouts/pages/landing-pages/contact-us";
+import ContactUs from "layouts/pages/landing-pages/contact-us";
 // import Author from "layouts/pages/landing-pages/author";
 // import SignIn from "layouts/pages/authentication/sign-in";
 // import SignUp from "layouts/pages/authentication/sign-up";
 // import SignOutPage from "layouts/pages/authentication/sign-out";
 import PresentationPage from "layouts/pages/presentation";
+import GalleryPage from "layouts/pages/gallery";
 
 // Sections
 // import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -123,8 +124,8 @@ const routes = [
                 protected: false,
               },
               {
-                name: "virtuak tours",
-                route: "/pages/landing-pages/contact-us",
+                name: "virtual tours",
+                route: "/creative",
                 component: <AboutUs />,
                 protected: false,
               },
@@ -144,8 +145,8 @@ const routes = [
           },
           {
             name: "events",
-            route: "/creative",
-            component: <AboutUs/>,
+            route: "/gallery",
+            component: <ContactUs/>,
           },
           {
             name: "animation",

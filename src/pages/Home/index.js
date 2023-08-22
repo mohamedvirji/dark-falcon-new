@@ -33,6 +33,7 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import Information from "pages/Home/sections/Information";
 import Testimonials from "pages/Home/sections/Testimonials";
 import Counters from "pages/Home/sections/Counters";
+import Gallery from "pages/Home/sections/Gallery";
 // import Team from "pages/Home/sections/Team";
 // import Featuring from "pages/Home/sections/Featuring";
 import ThreeSteps from "components/Custom/ThreeSteps";
@@ -122,7 +123,8 @@ function Home() {
         
         <Counters/>
         <Testimonials/>
-        <MasonryImageList/>
+        <Gallery/>
+        {/* <MasonryImageList/> */}
         {/* <Information /> */}
         {/* <Team />
         <Featuring /> */}
