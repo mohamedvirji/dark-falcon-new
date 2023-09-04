@@ -9,7 +9,7 @@ import MKTypography from "components/MKTypography";
 
 // Images
 // import logoCT from "assets/images/logo-ct-dark.png";
-import dfLogo from "assets/images/df-logo_2.png";
+import dfLogo from "assets/images/df-logo_3.png";
 
 const date = new Date().getFullYear();
 
@@ -65,7 +65,6 @@ export default {
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
       All rights reserved. Copyright &copy; {date} Dark Falcon Productions{" "}
-      .
     </MKTypography>
   ),
 };

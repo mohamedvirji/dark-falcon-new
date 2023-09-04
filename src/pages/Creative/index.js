@@ -32,6 +32,7 @@ import Information from "pages/Creative/sections/Information";
 import Team from "pages/Creative/sections/Team";
 import Featuring from "pages/Creative/sections/Featuring";
 import Newsletter from "pages/Creative/sections/Newsletter";
+import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
 import routes from "routes";
@@ -50,8 +51,8 @@ function Creative() {
           action={{
             type: "internal",
             route: "/pages/quick-quote",
-            label: "meet us",
-            color: "default",
+            label: "quick quote",
+            color: "primary",
           }}
           
           transparent
@@ -92,16 +93,15 @@ function Creative() {
                 },
               })}
             >
-              Work with an amazing design
+              SERVICE TITLE
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We&apos;re constantly trying to express ourselves and actualize our dreams. If you
-              have the opportunity to play this game
+              Service Text
             </MKTypography>
             <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              create account
+              learn more
             </MKButton>
-            <MKTypography variant="h6" color="white" mt={8} mb={1}>
+            {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
@@ -117,11 +117,29 @@ function Creative() {
               <MKTypography component="a" variant="body1" color="white" href="#">
                 <i className="fab fa-google-plus" />
               </MKTypography>
-            </MKBox>
+            </MKBox> */}
           </Grid>
         </Container>
       </MKBox>
-      <Card
+      <ThreeSteps/>
+        <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
+        <MKTypography
+              variant="h1"
+              color="white"
+              sx={({ breakpoints, typography: { size } }) => ({
+                [breakpoints.down("md")]: {
+                  fontSize: size["3xl"],
+                },
+              })}
+            >
+              GET IN TOUCH
+            </MKTypography>
+            <br/>
+      <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
+              learn more
+            </MKButton>
+            </MKBox>
+      {/* <Card
         sx={{
           p: 2,
           mx: { xs: 2, lg: 3 },
@@ -134,7 +152,7 @@ function Creative() {
         <Team />
         <Featuring />
         <Newsletter />
-      </Card>
+      </Card> */}
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>

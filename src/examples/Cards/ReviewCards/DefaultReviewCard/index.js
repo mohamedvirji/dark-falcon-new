@@ -111,10 +111,10 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
         <MKAvatar
           src={image}
           alt={name}
-          variant="rounded"
+          variant="circular"
           size="lg"
           shadow="md"
-          sx={{ mt: -5, mb: 1 }}
+          sx={{ mt: 0, mb: 0, ml: '60%', position: 'absolute' }}
         />
       )}
       <MKBox lineHeight={1}>

@@ -103,8 +103,8 @@ function Home() {
             >
               Discover The <br/>Falcon
             </MKTypography>
-            <MKButton color="primary" style={{width:'25%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
-              Get a Quote
+            <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
+              Learn More
             </MKButton>
           </Grid>
         </Container>
@@ -119,7 +119,7 @@ function Home() {
           backgroundColor: "#212529 !important"
         }}
       >
-        <h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1>
+        <a href="#count"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
         
         <Counters/>
         <Testimonials/>

@@ -27,6 +27,9 @@ import MKAvatar from "components/MKAvatar";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 // Images
+import hollie from "assets/images/new-hollie.png";
+import rob from "assets/images/new-rob.png";
+import owen from "assets/images/new-owen.png";
 import appleLogo from "assets/images/logos/gray-logos/logo-apple.svg";
 import facebookLogo from "assets/images/logos/gray-logos/logo-facebook.svg";
 import nasaLogo from "assets/images/logos/gray-logos/logo-nasa.svg";
@@ -62,6 +65,7 @@ function Information() {
               date="My Vital Metrics"
               review="Working with Dark Falcon was really easy from the very beginning. They had reviewed the footage to be filmed, quickly got comfortable with the space, and had real creative flair for understanding what footage was going to be good and useful, and versatile. Absolutely 10/10 for the shooting day."
               rating={5}
+              image={owen}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
@@ -73,6 +77,7 @@ function Information() {
               Nothing is ever too much for them and they always find a quality solution while generating fresh ideas.
               Not only do they complete the projects on time and to a very high standard - but they spent time educating me about their world which enabled the relationship to flourish."
               rating={5}
+              image={rob}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
@@ -82,24 +87,24 @@ function Information() {
               date="Grayce"
               review="We're really pleased with the videos that Dark Falcon have produced for us. A very approachable, professional team who worked closely with us to ensure we championed our brief. Highly recommend."
               rating={5}
-              image={appleLogo}
+              image={hollie}
             />
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        <h1 style={{textAlign:"center", color:"red"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1>
+        <h1 style={{textAlign:"center", color:"#e91e63"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1>
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={0.6} />
+            <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={facebookLogo} alt="Facebook" width="100%" opacity={0.6} />
+            <MKBox component="img" src={facebookLogo} alt="Facebook" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={nasaLogo} alt="Nasa" width="100%" opacity={0.6} />
+            <MKBox component="img" src={nasaLogo} alt="Nasa" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={vodafoneLogo} alt="Vodafone" width="100%" opacity={0.6} />
+            <MKBox component="img" src={vodafoneLogo} alt="Vodafone" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
             <MKBox
@@ -107,7 +112,7 @@ function Information() {
               src={digitalOceanLogo}
               alt="DigitalOcean"
               width="100%"
-              opacity={0.6}
+              opacity={1}
             />
           </Grid>
         </Grid>

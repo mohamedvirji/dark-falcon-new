@@ -23,7 +23,7 @@ function Gallery() {
       id="portfolio"
       className="section fp-section fp-table active"
     >
-      <Grid>
+      <Grid >
       {/* Portfolio items */}
       <Grid item
         className="portfolio-item dark"
