@@ -3,6 +3,17 @@ section#three-step-method {
     margin-bottom: 10%;
     }
 
+    .bow{
+      max-width: 100%;
+      padding-right: calc(var(--bs-gutter-x)*0.5);
+      padding-left: calc(var(--bs-gutter-x)*0.5);
+      margin-top: var(--bs-gutter-y);
+      --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
     /* 16. three step method */
     .three-step-method-heading {
         font-family: 'Oswald', sans-serif;

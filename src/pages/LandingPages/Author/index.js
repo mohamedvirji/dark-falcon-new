@@ -33,13 +33,10 @@ import routes from "routes";
 
 // Images
 import bgImage from "assets/images/city-profile.jpg";
-import { useAuth } from "auth-context/auth.context";
 
 function Author() {
-  const { user } = useAuth();
   return (
     <>
-      {user && user.token ? (
         <DefaultNavbar
           routes={routes}
           action={{
@@ -51,19 +48,6 @@ function Author() {
           transparent
           light
         />
-      ) : (
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://appseed.us/product/material-kit/api-server-nodejs/react/",
-            label: "download",
-            color: "info",
-          }}
-          transparent
-          light
-        />
-      )}
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"

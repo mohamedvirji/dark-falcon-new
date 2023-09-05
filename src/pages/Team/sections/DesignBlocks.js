@@ -33,8 +33,8 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => (
-    <Grid container spacing={3} sx={{ mb: 0 }} key={title}>
-      {/* <Grid item xs={12} lg={3}>
+    <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
+      <Grid item xs={12} lg={3}>
         <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
           <MKTypography variant="h3" fontWeight="bold" mb={1}>
             {title}
@@ -43,8 +43,8 @@ function DesignBlocks() {
             {description}
           </MKTypography>
         </MKBox>
-      </Grid> */}
-      <Grid item xs={12} lg={12}>
+      </Grid>
+      <Grid item xs={12} lg={9}>
         <Grid container spacing={3}>
           {items.map(({ image, name, count, route, pro }) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
@@ -72,16 +72,17 @@ function DesignBlocks() {
         >
           <MKBadge
             variant="contained"
-            color="primary"
-            badgeContent="Thumbnails"
+            color="info"
+            badgeContent="Infinite combinations"
             container
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Thumbnails
+            Huge collection of sections
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            This is the layout for Thumbnails
+            We have created multiple options for you to put together and customise into pixel
+            perfect pages.
           </MKTypography>
         </Grid>
       </Container>

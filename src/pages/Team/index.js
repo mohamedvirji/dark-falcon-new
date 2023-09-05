@@ -18,42 +18,36 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import MKSocialButton from "components/MKSocialButton";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
-// About Us page sections
-import Information from "pages/Home/sections/Information";
-import Testimonials from "pages/Home/sections/Testimonials";
-import Counters from "pages/Home/sections/Counters";
-import Gallery from "components/Custom/Gallery";
-import ThreeSteps from "components/Custom/ThreeSteps";
+import TeamSection from "components/Custom/Team";
 
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
+//import bgImage from "assets/images/bg-presentation.jpg";
 import bgImage from "assets/images/df-bg.jpeg"
-import { dark } from "@mui/material/styles/createPalette";
 
-// import { useAuth } from "auth-context/auth.context";
+//import { useAuth } from "auth-context/auth.context";
 
-function Home() {
+function Team() {
   return (
     <>
         <DefaultNavbar
           routes={routes}
           action={{
             type: "internal",
-            route: "/contact",
+            route: "/pages/quick-quote",
             label: "quick quote",
             color: "primary",
           }}
@@ -62,30 +56,18 @@ function Home() {
           sticky
         />
       <MKBox
-        minHeight="100vh"
+        minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${bgImage})`,
+          backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "top",
           display: "grid",
           placeItems: "center",
         }}
       >
         <Container>
-          <Grid
-            container
-            item
-            xs={12}
-            lg={8}
-            justifyContent="center"
-            alignItems="left"
-            flexDirection="column"
-          >
+          <Grid container item xs={12} lg={7} justifyContent="left" mx="auto">
             <MKTypography
               variant="h1"
               color="white"
@@ -97,11 +79,8 @@ function Home() {
                 },
               })}
             >
-              Discover The <br/>Falcon
+              Meet The Team{" "}
             </MKTypography>
-            <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
-              Learn More
-            </MKButton>
           </Grid>
         </Container>
       </MKBox>
@@ -115,12 +94,7 @@ function Home() {
           backgroundColor: "#212529 !important"
         }}
       >
-        <a href="#count"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
-        
-        <Counters/>
-        <Testimonials/>
-        <Gallery/>
-        <ThreeSteps/>
+        <TeamSection/>
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
@@ -129,4 +103,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Team;

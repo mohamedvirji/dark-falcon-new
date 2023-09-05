@@ -36,22 +36,14 @@ Coded by www.creative-tim.com
   10. The `rowsPerColumn` key is used to define that how many rows should be in a column.
 */
 
-// @mui material components
-// import Icon from "@mui/material/Icon";
-
-// @mui icons
-// import GitHubIcon from "@mui/icons-material/GitHub";
-
 // Pages
 import Creative from "layouts/pages/creative";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
-// import Author from "layouts/pages/landing-pages/author";
-// import SignIn from "layouts/pages/authentication/sign-in";
-// import SignUp from "layouts/pages/authentication/sign-up";
-// import SignOutPage from "layouts/pages/authentication/sign-out";
-import PresentationPage from "layouts/pages/presentation";
-import GalleryPage from "layouts/pages/gallery";
+import Author from "layouts/pages/landing-pages/author";
+import Presentation from "layouts/pages/presentation";
+import Team from "layouts/pages/team";
+// import GalleryPage from "layouts/pages/gallery";
 
 // Sections
 // import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -84,14 +76,14 @@ const routes = [
         collapse: [
           {
             name: "meet the team",
-            route: "/creative",
-            component: <AboutUs />,
+            route: "/team",
+            component: <Team />,
             protected: false,
           },
           {
             name: "resources",
-            route: "/creative",
-            component: <AboutUs />,
+            route: "/resources",
+            component: <Presentation />,
             protected: false,
           },
         ],
@@ -101,66 +93,60 @@ const routes = [
             collapse: [
               {
                 name: "brand videos",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/brand",
+                component: <Creative />,
                 protected: false,
               },
               {
                 name: "talking heads",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/talking-heads",
+                component: <Creative />,
                 protected: false,
               },
               {
                 name: "testimonial videos",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/testimonials",
+                component: <Creative />,
                 protected: false,
               },
               {
                 name: "product videos",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/product",
+                component: <Creative />,
                 protected: false,
               },
               {
                 name: "virtual tours",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/virtual-tours",
+                component: <Creative />,
                 protected: false,
               },
               {
                 name: "podcast videos",
-                route: "/creative",
-                component: <AboutUs />,
-                protected: false,
-              },
-              {
-                name: "talking heads",
-                route: "/creative",
-                component: <AboutUs />,
+                route: "/podcast",
+                component: <Creative />,
                 protected: false,
               },
             ],
           },
           {
             name: "events",
-            route: "/gallery",
-            component: <ContactUs/>,
+            route: "/events",
+            component: <Creative/>,
           },
           {
             name: "animation",
                 collapse: [
                   {
                     name: "2D",
-                    route: "/creative",
-                    component: <AboutUs />,
+                    route: "/animation/2D",
+                    component: <Creative />,
                     protected: false,
                   },
                   {
                     name: "3D",
-                    route: "/creative",
-                    component: <AboutUs />,
+                    route: "/animation/3D",
+                    component: <Creative />,
                     protected: false,
                   },
                 ],
@@ -170,27 +156,27 @@ const routes = [
                     collapse: [
                       {
                         name: "events",
-                        route: "/creative",
-                        component: <AboutUs />,
+                        route: "/photography/events",
+                        component: <Creative />,
                         protected: false,
                       },
                       {
                         name: "headshots",
-                        route: "/creative",
-                        component: <AboutUs />,
+                        route: "/photography/headshots",
+                        component: <Creative />,
                         protected: false,
                       },
                     ],
                   },
                   {
                     name: "",
-                    route: "",
-                    component: <AboutUs/>,
+                    route: "/contact",
+                    component: <ContactUs/>,
                   },
                   {
                     name: "",
                     route: "",
-                    component: <AboutUs/>,
+                    component: <Creative/>,
                   },
   //     // {
   //     //   name: "account",

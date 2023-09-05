@@ -29,37 +29,19 @@ import MKTypography from "components/MKTypography";
 import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
-import data from "pages/Presentation/sections/data/designBlocksData";
+import data from "pages/Presentation/sections/data/pagesData";
 
-function DesignBlocks() {
-  const renderData = data.map(({ title, description, items }) => (
-    <Grid container spacing={3} sx={{ mb: 0 }} key={title}>
-      {/* <Grid item xs={12} lg={3}>
-        <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-          <MKTypography variant="h3" fontWeight="bold" mb={1}>
-            {title}
-          </MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-            {description}
-          </MKTypography>
-        </MKBox>
-      </Grid> */}
-      <Grid item xs={12} lg={12}>
-        <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
-            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} count={count} pro={pro} />
-              </Link>
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
+function Pages() {
+  const renderData = data.map(({ image, name, route }) => (
+    <Grid item xs={12} md={6} sx={{ mb: { xs: 3, lg: 0 } }} key={name}>
+      <Link to={route}>
+        <ExampleCard image={image} name={name} display="grid" minHeight="auto" />
+      </Link>
     </Grid>
   ));
 
   return (
-    <MKBox component="section" my={6} py={6}>
+    <MKBox component="section" py={6}>
       <Container>
         <Grid
           container
@@ -72,22 +54,42 @@ function DesignBlocks() {
         >
           <MKBadge
             variant="contained"
-            color="primary"
-            badgeContent="Thumbnails"
+            color="info"
+            badgeContent="boost creativity"
             container
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Thumbnails
+            With our coded pages
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            This is the layout for Thumbnails
+            The easiest way to get started is to use one of our
+            <br /> pre-built example pages.
           </MKTypography>
         </Grid>
       </Container>
-      <Container sx={{ mt: 6 }}>{renderData}</Container>
+      <Container sx={{ mt: { xs: 8, lg: 16 } }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} lg={9} sx={{ mt: 3, px: { xs: 0, lg: 8 } }}>
+            <Grid container spacing={3}>
+              {renderData}
+            </Grid>
+          </Grid>
+          <Grid item xs={12} lg={3}>
+            <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
+              <MKTypography variant="h3" fontWeight="bold" mb={1}>
+                Presentation Pages for Company, Landing Pages, Blogs and Support
+              </MKTypography>
+              <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
+                These is just a small selection of the multiple possibitilies you have. Focus on the
+                business, not on the design.
+              </MKTypography>
+            </MKBox>
+          </Grid>
+        </Grid>
+      </Container>
     </MKBox>
   );
 }
 
-export default DesignBlocks;
+export default Pages;

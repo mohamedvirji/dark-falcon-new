@@ -33,10 +33,7 @@ import footerRoutes from "footer.routes";
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
-// import { useAuth } from "auth-context/auth.context";
-
 function ContactUs() {
-  // const { user } = useAuth();
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">

@@ -28,16 +28,16 @@ function Gallery() {
           id="portfolio"
           className="section fp-section fp-table active"
         >
-          <Grid>
+          <Grid container>
           {/* Portfolio items */}
-          <Grid item
+          <Grid item xs={12} md={2}
             className="portfolio-item dark"
           >
             <div className="portfolio-meta">
               <a href="#" className="portfolio-like">
                 <i className="ion-ios-heart-outline"></i>
               </a>
-              <time dateTime="15.02.2017">15.02.2017</time>
+              <time dateTime="15.02.2017">Name of Production</time>
               <a href="project-details-1.html" className="portfolio-item-more">
                 <i className="ion-ios-arrow-right"></i>
               </a>
@@ -58,10 +58,10 @@ function Gallery() {
               </a>
             </header>
           </Grid>
-          <Grid item className="portfolio-item width-2x">
+          <Grid item xs={12} md={4} className="portfolio-item width-2x" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-2.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -76,10 +76,10 @@ function Gallery() {
     </a>
   </header>
 </Grid>
-<Grid item className="portfolio-item dark">
+<Grid item xs={12} md={3} className="portfolio-item dark" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-3.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -94,10 +94,10 @@ function Gallery() {
     </a>
   </header>
 </Grid>
-<Grid item className="portfolio-item dark">
+<Grid item xs={12} md={3} className="portfolio-item dark" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-5.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -112,10 +112,10 @@ function Gallery() {
     </a>
   </header>
 </Grid>
-<Grid item className="portfolio-item">
+<Grid item xs={12} md={3} className="portfolio-item" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-6.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -130,10 +130,10 @@ function Gallery() {
     </a>
   </header>
 </Grid>
-<Grid item className="portfolio-item dark">
+<Grid item xs={12} md={3} className="portfolio-item dark" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-7.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -148,10 +148,10 @@ function Gallery() {
     </a>
   </header>
 </Grid>
-{/* <Grid item className="portfolio-item width-2x dark">
+{/* <Grid item xs={12} md={2} className="portfolio-item width-2x dark">
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-8.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -166,10 +166,10 @@ function Gallery() {
     </a>
   </header>
 </Grid> */}
-<Grid item className="portfolio-item width-2x dark">
+<Grid item xs={12} md={4} className="portfolio-item width-2x dark" >
   <div className="portfolio-meta">
     <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">15.02.2017</time>
+    <time dateTime="15.02.2017">Name of Production</time>
     <a href="project-details-8.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
   </div>
   <header className="portfolio-header">
@@ -187,6 +187,8 @@ function Gallery() {
           <Grid
             item
             className="portfolio-item portfolio-more-items"
+            xs={12}
+            md={2}
           >
             <a href="#" className="load-more active">
               <span>MORE</span>

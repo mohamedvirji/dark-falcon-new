@@ -27,11 +27,8 @@ import MKButton from "components/MKButton";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
-// About Us page sections
-import Information from "pages/Creative/sections/Information";
-import Team from "pages/Creative/sections/Team";
-import Featuring from "pages/Creative/sections/Featuring";
-import Newsletter from "pages/Creative/sections/Newsletter";
+// Main Components
+import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
 import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
@@ -96,7 +93,7 @@ function Creative() {
               SERVICE TITLE
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              Service Text
+              Service Subtitle
             </MKTypography>
             <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
               learn more
@@ -122,6 +119,7 @@ function Creative() {
         </Container>
       </MKBox>
       <ThreeSteps/>
+      <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
         <MKTypography
               variant="h1"
@@ -139,20 +137,6 @@ function Creative() {
               learn more
             </MKButton>
             </MKBox>
-      {/* <Card
-        sx={{
-          p: 2,
-          mx: { xs: 2, lg: 3 },
-          mt: -8,
-          mb: 4,
-          boxShadow: ({ boxShadows: { xxl } }) => xxl,
-        }}
-      >
-        <Information />
-        <Team />
-        <Featuring />
-        <Newsletter />
-      </Card> */}
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>

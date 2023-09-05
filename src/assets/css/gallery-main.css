@@ -3414,3 +3414,12 @@ p {
  .fp-responsive .fp-auto-height-responsive .fp-tableCell {
      height: auto !important;
  }
+
+ @media only screen and (max-width: 768px) {
+    .portfolio-item {
+        height: 500px;
+    }
+    .width-2x{
+        height: 250px !important;
+    }
+  }

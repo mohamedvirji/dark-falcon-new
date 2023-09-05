@@ -55,13 +55,15 @@ function Presentation() {
     <>
         <DefaultNavbar
           routes={routes}
-          sticky
           action={{
             type: "internal",
             route: "/pages/quick-quote",
-            label: "meet us",
-            color: "default",
+            label: "quick quote",
+            color: "primary",
           }}
+          light
+          transparent
+          sticky
         />
       <MKBox
         minHeight="75vh"

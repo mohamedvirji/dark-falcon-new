@@ -44,9 +44,9 @@ function ThreeSteps() {
         <div className="inner-divider-half"></div>
         {/* divider end */}
         {/* row start */}
-        <Row>
+        <Grid container>
           {/* col start */}
-          <Col md={4} className="three-step-method-block">
+          <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
             Brief
             </h4>
@@ -56,10 +56,10 @@ function ThreeSteps() {
             <p>
             Tell us what you need by downloading our production brief, if you already have one please share this in an email.
             </p>
-          </Col>
+          </Grid>
           {/* col end */}
           {/* col start */}
-          <Col md={4} className="three-step-method-block middle">
+          <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
             Proposal
             </h4>
@@ -69,10 +69,10 @@ function ThreeSteps() {
             <p>
             We will send our proposal which includes a production overview, framework and itemised quote.
             </p>
-          </Col>
+          </Grid>
           {/* col end */}
           {/* col start */}
-          <Col md={4} className="three-step-method-block">
+          <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
             Let's start
             </h4>
@@ -82,9 +82,9 @@ function ThreeSteps() {
             <p>
             Give us the thumbs up and we can start working on your production
             </p>
-          </Col>
+          </Grid>
           {/* col end */}
-        </Row>
+        </Grid>
         {/* row end */}
       </Container>
       {/* container end */}

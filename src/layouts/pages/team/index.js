@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Gallery from "pages/Gallery";
+import Team from "pages/Team";
 
-export default function GalleryPage() {
-  return <Gallery />;
+export default function TeamPage() {
+  return <Team />;
 }
