@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Creative from "pages/Creative";
+import ThreeD from "pages/ServicePages/3D";
 
-export default function CreativePage() {
-  return <Creative />;
+export default function ThreeDPage() {
+  return <ThreeD />;
 }

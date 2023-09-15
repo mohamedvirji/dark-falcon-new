@@ -24,8 +24,8 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultNavbar from "layouts/DefaultNavbar";
+import DefaultFooter from "layouts/DefaultFooter";
 
 // About Us page sections
 import Information from "pages/LandingPages/AboutUs/sections/Information";
@@ -49,12 +49,13 @@ function AboutUs() {
           routes={routes}
           action={{
             type: "internal",
-            route: "/pages/authentication/sign-out",
-            label: "logout",
-            color: "default",
+            route: "/contact",
+            label: "quick quote",
+            color: "primary",
           }}
-          transparent
           light
+          transparent
+          sticky
         />
       <MKBox
         minHeight="75vh"

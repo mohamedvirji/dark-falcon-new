@@ -26,12 +26,12 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultNavbar from "layouts/DefaultNavbar";
+import DefaultFooter from "layouts/DefaultFooter";
 
 // About Us page sections
-import Information from "pages/Home/sections/Information";
-import Testimonials from "pages/Home/sections/Testimonials";
+// import Information from "pages/Home/sections/Information";
+// import Testimonials from "pages/Home/sections/Testimonials";
 import Counters from "pages/Home/sections/Counters";
 import Gallery from "components/Custom/Gallery";
 import ThreeSteps from "components/Custom/ThreeSteps";
@@ -42,7 +42,7 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/df-bg.jpeg"
-import { dark } from "@mui/material/styles/createPalette";
+// import { dark } from "@mui/material/styles/createPalette";
 
 // import { useAuth } from "auth-context/auth.context";
 
@@ -67,8 +67,8 @@ function Home() {
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
+              rgba(gradients.dark.main, 0),
+              rgba(gradients.dark.state, 0)
             )}, url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -89,7 +89,7 @@ function Home() {
             <MKTypography
               variant="h1"
               color="white"
-              mt={-6}
+              mt={15}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
@@ -118,9 +118,10 @@ function Home() {
         <a href="#count"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
         
         <Counters/>
-        <Testimonials/>
+        {/* <Testimonials/> */}
         <Gallery/>
         <ThreeSteps/>
+        {/* <Information/> */}
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

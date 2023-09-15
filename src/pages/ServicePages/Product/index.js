@@ -24,11 +24,11 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultNavbar from "layouts/DefaultNavbar";
+import DefaultFooter from "layouts/DefaultFooter";
 
 // Main Components
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
+import DesignBlocks from "pages/ServicePages/Product/sections/DesignBlocks";
 import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
@@ -40,7 +40,7 @@ import bgImage from "assets/images/bg-about-us.jpg";
 
 // import { useAuth } from "auth-context/auth.context";
 
-function Creative() {
+function Product() {
   return (
     <>
         <DefaultNavbar
@@ -90,7 +90,7 @@ function Creative() {
                 },
               })}
             >
-              SERVICE TITLE
+              PRODUCT VIDEOS
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
               Service Subtitle
@@ -144,4 +144,4 @@ function Creative() {
   );
 }
 
-export default Creative;
+export default Product;

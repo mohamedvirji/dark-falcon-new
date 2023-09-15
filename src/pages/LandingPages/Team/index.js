@@ -25,8 +25,8 @@ import MKSocialButton from "components/MKSocialButton";
 import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+import DefaultNavbar from "layouts/DefaultNavbar";
+import DefaultFooter from "layouts/DefaultFooter";
 
 import TeamSection from "components/Custom/Team";
 

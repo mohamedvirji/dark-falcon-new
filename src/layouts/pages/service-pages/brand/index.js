@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Team from "pages/Team";
+import Brand from "pages/ServicePages/Brand";
 
-export default function TeamPage() {
-  return <Team />;
+export default function BrandPage() {
+  return <Brand />;
 }

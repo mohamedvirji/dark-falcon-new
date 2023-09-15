@@ -26,7 +26,7 @@ import DefaultCounterCard from "examples/Cards/CounterCards/DefaultCounterCard";
 
 function Counters() {
   return (
-    <MKBox id="count" component="section" py={3} sx={{ mb: -7 }}>
+    <MKBox id="count" component="section" py={3} sx={{ mb: 5 }}>
       <Container>
         <Grid container item xs={12} lg={9} sx={{ mx: "auto" }}>
           <Grid item xs={12} md={3}>

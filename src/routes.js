@@ -36,14 +36,28 @@ Coded by www.creative-tim.com
   10. The `rowsPerColumn` key is used to define that how many rows should be in a column.
 */
 
-// Pages
-import Creative from "layouts/pages/creative";
-import AboutUs from "layouts/pages/landing-pages/about-us";
+// Service Pages
+import TwoD from "layouts/pages/service-pages/2D";
+import ThreeD from "layouts/pages/service-pages/3D";
+import Brand from "layouts/pages/service-pages/brand";
+import Creative from "layouts/pages/service-pages/creative";
+import Events from "layouts/pages/service-pages/events";
+import Headshots from "layouts/pages/service-pages/headshots";
+import PhotoEvents from "layouts/pages/service-pages/photo-events";
+import Podcasts from "layouts/pages/service-pages/podcast";
+import Product from "layouts/pages/service-pages/product";
+import TalkingHeads from "layouts/pages/service-pages/talking-heads";
+import Testimonials from "layouts/pages/service-pages/testimonials";
+import VirtualTours from "layouts/pages/service-pages/virtual-tours";
+
+
+import Team from "layouts/pages/landing-pages/team";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
-import Author from "layouts/pages/landing-pages/author";
-import Presentation from "layouts/pages/presentation";
-import Team from "layouts/pages/team";
+import AboutUs from "layouts/pages/landing-pages/about-us";
+
+// import Author from "layouts/pages/landing-pages/author";
 // import GalleryPage from "layouts/pages/gallery";
+// import Presentation from "layouts/pages/presentation";
 
 // Sections
 // import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -72,112 +86,103 @@ const routes = [
     component: <Creative/>,
   },
   {
-    name: "about",
+    name: "branded",
         collapse: [
           {
-            name: "meet the team",
-            route: "/team",
-            component: <Team />,
+            name: "brand videos",
+            route: "/brand",
+            component: <Brand />,
             protected: false,
           },
           {
-            name: "resources",
-            route: "/resources",
-            component: <Presentation />,
+            name: "talking heads",
+            route: "/talking-heads",
+            component: <TalkingHeads />,
+            protected: false,
+          },
+          {
+            name: "testimonial videos",
+            route: "/testimonials",
+            component: <Testimonials />,
+            protected: false,
+          },
+          {
+            name: "product videos",
+            route: "/product",
+            component: <Product />,
+            protected: false,
+          },
+          {
+            name: "virtual tours",
+            route: "/virtual-tours",
+            component: <VirtualTours />,
+            protected: false,
+          },
+          {
+            name: "podcast videos",
+            route: "/podcast",
+            component: <Podcasts />,
             protected: false,
           },
         ],
       },
       {
-        name: "branded",
+        name: "events",
+        route: "/events",
+        component: <Events/>,
+      },
+      {
+        name: "animation",
             collapse: [
               {
-                name: "brand videos",
-                route: "/brand",
-                component: <Creative />,
+                name: "2D",
+                route: "/animation/2D",
+                component: <TwoD />,
                 protected: false,
               },
               {
-                name: "talking heads",
-                route: "/talking-heads",
-                component: <Creative />,
-                protected: false,
-              },
-              {
-                name: "testimonial videos",
-                route: "/testimonials",
-                component: <Creative />,
-                protected: false,
-              },
-              {
-                name: "product videos",
-                route: "/product",
-                component: <Creative />,
-                protected: false,
-              },
-              {
-                name: "virtual tours",
-                route: "/virtual-tours",
-                component: <Creative />,
-                protected: false,
-              },
-              {
-                name: "podcast videos",
-                route: "/podcast",
-                component: <Creative />,
+                name: "3D",
+                route: "/animation/3D",
+                component: <ThreeD />,
                 protected: false,
               },
             ],
           },
           {
-            name: "events",
-            route: "/events",
-            component: <Creative/>,
-          },
-          {
-            name: "animation",
+            name: "photography",
                 collapse: [
                   {
-                    name: "2D",
-                    route: "/animation/2D",
-                    component: <Creative />,
+                    name: "events",
+                    route: "/photography/events",
+                    component: <PhotoEvents />,
                     protected: false,
                   },
                   {
-                    name: "3D",
-                    route: "/animation/3D",
-                    component: <Creative />,
+                    name: "headshots",
+                    route: "/photography/headshots",
+                    component: <Headshots />,
                     protected: false,
                   },
                 ],
               },
               {
-                name: "photography",
-                    collapse: [
-                      {
-                        name: "events",
-                        route: "/photography/events",
-                        component: <Creative />,
-                        protected: false,
-                      },
-                      {
-                        name: "headshots",
-                        route: "/photography/headshots",
-                        component: <Creative />,
-                        protected: false,
-                      },
-                    ],
-                  },
-                  {
-                    name: "",
-                    route: "/contact",
-                    component: <ContactUs/>,
-                  },
-                  {
-                    name: "",
-                    route: "",
-                    component: <Creative/>,
-                  },
+                name: "",
+                route: "/contact",
+                component: <ContactUs/>,
+              },
+              {
+                name: "our mission",
+                route: "/about",
+                component: <AboutUs/>,
+              },
+      
+          
+              
+                  // {
+                  //   name: "",
+                  //   route: "/contact",
+                  //   component: <ContactUs/>,
+                  // },
   //     // {
   //     //   name: "account",
   //     //   collapse: [
