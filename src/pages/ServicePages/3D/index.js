@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import { Link } from "react-router-dom";
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -93,11 +93,13 @@ function ThreeD() {
               3D
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              Service Subtitle
+              
             </MKTypography>
-            <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              learn more
+            <Link to="/contact">
+            <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
+              quick quote
             </MKButton>
+            </Link>
             {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
@@ -133,9 +135,11 @@ function ThreeD() {
               GET IN TOUCH
             </MKTypography>
             <br/>
-      <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              learn more
+            <Link to="/contact">
+            <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
+              quick quote
             </MKButton>
+            </Link>
             </MKBox>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

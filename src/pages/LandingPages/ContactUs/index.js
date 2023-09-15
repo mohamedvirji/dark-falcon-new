@@ -39,12 +39,12 @@ function ContactUs() {
       <MKBox position="fixed" top="0.5rem" width="100%">
           <DefaultNavbar
             routes={routes}
-            action={{
-              type: "internal",
-              route: "/pages/authentication/sign-out",
-              label: "quick quote",
-              color: "primary",
-            }}
+            // action={{
+            //   type: "internal",
+            //   route: "/pages/authentication/sign-out",
+            //   label: "quick quote",
+            //   color: "primary",
+            // }}
             light
           transparent
           sticky

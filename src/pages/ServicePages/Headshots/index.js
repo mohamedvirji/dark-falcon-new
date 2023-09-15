@@ -12,6 +12,8 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+// react-router-dom components
+import { Link } from "react-router-dom";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -28,7 +30,7 @@ import DefaultNavbar from "layouts/DefaultNavbar";
 import DefaultFooter from "layouts/DefaultFooter";
 
 // Main Components
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
+import DesignBlocks from "pages/ServicePages/Headshots/sections/DesignBlocks";
 import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
@@ -40,7 +42,7 @@ import bgImage from "assets/images/bg-about-us.jpg";
 
 // import { useAuth } from "auth-context/auth.context";
 
-function Heashots() {
+function Headshots() {
   return (
     <>
         <DefaultNavbar
@@ -93,11 +95,15 @@ function Heashots() {
               HEADSHOTS
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              Service Subtitle
+              
             </MKTypography>
-            <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              learn more
+            <Link to="/contact">
+            <Link to="/contact">
+            <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
+              quick quote
             </MKButton>
+            </Link>
+            </Link>
             {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
@@ -133,9 +139,11 @@ function Heashots() {
               GET IN TOUCH
             </MKTypography>
             <br/>
-      <MKButton color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              learn more
+            <Link to="/contact">
+            <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
+              quick quote
             </MKButton>
+            </Link>
             </MKBox>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
@@ -144,4 +152,4 @@ function Heashots() {
   );
 }
 
-export default Heashots;
+export default Headshots;

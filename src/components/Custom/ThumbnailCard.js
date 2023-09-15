@@ -26,7 +26,7 @@ import MKTypography from "components/MKTypography";
 function ThumbnailCard({ image, name, count, pro, ...rest }) {
   const imageTemplate = (
     <MKBox
-      bgColor="white"
+      bgColor="primary"
       borderRadius="xl"
       shadow="lg"
       minHeight="10rem"

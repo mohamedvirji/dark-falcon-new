@@ -49,17 +49,14 @@ import Product from "layouts/pages/service-pages/product";
 import TalkingHeads from "layouts/pages/service-pages/talking-heads";
 import Testimonials from "layouts/pages/service-pages/testimonials";
 import VirtualTours from "layouts/pages/service-pages/virtual-tours";
-
-
-import Team from "layouts/pages/landing-pages/team";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import AboutUs from "layouts/pages/landing-pages/about-us";
-
-// import Author from "layouts/pages/landing-pages/author";
+import Author from "layouts/pages/landing-pages/author";
 // import GalleryPage from "layouts/pages/gallery";
 // import Presentation from "layouts/pages/presentation";
 
 // Sections
+// import Team from "layouts/pages/landing-pages/team";
 // import PageHeaders from "layouts/sections/page-sections/page-headers";
 // import Features from "layouts/sections/page-sections/featuers";
 // import Navbars from "layouts/sections/navigation/navbars";
@@ -173,7 +170,7 @@ const routes = [
               {
                 name: "our mission",
                 route: "/about",
-                component: <AboutUs/>,
+                component: <Author/>,
               },
       
           

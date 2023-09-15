@@ -14,8 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Kit 2 React pages
-import Heashots from "pages/ServicePages/Heashots";
+import Headshots from "pages/ServicePages/Headshots";
 
-export default function HeashotsPage() {
-  return <Heashots />;
+export default function HeadshotsPage() {
+  return <Headshots />;
 }

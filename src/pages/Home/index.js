@@ -100,7 +100,7 @@ function Home() {
               Discover The <br/>Falcon
             </MKTypography>
             <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
-              Learn More
+              quick quote
             </MKButton>
           </Grid>
         </Container>
