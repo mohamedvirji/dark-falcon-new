@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = () => {
+const MultiStepForm = ({userName,userEmail,selected}) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -57,23 +57,23 @@ const MultiStepForm = () => {
     "Do you need a voice over artist?", // New question 2
     "Do you need a script written?", // New question 3
     "Do you have a descriptive storyboard?", // New question 4
-    "Can you share any video links you like the style of",
-    "Details",
+    "Can you share any video links you like the style of"
   ];
   const [videoLength, setVideoLength] = useState("");
   const [needVoiceOverArtist, setNeedVoiceOverArtist] = useState("");
   const [needScriptWritten, setNeedScriptWritten] = useState("");
   const [haveStoryboard, setHaveStoryboard] = useState("");
-  //   const [descriptiveStoryboard, setDescriptiveStoryboard] = useState('Yes: £0');
+  //   const [descriptiveStoryboard, setDescriptiveStoryboard] = useState('Yes');
   const [videoStyle, setVideoStyle] = useState("");
-
+  const [userSelections, setUserSelections] = useState({}); // Store user selections
+  const [errorName, setErrorName] =  useState()
+  const [errorEmail, setErrorEmail] =  useState()
   useEffect(() => {
     const calculatedPrice = calculatePrice();
     setTotalPrice(calculatedPrice);
   }, [videoLength, needVoiceOverArtist, needScriptWritten, haveStoryboard, videoStyle]);
 
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+
 
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
@@ -95,58 +95,142 @@ const MultiStepForm = () => {
     let price = 0;
 
     switch (videoLength) {
-      case "Under 1 Minute: £800":
+      case "Under 1 Minute":
         price += 800;
         break;
-      case "1-2 Minutes: £1300":
+      case "1-2 Minutes":
         price += 1300;
         break;
-      case "2-3 Minutes: £1800":
+      case "2-3 Minutes":
         price += 1800;
         break;
       default:
         break;
     }
 
-    if (needVoiceOverArtist === "Yes: £400") {
+    if (needVoiceOverArtist === "Yes") {
       price += 400;
     }
 
-    if (needScriptWritten === "Yes: £300") {
+    if (needScriptWritten === "Yes") {
       price += 300;
     }
 
-    if (haveStoryboard === "No: £500") {
+    if (haveStoryboard === "No") {
       price += 500;
     }
+
+    const newUserSelections = {
+      ...userSelections, // Preserve existing selections
+      [steps[activeStep]]: getUserSelectionForCurrentStep(), // Store current step's selection
+    };
+  
+    setUserSelections(newUserSelections);
+  
+
 
     return price;
   };
 
+  const getUserSelectionForCurrentStep = () => {
+    // Implement logic to get the user's selection for the current step
+    switch (activeStep) {
+      case 0:
+        return videoLength;
+      case 1:
+        return needVoiceOverArtist;
+      case 2:
+        return needScriptWritten;
+      case 3:
+        return haveStoryboard;
+      case 4:
+        return videoStyle;
+   
+      default:
+        return null;
+    }
+  };
+
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+  const sendEmail = ()=>{
+
+    if(userName.length === 0) {
+      setErrorName('Name is required')
+    } 
+    if(userName.length > 0) {
+      setErrorName('')
+    } 
+     if(!validateEmail(userEmail)){
+      setErrorEmail('Email Invalid')
+    } 
+    if(validateEmail(userEmail)){
+      setErrorEmail('')
+    }
+    if(validateEmail(userEmail) && errorName.length ===0) {
+      function simplifyObject(obj) {
+        for (const key in obj) {
+          if (typeof obj[key] === 'object' && obj[key] !== null) {
+            const trueKeys = Object.keys(obj[key]).filter(subKey => obj[key][subKey] === true);
+            if (trueKeys.length > 0) {
+              obj[key] = trueKeys;
+            } else {
+              delete obj[key];
+            }
+          }
+        }
+        return obj;
+      }
+      const simplifiedObject = simplifyObject(userSelections);
+      let allDetails = {
+        name:userName,
+        email:userEmail,
+        selected:selected,
+        Details:simplifiedObject
+      }
+      console.log(allDetails)
+      setErrorEmail('')
+      setErrorName('')
+    }
+
+   
+
+
+
+}
   return (
     <Container>
-      <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>
+        {
+        errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
+      }
+       {
+        errorEmail && <Typography sx={{color:'red',fontSize:'1rem'}}>*{errorEmail}</Typography>
+      }
+      <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>
         {steps[activeStep]}
       </Typography>
-      <Paper elevation={3} className={classes.formContainer}>
+      <Box elevation={3} className={classes.formContainer}>
         {activeStep === 0 && (
           <FormControl component="fieldset" className={classes.formControl}>
             {/* Question 1: How long do you want your video to be? */}
             <RadioGroup value={videoLength} onChange={(e) => setVideoLength(e.target.value)}>
               <FormControlLabel
-                value="Under 1 Minute: £800"
+                value="Under 1 Minute"
                 control={<Radio />}
-                label="Under 1 Minute: £800"
+                label="Under 1 Minute"
               />
               <FormControlLabel
-                value="1-2 Minutes: £1300"
+                value="1-2 Minutes"
                 control={<Radio />}
-                label="1-2 Minutes: £1300"
+                label="1-2 Minutes"
               />
               <FormControlLabel
-                value="2-3 Minutes: £1800"
+                value="2-3 Minutes"
                 control={<Radio />}
-                label="2-3 Minutes: £1800"
+                label="2-3 Minutes"
               />
             </RadioGroup>
           </FormControl>
@@ -158,8 +242,8 @@ const MultiStepForm = () => {
               value={needVoiceOverArtist}
               onChange={(e) => setNeedVoiceOverArtist(e.target.value)}
             >
-              <FormControlLabel value="Yes: £400" control={<Radio />} label="Yes: £400" />
-              <FormControlLabel value="No: £0" control={<Radio />} label="No: £0" />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
         )}
@@ -170,8 +254,8 @@ const MultiStepForm = () => {
               value={needScriptWritten}
               onChange={(e) => setNeedScriptWritten(e.target.value)}
             >
-              <FormControlLabel value="Yes: £300" control={<Radio />} label="Yes: £300" />
-              <FormControlLabel value="No: £0" control={<Radio />} label="No: £0" />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
         )}
@@ -179,8 +263,8 @@ const MultiStepForm = () => {
           <FormControl component="fieldset" className={classes.formControl}>
             {/* Question 4: Do you have a descriptive storyboard? */}
             <RadioGroup value={haveStoryboard} onChange={(e) => setHaveStoryboard(e.target.value)}>
-              <FormControlLabel value="Yes: £0" control={<Radio />} label="Yes: £0" />
-              <FormControlLabel value="No: £500" control={<Radio />} label="No: £500" />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
         )}
@@ -197,22 +281,7 @@ const MultiStepForm = () => {
         )}
 
         {activeStep === 5 && (
-          <>
-            <TextField
-              label="Your Name"
-              variant="outlined"
-              fullWidth
-              value={userName}
-              onChange={handleUserNameChange}
-            />
-            <TextField
-              label="Your Email"
-              variant="outlined"
-              fullWidth
-              value={userEmail}
-              onChange={handleUserEmailChange}
-            />
-          </>
+      <></>
         )}
         <Box mt={2}>
           <div>
@@ -230,7 +299,7 @@ const MultiStepForm = () => {
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => setTotalPrice(calculatePrice())}
+                onClick={sendEmail}
                 className={classes.calculateButton}
               >
                 Calculate
@@ -246,16 +315,9 @@ const MultiStepForm = () => {
               </Button>
             )}
           </div>
-          {/* {activeStep === steps.length - 1 && (
-            <Typography variant="h6" align="center" className={classes.totalLabel}>
-              Total Price: £{totalPrice}
-            </Typography>
-          )} */}
-          <Typography variant="h6" align="center" className={classes.totalLabel}>
-            Total Price: £{totalPrice}
-          </Typography>
+
         </Box>
-      </Paper>
+      </Box>
     </Container>
   );
 };

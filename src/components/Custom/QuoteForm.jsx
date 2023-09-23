@@ -5,7 +5,9 @@ import {
   InputAdornment,
   InputLabel,
   MenuItem,
+  Paper,
   Select,
+  TextField,
   Typography,
 } from "@mui/material";
 
@@ -21,6 +23,12 @@ import Q4 from "./Q4";
 import { ArrowDropDown } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
+  formContainer: {
+    padding: theme.spacing(2),
+    [theme.breakpoints.down("xs")]: {
+      padding: theme.spacing(1),
+    },
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 300,
@@ -35,6 +43,16 @@ export const QuoteForm = () => {
   const classes = useStyles();
   const [selectedOption, setSelectedOption] = useState(0);
 
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const handleUserEmailChange = (e) => {
+    setUserEmail(e.target.value);
+  };
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -75,27 +93,51 @@ export const QuoteForm = () => {
             <MenuItem style={{ color: "primary" }} value={0}>
               Select here
             </MenuItem>
-            <MenuItem style={{ color: "primary" }} value={"A"}>
+            <MenuItem style={{ color: "primary" }} value={"Company Brand Video"}>
               Company Brand Video
             </MenuItem>
-            <MenuItem value={"B"}>Customer Testimonial</MenuItem>
-            <MenuItem value={"C"}>Talking Heads</MenuItem>
-            <MenuItem value={"D"}>Site Video</MenuItem>
-            <MenuItem value={"E"}>2D Animation</MenuItem>
-            <MenuItem value={"F"}>3D Animation</MenuItem>
+            <MenuItem value={"Customer Testimonial"}>Customer Testimonial</MenuItem>
+            <MenuItem value={"Talking Heads"}>Talking Heads</MenuItem>
+            <MenuItem value={"Site Video"}>Site Video</MenuItem>
+            <MenuItem value={"2D Animation"}>2D Animation</MenuItem>
+            <MenuItem value={"3D Animation"}>3D Animation</MenuItem>
           </Select>
         </FormControl>
       </Box>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
-        <Box sx={{ display: "flex", background: "", height: "auto" }}>
-          {(selectedOption === "A" || selectedOption === "B" || selectedOption === "D") && <Q1 />}
-          {selectedOption === "C" && <Q2 />}
 
-          {selectedOption === "E" && <Q3 />}
+        <Box sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
+        <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
+      <>
+            <TextField
+              label="Your Name"
+              variant="outlined"
+              fullWidth
+              value={userName}
+              onChange={handleUserNameChange}
+              sx={{mb:'1rem'}}
+            />
+            <TextField
+              label="Your Email"
+              variant="outlined"
+              fullWidth
+              value={userEmail}
+              sx={{mb:'1rem'}}
 
-          {selectedOption === "F" && <Q4 />}
+              onChange={handleUserEmailChange}
+            />
+          </>
+
+          {(selectedOption === "Company Brand Video" || selectedOption === "Customer Testimonial" || selectedOption === "Site Video") && <Q1 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+          {selectedOption === "Talking Heads" && <Q2 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+
+          {selectedOption === "2D Animation" && <Q3 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+
+          {selectedOption === "3D Animation" && <Q4 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+          </Paper>
         </Box>
+       
       </Grid>
     </Grid>
   );

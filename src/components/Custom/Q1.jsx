@@ -47,18 +47,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = () => {
+const MultiStepForm = ({userName,userEmail, selected}) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [errorName, setErrorName] =  useState()
+  const [errorEmail, setErrorEmail] =  useState()
 
   const steps = [
     "Do you require interviews to be filmed?",
     "Do you require B-roll footage?",
     "How long do you want your video to be?",
     "Do you need any of the extras?",
-    "Can you share any video links you like the style of?",
-    "Details",
+    "Can you share any video links you like the style of?"
   ];
 
   const [requireFilmed, setRequireFilmed] = useState("No");
@@ -78,8 +79,8 @@ const MultiStepForm = () => {
     subtitles: false,
   });
   const [videoStyle, setVideoStyle] = useState("");
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+;
+  const [userSelections, setUserSelections] = useState({}); // Store user selections
 
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
@@ -154,16 +155,98 @@ const MultiStepForm = () => {
     if (extras.subtitles) {
       price += 200;
     }
-
+    const newUserSelections = {
+      ...userSelections, // Preserve existing selections
+      [steps[activeStep]]: getUserSelectionForCurrentStep(), // Store current step's selection
+    };
+  
+    setUserSelections(newUserSelections);
     return price;
   };
 
+  const getUserSelectionForCurrentStep = () => {
+    // Implement logic to get the user's selection for the current step
+    switch (activeStep) {
+      case 0:
+        return requireFilmed;
+      case 1:
+        return bRollOptions;
+      case 2:
+        return videoLength;
+      case 3:
+        return extras;
+      case 4:
+        return videoStyle;
+        
+      default:
+        return null;
+    }
+  };
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+
+
+  const sendEmail = ()=>{
+
+      if(userName.length === 0) {
+        setErrorName('Name is required')
+      } 
+      if(userName.length > 0) {
+        setErrorName('')
+      } 
+       if(!validateEmail(userEmail)){
+        setErrorEmail('Email Invalid')
+      } 
+      if(validateEmail(userEmail)){
+        setErrorEmail('')
+      }
+      if(validateEmail(userEmail) && errorName.length ===0) {
+        function simplifyObject(obj) {
+          for (const key in obj) {
+            if (typeof obj[key] === 'object' && obj[key] !== null) {
+              const trueKeys = Object.keys(obj[key]).filter(subKey => obj[key][subKey] === true);
+              if (trueKeys.length > 0) {
+                obj[key] = trueKeys;
+              } else {
+                delete obj[key];
+              }
+            }
+          }
+          return obj;
+        }
+        const simplifiedObject = simplifyObject(userSelections);
+        let allDetails = {
+          name:userName,
+          email:userEmail,
+          selected:selected,
+          Details:simplifiedObject
+        }
+        console.log(allDetails)
+        setErrorEmail('')
+        setErrorName('')
+      }
+
+     
+
+
+
+  }
+
   return (
     <Container>
-      <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>
+      {
+        errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
+      }
+       {
+        errorEmail && <Typography sx={{color:'red',fontSize:'1rem'}}>*{errorEmail}</Typography>
+      }
+      <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>
         {steps[activeStep]}
       </Typography>
-      <Paper elevation={3} className={classes.formContainer}>
+      <Box className={classes.formContainer}>
         {activeStep === 0 && (
           <FormControl className={classes.formControl}>
             {/* <Typography>Do you require interviews to be filmed?</Typography> */}
@@ -173,8 +256,8 @@ const MultiStepForm = () => {
               onChange={(e) => setRequireFilmed(e.target.value)}
               sx={{ padding: "1rem" }}
             >
-              <MenuItem value="Yes">Yes: £900</MenuItem>
-              <MenuItem value="No">No: £0</MenuItem>
+              <MenuItem value="Yes">Yes</MenuItem>
+              <MenuItem value="No">No</MenuItem>
             </Select>
           </FormControl>
         )}
@@ -187,7 +270,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
                 />
               }
-              label="Filmed: £500"
+              label="Filmed"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -199,7 +282,7 @@ const MultiStepForm = () => {
                   }
                 />
               }
-              label="Stock Video: £400"
+              label="Stock Video"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -211,7 +294,7 @@ const MultiStepForm = () => {
                   }
                 />
               }
-              label="Filmed & Stock Video: £800"
+              label="Filmed & Stock Video"
               classes={{ label: classes.checkBoxLabel }}
             />
           </FormGroup>
@@ -234,7 +317,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, shortVideoReels: e.target.checked })}
                 />
               }
-              label="3x Short Video Reels: £800"
+              label="3x Short Video Reels"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -244,7 +327,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, voiceOverArtist: e.target.checked })}
                 />
               }
-              label="Voice Over Artist: £400"
+              label="Voice Over Artist"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -254,7 +337,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, locationScout: e.target.checked })}
                 />
               }
-              label="Location Scout: £300"
+              label="Location ScouT"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -264,7 +347,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, teleprompter: e.target.checked })}
                 />
               }
-              label="Teleprompter: £150"
+              label="Teleprompter"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -274,7 +357,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, droneOperator: e.target.checked })}
                 />
               }
-              label="Drone Operator: £800"
+              label="Drone Operator"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -284,7 +367,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, makeUpArtist: e.target.checked })}
                 />
               }
-              label="Make-Up Artist: £400"
+              label="Make-Up Artist"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -294,7 +377,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, subtitles: e.target.checked })}
                 />
               }
-              label="Subtitles: £200"
+              label="Subtitles"
               classes={{ label: classes.checkBoxLabel }}
             />
           </FormGroup>
@@ -313,20 +396,11 @@ const MultiStepForm = () => {
 
         {activeStep === 5 && (
           <>
-            <TextField
-              label="Your Name"
-              variant="outlined"
-              fullWidth
-              value={userName}
-              onChange={handleUserNameChange}
-            />
-            <TextField
-              label="Your Email"
-              variant="outlined"
-              fullWidth
-              value={userEmail}
-              onChange={handleUserEmailChange}
-            />
+            <Typography variant="body1" align="center">
+            {JSON.stringify(userSelections, null, 2)}
+          </Typography>
+          <h1>Total Price: £{totalPrice} </h1>
+    
           </>
         )}
         <Box mt={2}>
@@ -342,14 +416,23 @@ const MultiStepForm = () => {
               </Button>
             )}
             {activeStep === steps.length - 1 ? (
+              // <Button
+              //   variant="contained"
+              //   color="primary"
+              //   onClick={() => setTotalPrice(calculatePrice())}
+              //   className={classes.calculateButton}
+              // >
+              //   Calculate
+              // </Button>
               <Button
-                variant="contained"
-                color="primary"
-                onClick={() => setTotalPrice(calculatePrice())}
-                className={classes.calculateButton}
-              >
-                Calculate
-              </Button>
+              variant="contained"
+              color="primary"
+              // onClick={() => setTotalPrice(calculatePrice())}
+              onClick={sendEmail}
+              className={classes.calculateButton}
+            >
+              Submit
+            </Button>
             ) : (
               <Button
                 variant="contained"
@@ -366,12 +449,12 @@ const MultiStepForm = () => {
               Total Price: £{totalPrice}
             </Typography>
           )} */}
-
+{/* 
           <Typography variant="h6" align="center" className={classes.totalLabel}>
             Total Price: £{totalPrice}
-          </Typography>
+          </Typography> */}
         </Box>
-      </Paper>
+      </Box>
     </Container>
   );
 };

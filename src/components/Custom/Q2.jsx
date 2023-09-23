@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = () => {
+const MultiStepForm = ({userName,userEmail, selected}) => {
   const classes = useStyles();
 
   const steps = [
@@ -56,8 +56,7 @@ const MultiStepForm = () => {
     "How many cameras do you need?",
     "Do you require B-roll footage?",
     "Do you require any extras?",
-    "How many Talking Head videos do you want produced?",
-    "Details",
+    "How many Talking Head videos do you want produced?"
   ];
 
   const [activeStep, setActiveStep] = useState(0);
@@ -78,9 +77,10 @@ const MultiStepForm = () => {
   });
   const [numberOfTalkingHeadVideos, setNumberOfTalkingHeadVideos] = useState("");
 
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-
+ 
+  const [userSelections, setUserSelections] = useState({}); // Store user selections
+  const [errorName, setErrorName] =  useState()
+  const [errorEmail, setErrorEmail] =  useState()
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -107,10 +107,10 @@ const MultiStepForm = () => {
 
     // Question 1: Where would you like to film?
     switch (filmLocation) {
-      case "My site: £0":
+      case "My site":
         price += 0;
         break;
-      case "Your studio: £600":
+      case "Your studio":
         price += 600;
         break;
       default:
@@ -119,13 +119,13 @@ const MultiStepForm = () => {
 
     // Question 2: How many cameras do you need?
     switch (numberOfCameras) {
-      case "1 camera: £500":
+      case "1 camera":
         price += 500;
         break;
-      case "2 cameras: £900":
+      case "2 cameras":
         price += 900;
         break;
-      case "Includes electronic slider: £1,200":
+      case "Includes electronic slider":
         price += 1200;
         break;
       default:
@@ -171,25 +171,110 @@ const MultiStepForm = () => {
       default:
         break;
     }
+    const newUserSelections = {
+      ...userSelections, // Preserve existing selections
+      [steps[activeStep]]: getUserSelectionForCurrentStep(), // Store current step's selection
+    };
+  
+    setUserSelections(newUserSelections);
+  
 
     return price;
   };
 
+
+
+
+const getUserSelectionForCurrentStep = () => {
+  // Implement logic to get the user's selection for the current step
+  switch (activeStep) {
+    case 0:
+      return filmLocation;
+    case 1:
+      return numberOfCameras;
+    case 2:
+      return bRollOptions;
+    case 3:
+      return extras;
+    case 4:
+      return numberOfTalkingHeadVideos;
+    default:
+      return null;
+  }
+};
+
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+const sendEmail = ()=>{
+
+  if(userName.length === 0) {
+    setErrorName('Name is required')
+  } 
+  if(userName.length > 0) {
+    setErrorName('')
+  } 
+   if(!validateEmail(userEmail)){
+    setErrorEmail('Email Invalid')
+  } 
+  if(validateEmail(userEmail)){
+    setErrorEmail('')
+  }
+  if(validateEmail(userEmail) && errorName.length ===0) {
+    function simplifyObject(obj) {
+      for (const key in obj) {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+          const trueKeys = Object.keys(obj[key]).filter(subKey => obj[key][subKey] === true);
+          if (trueKeys.length > 0) {
+            obj[key] = trueKeys;
+          } else {
+            delete obj[key];
+          }
+        }
+      }
+      return obj;
+    }
+    const simplifiedObject = simplifyObject(userSelections);
+    let allDetails = {
+      name:userName,
+      email:userEmail,
+      selected:selected,
+      Details:simplifiedObject
+    }
+    console.log(allDetails)
+    setErrorEmail('')
+    setErrorName('')
+  }
+
+ 
+
+
+
+}
+
   return (
     <Container>
-      <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>
+         {
+        errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
+      }
+       {
+        errorEmail && <Typography sx={{color:'red',fontSize:'1rem'}}>*{errorEmail}</Typography>
+      }
+      <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>
         {steps[activeStep]}
       </Typography>
-      <Paper elevation={3} className={classes.formContainer}>
+      <Box elevation={3} className={classes.formContainer}>
         {activeStep === 0 && (
           <FormControl className={classes.formControl}>
             {/* Question 1: Where would you like to film? */}
             <RadioGroup value={filmLocation} onChange={(e) => setFilmLocation(e.target.value)}>
-              <FormControlLabel value="My site: £0" control={<Radio />} label="My site: £0" />
+              <FormControlLabel value="My site" control={<Radio />} label="My site" />
               <FormControlLabel
-                value="Your studio: £600"
+                value="Your studio"
                 control={<Radio />}
-                label="Your studio: £600"
+                label="Your studio"
               />
             </RadioGroup>
           </FormControl>
@@ -201,16 +286,16 @@ const MultiStepForm = () => {
               value={numberOfCameras}
               onChange={(e) => setNumberOfCameras(e.target.value)}
             >
-              <FormControlLabel value="1 camera: £500" control={<Radio />} label="1 camera: £500" />
+              <FormControlLabel value="1 camera" control={<Radio />} label="1 camera" />
               <FormControlLabel
-                value="2 cameras: £900"
+                value="2 cameras"
                 control={<Radio />}
-                label="2 cameras: £900"
+                label="2 cameras"
               />
               <FormControlLabel
-                value="Includes electronic slider: £1,200"
+                value="Includes electronic slider"
                 control={<Radio />}
-                label="Includes electronic slider: £1,200"
+                label="Includes electronic slider"
               />
             </RadioGroup>
           </FormControl>
@@ -225,7 +310,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
                 />
               }
-              label="Filmed: £500"
+              label="Filmed"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -237,7 +322,7 @@ const MultiStepForm = () => {
                   }
                 />
               }
-              label="Stock Video: £400"
+              label="Stock Video"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -249,7 +334,7 @@ const MultiStepForm = () => {
                   }
                 />
               }
-              label="Filmed & Stock Video: £800"
+              label="Filmed & Stock Video"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -269,7 +354,7 @@ const MultiStepForm = () => {
                   }
                 />
               }
-              label="No: £0"
+              label="No"
               classes={{ label: classes.checkBoxLabel }}
             />
           </FormGroup>
@@ -284,7 +369,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, teleprompter: e.target.checked })}
                 />
               }
-              label="Teleprompter: £150"
+              label="Teleprompter"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -294,7 +379,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, makeUpArtist: e.target.checked })}
                 />
               }
-              label="Make-Up Artist: £400"
+              label="Make-Up Artist"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -304,7 +389,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, subtitles: e.target.checked })}
                 />
               }
-              label="Subtitles: £200"
+              label="Subtitles"
               classes={{ label: classes.checkBoxLabel }}
             />
             <FormControlLabel
@@ -314,7 +399,7 @@ const MultiStepForm = () => {
                   onChange={(e) => setExtras({ ...extras, animationGraphics: e.target.checked })}
                 />
               }
-              label="Animation/Graphics: £400"
+              label="Animation/Graphics"
               classes={{ label: classes.checkBoxLabel }}
             />
           </FormGroup>
@@ -329,17 +414,17 @@ const MultiStepForm = () => {
               <FormControlLabel
                 value="1"
                 control={<Radio />}
-                label="1 (Note - Previous calculation x1)"
+                label="1"
               />
               <FormControlLabel
                 value="2"
                 control={<Radio />}
-                label="2 (Note - Previous calculation x2)"
+                label="2"
               />
               <FormControlLabel
                 value="3"
                 control={<Radio />}
-                label="3 (Note - Previous calculation x3)"
+                label="3"
               />
             </RadioGroup>
           </FormControl>
@@ -347,20 +432,6 @@ const MultiStepForm = () => {
 
         {activeStep === 5 && (
           <>
-            <TextField
-              label="Your Name"
-              variant="outlined"
-              fullWidth
-              value={userName}
-              onChange={handleUserNameChange}
-            />
-            <TextField
-              label="Your Email"
-              variant="outlined"
-              fullWidth
-              value={userEmail}
-              onChange={handleUserEmailChange}
-            />
           </>
         )}
         <Box mt={2}>
@@ -379,10 +450,10 @@ const MultiStepForm = () => {
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => setTotalPrice(calculatePrice())}
+                onClick={sendEmail}
                 className={classes.calculateButton}
               >
-                Calculate
+                Submit
               </Button>
             ) : (
               <Button
@@ -401,11 +472,11 @@ const MultiStepForm = () => {
             </Typography>
           )} */}
 
-          <Typography variant="h6" align="center" className={classes.totalLabel}>
+          {/* <Typography variant="h6" align="center" className={classes.totalLabel}>
             Total Price: £{totalPrice}
-          </Typography>
+          </Typography> */}
         </Box>
-      </Paper>
+      </Box>
     </Container>
   );
 };
