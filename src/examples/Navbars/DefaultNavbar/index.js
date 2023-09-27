@@ -165,7 +165,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
                           "&:hover": {
                             backgroundColor: grey[200],
-                            color: dark.main,
+                            color: dark.other,
                           },
                         })}
                       >
@@ -229,10 +229,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
               "&:hover": {
                 backgroundColor: grey[200],
-                color: dark.main,
+                color: dark.other,
 
                 "& *": {
-                  color: dark.main,
+                  color: dark.other,
                 },
               },
             })}
@@ -373,10 +373,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
                       "&:hover": {
                         backgroundColor: grey[200],
-                        color: dark.main,
+                        color: dark.other,
 
                         "& *": {
-                          color: dark.main,
+                          color: dark.other,
                         },
                       },
                     })}

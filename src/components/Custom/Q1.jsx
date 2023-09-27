@@ -17,6 +17,7 @@ import {
   TextField,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import MKButton from "components/MKButton";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -406,14 +407,14 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
         <Box mt={2}>
           <div>
             {activeStep > 0 && (
-              <Button
+              <MKButton
                 variant="contained"
                 color="primary"
                 onClick={handleBack}
                 className={classes.backButton}
               >
                 Back
-              </Button>
+              </MKButton>
             )}
             {activeStep === steps.length - 1 ? (
               // <Button
@@ -424,7 +425,7 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
               // >
               //   Calculate
               // </Button>
-              <Button
+              <MKButton
               variant="contained"
               color="primary"
               // onClick={() => setTotalPrice(calculatePrice())}
@@ -432,16 +433,16 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
               className={classes.calculateButton}
             >
               Submit
-            </Button>
+            </MKButton>
             ) : (
-              <Button
+              <MKButton
                 variant="contained"
                 color="primary"
                 onClick={handleNext}
                 className={classes.calculateButton}
               >
                 Next
-              </Button>
+              </MKButton>
             )}
           </div>
           {/* {activeStep === steps.length - 1 && (

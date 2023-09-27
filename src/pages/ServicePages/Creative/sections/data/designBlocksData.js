@@ -24,13 +24,13 @@ export default [
     items: [
       {
         image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+72-01.jpg`,
-        name: "Pearl 72",
+        name: "Pearl Yacht 72",
         count: "",
         route: "https://youtu.be/VgkZJDTQL8s",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Pearl+3D-01.jpg`,
-        name: "Pearl 3D",
+        name: "3D Pearl Yachts",
         count: "",
         route: "https://youtu.be/KmIWUySR2k0",
       },
@@ -48,7 +48,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Premium-Power+Up-01.jpg`,
-        name: "Powerup",
+        name: "Power Up",
         count: "",
         route: "https://youtu.be/qlr__K2MbNM",
       },
@@ -60,7 +60,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Premium-Iftar+show-01.jpg`,
-        name: "Iftar Show",
+        name: "The Iftar Show",
         count: "",
         route: "https://youtu.be/ZZj2GQZjJNE",
       },
@@ -72,7 +72,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_+Premium-4+-+Shaam-01.jpg`,
-        name: "Shaam",
+        name: "Syria",
         count: "",
         route: "https://youtu.be/e_Gu-7HMrMg",
       },
@@ -90,7 +90,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+Yatch+82-01.jpg`,
-        name: "Pearl 82",
+        name: "Pearl Yachts 82",
         count: "",
         route: "https://youtu.be/X_Q2ons4KvM",
       },

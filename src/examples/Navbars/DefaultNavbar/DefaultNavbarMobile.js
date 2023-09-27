@@ -88,7 +88,7 @@ function DefaultNavbarMobile({ routes, open }) {
 
                           "&:hover": {
                             backgroundColor: grey[200],
-                            color: dark.main,
+                            color: dark.other,
                           },
                         })}
                       >
@@ -114,10 +114,10 @@ function DefaultNavbarMobile({ routes, open }) {
 
                       "&:hover": {
                         backgroundColor: grey[200],
-                        color: dark.main,
+                        color: dark.other,
 
                         "& *": {
-                          color: dark.main,
+                          color: dark.other,
                         },
                       },
                     })}

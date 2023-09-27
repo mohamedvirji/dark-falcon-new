@@ -36,6 +36,11 @@ import nasaLogo from "assets/images/logos/gray-logos/logo-nasa.svg";
 import vodafoneLogo from "assets/images/logos/gray-logos/logo-vodafone.svg";
 import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.svg";
 
+const imagesPrefix =
+  "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/logos";
+
+  // `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+72-01.jpg`
+
 function Information() {
   return (
     <MKBox component="section" py={12}>
@@ -92,28 +97,25 @@ function Information() {
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        <h1 style={{textAlign:"center", color:"#e91e63"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1>
+        {/* <h1 style={{textAlign:"center", color:"#e91e63"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1> */}
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/TE-t.png`} alt="TotalEnergies" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={facebookLogo} alt="Facebook" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/IVG.png`} alt="IVG" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={nasaLogo} alt="Nasa" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/LastPass.png`} alt="LastPass" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={vodafoneLogo} alt="Vodafone" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/NHS-t.png`} alt="NHS" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox
-              component="img"
-              src={digitalOceanLogo}
-              alt="DigitalOcean"
-              width="100%"
-              opacity={1}
-            />
+            <MKBox component="img" src={`${imagesPrefix}/R-t.png`} alt="R" width="100%" opacity={1} />
+          </Grid>
+          <Grid item xs={6} md={4} lg={2}>
+            <MKBox component="img" src={`${imagesPrefix}/RC-t.png`} alt="RC" width="100%" opacity={1} />
           </Grid>
         </Grid>
       </Container>

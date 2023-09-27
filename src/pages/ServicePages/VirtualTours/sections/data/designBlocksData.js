@@ -24,31 +24,25 @@ export default [
     items: [
       {
         image: `${imagesPrefix}/03566.png`,
-        name: "3566",
+        name: "Madressa",
         count: "",
         route: "https://youtu.be/3Knszp0R3dA",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+WARESIDE-01.jpg`,
-        name: "Wareside",
+        name: "Wareside Primary School",
         count: "",
         route: "https://youtu.be/xh1qdPlsH3w",
       },
       {
-        image: `${placeholder}`,
-        name: "Spire Court",
-        count: "",
-        route: "https://youtu.be/4OdcrQO7dqk",
-      },
-      {
         image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+Stork-01.jpg`,
-        name: "Stork",
+        name: "Stork Mayfair",
         count: "",
         route: "https://youtu.be/DqmIo2rnGWA",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+STOPSLEY-01.jpg`,
-        name: "Stopsley",
+        name: "Stopsley Primary School",
         count: "",
         route: "https://youtu.be/4Ngo4f3_Sgg",
       },

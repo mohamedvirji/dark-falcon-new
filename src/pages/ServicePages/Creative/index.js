@@ -18,6 +18,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -36,7 +38,7 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-about-us.jpg";
+import bgImage from "assets/images/CreativeHeader3.png";
 
 // import { useAuth } from "auth-context/auth.context";
 
@@ -47,9 +49,9 @@ function Creative() {
           routes={routes}
           action={{
             type: "internal",
-            route: "/pages/quick-quote",
+            route: "/contact",
             label: "quick quote",
-            color: "primary",
+            color: "white",
           }}
           
           transparent
@@ -95,11 +97,11 @@ function Creative() {
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
               
             </MKTypography>
-            <Link to="/contact">
+            {/* <Link to="/contact">
             <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
               quick quote
             </MKButton>
-            </Link>
+            </Link> */}
             {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
@@ -120,6 +122,7 @@ function Creative() {
           </Grid>
         </Container>
       </MKBox>
+      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
       <ThreeSteps/>
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">

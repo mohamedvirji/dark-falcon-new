@@ -4,12 +4,16 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+
+import ContactUs from "layouts/pages/landing-pages/contact-us";
+import Author from "layouts/pages/landing-pages/author";
+
 // Material Kit 2 React components
 import MKTypography from "components/MKTypography";
 
 // Images
 // import logoCT from "assets/images/logo-ct-dark.png";
-import dfLogo from "assets/images/df-logo_3.png";
+import dfLogo from "assets/images/df-logo_4.png";
 
 const date = new Date().getFullYear();
 
@@ -21,8 +25,8 @@ export default {
   },
   socials: [
     {
-      icon: <FacebookIcon />,
-      link: "https://www.facebook.com/darkfalconproductions/",
+      icon: <YouTubeIcon />,
+      link: "https://www.youtube.com/user/darkfalconprod",
     },
     {
       icon: <LinkedIn />,
@@ -33,8 +37,8 @@ export default {
       link: "https://www.instagram.com/darkfalconproductions/",
     },
     {
-      icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/user/darkfalconprod",
+      icon: <FacebookIcon />,
+      link: "https://www.facebook.com/darkfalconproductions/",
     },
   ],
   menus: [
@@ -51,10 +55,12 @@ export default {
       ],
     },
     {
-      name: "quick quote",
+      name: "more",
       items: [
-        
+        { name: "our mission", route: "/about", component: <Author/>},
+        { name: "message us", route: "/contact", component: <ContactUs/>},
       ],
+      route: "/contact"
     },
     {
       name: "",

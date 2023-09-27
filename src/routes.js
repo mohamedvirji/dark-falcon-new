@@ -149,13 +149,13 @@ const routes = [
             name: "photography",
                 collapse: [
                   {
-                    name: "events",
+                    name: "event photography",
                     route: "/photography/events",
                     component: <PhotoEvents />,
                     protected: false,
                   },
                   {
-                    name: "headshots",
+                    name: "headshot photography",
                     route: "/photography/headshots",
                     component: <Headshots />,
                     protected: false,
@@ -163,23 +163,15 @@ const routes = [
                 ],
               },
               {
-                name: "",
-                route: "/contact",
-                component: <ContactUs/>,
-              },
-              {
                 name: "our mission",
                 route: "/about",
                 component: <Author/>,
               },
-      
-          
-              
-                  // {
-                  //   name: "",
-                  //   route: "/contact",
-                  //   component: <ContactUs/>,
-                  // },
+              {
+                name: "",
+                route: "/contact",
+                component: <ContactUs/>,
+              },
   //     // {
   //     //   name: "account",
   //     //   collapse: [

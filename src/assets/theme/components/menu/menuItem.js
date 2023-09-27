@@ -38,7 +38,7 @@ export default {
 
       "&:hover, &:focus, &.Mui-selected, &.Mui-selected:hover, &.Mui-selected:focus": {
         backgroundColor: light.main,
-        color: dark.main,
+        color: dark.other,
       },
     },
   },

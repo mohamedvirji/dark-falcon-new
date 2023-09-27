@@ -16,7 +16,7 @@ section#three-step-method {
 
     /* 16. three step method */
     .three-step-method-heading {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Anton', sans-serif;
         font-size: 15px;
         font-style: normal;
         font-weight: 700;
@@ -29,7 +29,7 @@ section#three-step-method {
         .three-step-method-number {
         position: relative;
         top: 0;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Anton", sans-serif;
         font-size: 140px;
         font-weight: 700;
         text-transform: uppercase;
@@ -159,13 +159,13 @@ section#three-step-method {
 /* 7. heading */
 h2.section-heading {
     position: relative;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Anton', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 75px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: -0.04em;
+    letter-spacing: 0.04em;
     color: #fff;
     margin: 0 auto -3px auto;
     width: 100%;
@@ -221,7 +221,7 @@ h2.section-heading {
       }
     }
     h2.section-subheading {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Anton', sans-serif;
         font-size: 13px;
         font-style: normal;
         font-weight: 400;

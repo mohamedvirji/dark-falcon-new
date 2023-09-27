@@ -23,7 +23,7 @@ export default [
     items: [
       {
         image: `${imagesPrefix}/dfp-thumbnails_LBPC+-+Siatica-01.jpg`,
-        name: "LBPC SIATICA",
+        name: "LBPC",
         count: "",
         route: "https://youtu.be/tnFy7ns2HY8",
       },
@@ -35,7 +35,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_LAst Pass-01.jpg`,
-        name: "Last Pass",
+        name: "LastPass",
         count: "",
         route: "https://youtu.be/Zo4XeoapWKw",
       },
@@ -53,19 +53,19 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_+Iftar+show-01.jpg`,
-        name: "Iftar Show",
+        name: "The Iftar Show",
         count: "",
         route: "https://youtu.be/ZZj2GQZjJNE",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Inital+Paitent-01.jpg`,
-        name: "Initial Patient",
+        name: "Royal College of Surgeons",
         count: "",
         route: "https://youtu.be/FICPxrU5Yyo",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_LBPC+-+Spine++man-01.jpg`,
-        name: "LBPC Spine Man",
+        name: "LBPC",
         count: "",
         route: "https://youtu.be/OeJeuhh5B7E",
       },

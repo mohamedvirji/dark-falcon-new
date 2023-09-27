@@ -23,7 +23,7 @@ export default [
     items: [
       {
         image: `${imagesPrefix}/dfp-thumbnails_3++Adidas+Dragonball+Z+Limited+Edition--01.jpg`,
-        name: "Adidas Dragon Ball Z",
+        name: "Adidas Limited Edition",
         count: "",
         route: "https://youtu.be/x8I07lna1GM",
       },
@@ -41,19 +41,19 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_IVG SHORT-01.jpg`,
-        name: "IVG Short",
+        name: "IVG Regal",
         count: "",
         route: "https://youtube.com/shorts/0Xh1-b2_SMc",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_VT+-+1+-++Barclays+Uniform+Season+2021-01.jpg`,
-        name: "Barclays Uniform",
+        name: "Barclays",
         count: "",
         route: "https://youtu.be/LDeySva3Ayw",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Easy+Care-01.jpg`,
-        name: "Easy Care",
+        name: "Easy Care Solutions",
         count: "",
         route: "https://youtu.be/sLhBYS_kkrs",
       },

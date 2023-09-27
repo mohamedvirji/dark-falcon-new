@@ -29,7 +29,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Total Animation-01.jpg`,
-        name: "Total Animation",
+        name: "TotalEnergies",
         count: "",
         route: "https://youtu.be/ENX7Hsv81G0",
       },
@@ -53,7 +53,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_wayfinder-01.jpg`,
-        name: "Wayfinder",
+        name: "Purple",
         count: "",
         route: "https://youtu.be/NG0xfGti20I",
       },
@@ -65,7 +65,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_testing_my_electrical_appliances__northern_pat-01.jpg`,
-        name: "Testing My Electrical Applicances",
+        name: "Northern PAT",
         count: "",
         route: "https://youtu.be/7ixnfyqwKCk",
       },
@@ -77,19 +77,19 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Salaam-01.jpg`,
-        name: "Salam",
+        name: "Subulus Salam",
         count: "",
         route: "https://youtu.be/8rcN6JzOnQQ",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_national_contributions_fund-01.jpg`,
-        name: "National Contribution Fund",
+        name: "NIC",
         count: "",
         route: "https://youtu.be/XJUC4l2i0LY",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_national+contribution+batch+2-01.jpg`,
-        name: "National Contribution Batch",
+        name: "NIC",
         count: "",
         route: "https://youtu.be/8l7X4h7zNbo",
       },

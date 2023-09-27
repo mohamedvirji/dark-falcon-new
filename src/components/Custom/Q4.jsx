@@ -261,33 +261,33 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
         <Box mt={2}>
           <div>
             {activeStep > 0 && (
-              <Button
+              <MKButton
                 variant="contained"
                 color="primary"
                 onClick={handleBack}
                 className={classes.backButton}
               >
                 Back
-              </Button>
+              </MKButton>
             )}
             {activeStep === steps.length - 1 ? (
-              <Button
+              <MKButton
                 variant="contained"
                 color="primary"
                 onClick={sendEmail}
                 className={classes.calculateButton}
               >
                 Submit
-              </Button>
+              </MKButton>
             ) : (
-              <Button
+              <MKButton
                 variant="contained"
                 color="primary"
                 onClick={handleNext}
                 className={classes.calculateButton}
               >
                 Next
-              </Button>
+              </MKButton>
             )}
           </div>
 

@@ -33,7 +33,7 @@ function ThreeSteps() {
             {/* divider end */}
             {/* page subtitle start */}
             <h2 className="section-subheading">
-              <span>Brief, proposal, let's start</span>
+              <span>Your Vision, The Production, The Result</span>
             </h2>
             {/* page subtitle end */}
           </Col>
@@ -48,39 +48,39 @@ function ThreeSteps() {
           {/* col start */}
           <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
-            Brief
+            Your Vision
             </h4>
             <div className="three-step-method-number">
               1
             </div>
             <p>
-            Tell us what you need by downloading our production brief, if you already have one please share this in an email.
+            "Unlock the power of your vision with our expert guidance and creative collaboration."
             </p>
           </Grid>
           {/* col end */}
           {/* col start */}
           <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
-            Proposal
+            The Production
             </h4>
             <div className="three-step-method-number">
               2
             </div>
             <p>
-            We will send our proposal which includes a production overview, framework and itemised quote.
+            "Watch your ideas come to life with our highly skilled team, capturing every detail into a riveting production."
             </p>
           </Grid>
           {/* col end */}
           {/* col start */}
           <Grid item md={4} className="three-step-method-block">
             <h4 className="three-step-method-heading">
-            Let's start
+            The Result
             </h4>
             <div className="three-step-method-number">
               3
             </div>
             <p>
-            Give us the thumbs up and we can start working on your production
+            "Experience the remarkable results of our dedicated efforts and your visual masterpiece ready to impress."
             </p>
           </Grid>
           {/* col end */}

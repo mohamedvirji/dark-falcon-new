@@ -11,6 +11,12 @@ import {
   Typography,
 } from "@mui/material";
 
+// Material Kit 2 React components
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
+import MKButton from "components/MKButton";
+import MKInput from "components/MKInput";
+
 import React from "react";
 
 import { makeStyles } from "@mui/styles";
@@ -24,7 +30,7 @@ import { ArrowDropDown } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     [theme.breakpoints.down("xs")]: {
       padding: theme.spacing(1),
     },
@@ -56,19 +62,22 @@ export const QuoteForm = () => {
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const sendContactEmail = ()=>{
+    console.log("CONTACT FORM ONLY")
+  }
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
-      <Box sx={{ display: "flex", background: "" }}>
+      <MKBox sx={{ display: "flex", background: "" }}>
         <FormControl
           className={classes.formControl}
           variant="outlined"
           fullWidth
           sx={{ color: "white" }}
         >
-          <Typography style={{ color: "white", textAlign: "center" }}>
+          <MKTypography style={{ color: "white", textAlign: "center" }}>
             Instant Quote Form
-          </Typography>
+          </MKTypography>
           {/* <InputLabel htmlFor="age">I am looking for</InputLabel> */}
           <Select
             value={selectedOption}
@@ -103,22 +112,23 @@ export const QuoteForm = () => {
             <MenuItem value={"3D Animation"}>3D Animation</MenuItem>
           </Select>
         </FormControl>
-      </Box>
+      </MKBox>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
 
-        <Box sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
+        <MKBox sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
         <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
       <>
-            <TextField
-              label="Your Name"
+            <MKInput 
+            label="Your Name"
               variant="outlined"
               fullWidth
               value={userName}
               onChange={handleUserNameChange}
-              sx={{mb:'1rem'}}
-            />
-            <TextField
+              sx={{mb:'1rem'}} 
+              size="large"
+              />
+            <MKInput
               label="Your Email"
               variant="outlined"
               fullWidth
@@ -127,6 +137,14 @@ export const QuoteForm = () => {
 
               onChange={handleUserEmailChange}
             />
+            <MKInput fullWidth label="More Info" multiline rows={5} />
+            {/* <MKButton
+              variant="contained"
+              color="primary"
+              onClick={sendContactEmail}
+            >
+              Submit
+            </MKButton> */}
           </>
 
           {(selectedOption === "Company Brand Video" || selectedOption === "Customer Testimonial" || selectedOption === "Site Video") && <Q1 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
@@ -136,7 +154,7 @@ export const QuoteForm = () => {
 
           {selectedOption === "3D Animation" && <Q4 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
           </Paper>
-        </Box>
+        </MKBox>
        
       </Grid>
     </Grid>

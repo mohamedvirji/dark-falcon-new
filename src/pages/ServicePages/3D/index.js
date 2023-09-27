@@ -47,9 +47,9 @@ function ThreeD() {
           routes={routes}
           action={{
             type: "internal",
-            route: "/pages/quick-quote",
+            route: "/contact",
             label: "quick quote",
-            color: "primary",
+            color: "white",
           }}
           
           transparent
@@ -92,14 +92,14 @@ function ThreeD() {
             >
               3D
             </MKTypography>
-            <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
+            {/* <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
               
             </MKTypography>
             <Link to="/contact">
             <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
               quick quote
             </MKButton>
-            </Link>
+            </Link> */}
             {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>

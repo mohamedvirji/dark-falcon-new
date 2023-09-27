@@ -81,8 +81,9 @@ export default {
   },
 
   dark: {
-    main: "#344767",
+    main:  "#344767",
     focus: "#2c3c58",
+    other: "#212529"
   },
   stars:{
     default: "#FFC300"

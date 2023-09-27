@@ -28,8 +28,10 @@ import pxToRem from "assets/theme/functions/pxToRem";
 const { dark } = colors;
 
 const baseProperties = {
-  fontFamily2: '"Exo", sans-serif;',
-  fontFamily: '"Exo", sans-serif;',
+  //fontFamily2: '"Exo", sans-serif;',
+  //fontFamily: '"Exo", sans-serif;',
+  fontFamily: '"Anton", sans-serif;',
+  fontFamily2: '"Anton", sans-serif;',
   // fontFamily: '"Roboto Slab", sans-serif',
   fontWeightLighter: 100,
   fontWeightLight: 300,
@@ -47,13 +49,13 @@ const baseProperties = {
 };
 
 const baseHeadingProperties = {
-  color: dark.main,
+  color: dark.other,
   fontWeight: baseProperties.fontWeightBold,
 };
 
 const baseDisplayProperties = {
   fontFamily: baseProperties.fontFamily,
-  color: dark.main,
+  color: dark.other,
   fontWeight: baseProperties.fontWeightLight,
   lineHeight: 1.2,
 };

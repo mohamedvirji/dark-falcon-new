@@ -88,7 +88,7 @@ function DefaultNavbarMobile({ routes, open }) {
 
                           "&:hover": {
                             backgroundColor: grey[200],
-                            color: dark.main,
+                            color: dark.other,
                           },
                         })}
                       >
@@ -114,10 +114,10 @@ function DefaultNavbarMobile({ routes, open }) {
 
                       "&:hover": {
                         backgroundColor: grey[200],
-                        color: dark.main,
+                        color: dark.other,
 
                         "& *": {
-                          color: dark.main,
+                          color: dark.other,
                         },
                       },
                     })}
@@ -133,7 +133,7 @@ function DefaultNavbarMobile({ routes, open }) {
                     <MKTypography
                       display="block"
                       variant="button"
-                      color="text"
+                      color="dark.other"
                       fontWeight="regular"
                       sx={{ transition: "all 300ms linear" }}
                     >

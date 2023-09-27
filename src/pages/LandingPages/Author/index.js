@@ -45,12 +45,12 @@ function Author() {
     <>
         <DefaultNavbar
             routes={routes}
-            // action={{
-            //   type: "internal",
-            //   route: "/pages/authentication/sign-out",
-            //   label: "quick quote",
-            //   color: "primary",
-            // }}
+            action={{
+              type: "internal",
+              route: "/contact",
+              label: "quick quote",
+              color: "primary",
+            }}
             light
           transparent
           sticky
@@ -93,7 +93,7 @@ function Author() {
             >
               Welcome to Dark Falcon Productions
             </MKTypography>
-            <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
+            {/* <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
             Where your ideas come to life through professionally shot, edited, 
             <br/>
             and produced digital media content.
@@ -109,7 +109,7 @@ function Author() {
             <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
               quick quote
             </MKButton>
-            </Link>
+            </Link> */}
             {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
             </MKTypography>
@@ -147,7 +147,7 @@ function Author() {
           container
           item
           xs={12}
-          lg={6}
+          lg={9}
           flexDirection="column"
           alignItems="center"
           sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}

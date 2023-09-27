@@ -30,8 +30,8 @@ import DefaultNavbar from "layouts/DefaultNavbar";
 import DefaultFooter from "layouts/DefaultFooter";
 
 // About Us page sections
-// import Information from "pages/Home/sections/Information";
-// import Testimonials from "pages/Home/sections/Testimonials";
+import Information from "pages/Home/sections/Information";
+import Testimonials from "pages/Home/sections/Testimonials";
 import Counters from "pages/Home/sections/Counters";
 import Gallery from "components/Custom/Gallery";
 import ThreeSteps from "components/Custom/ThreeSteps";
@@ -55,7 +55,7 @@ function Home() {
             type: "internal",
             route: "/contact",
             label: "quick quote",
-            color: "primary",
+            color: "white",
           }}
           light
           transparent
@@ -89,7 +89,8 @@ function Home() {
             <MKTypography
               variant="h1"
               color="white"
-              mt={15}
+              mt={25}
+              ml={40}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
@@ -99,9 +100,9 @@ function Home() {
             >
               Discover The <br/>Falcon
             </MKTypography>
-            <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
+            {/* <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
               quick quote
-            </MKButton>
+            </MKButton> */}
           </Grid>
         </Container>
       </MKBox>
@@ -118,7 +119,7 @@ function Home() {
         <a href="#count"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
         
         <Counters/>
-        {/* <Testimonials/> */}
+        <Testimonials/>
         <Gallery/>
         <ThreeSteps/>
         {/* <Information/> */}

@@ -42,7 +42,7 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-+Cosun-01.jpg`,
-        name: "Cosun",
+        name: "Cosun Beet",
         count: "",
         route: "https://youtu.be/peRrOxSpmCY",
       },
@@ -60,13 +60,13 @@ export default [
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_Muslim+News-01.jpg`,
-        name: "Muslim News",
+        name: "The Muslim News",
         count: "",
         route: "https://youtu.be/II2u7I3jRfY",
       },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-Profit-01.jpg`,
-        name: "Profit",
+        name: "Profitero",
         count: "",
         route: "https://youtu.be/sKJxueEw6y0",
       },

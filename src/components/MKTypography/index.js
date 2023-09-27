@@ -45,8 +45,8 @@ const MKTypography = forwardRef(
 
 // Setting default values for the props of MKTypography
 MKTypography.defaultProps = {
-  color: "light",
-  fontWeight: false,
+  color: "primary",
+  fontWeight: "light",
   textTransform: "none",
   verticalAlign: "unset",
   textGradient: false,

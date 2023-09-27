@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "layouts/DefaultNavbar/DefaultNavbarMobile";
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-import brandImage from 'assets/images/df-logo_3.png'
+import brandImage from 'assets/images/df-logo_4.png'
 
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
@@ -165,7 +165,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
                           "&:hover": {
                             backgroundColor: grey[200],
-                            color: dark.main,
+                            color: "primary",
                           },
                         })}
                       >
@@ -229,10 +229,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
               "&:hover": {
                 backgroundColor: grey[200],
-                color: dark.main,
+                color: "primary",
 
                 "& *": {
-                  color: dark.main,
+                  color: "primary",
                 },
               },
             })}
@@ -362,7 +362,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                     variant="button"
                     textTransform="capitalize"
                     minWidth={item.description ? "14rem" : "12rem"}
-                    color={item.description ? "dark" : "text"}
+                    color={item.description ? "primary" : "primary"}
                     fontWeight={item.description ? "bold" : "regular"}
                     py={item.description ? 1 : 0.625}
                     px={2}
@@ -373,10 +373,10 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
                       "&:hover": {
                         backgroundColor: grey[200],
-                        color: dark.main,
+                        color: "primary",
 
                         "& *": {
-                          color: dark.main,
+                          color: "primary",
                         },
                       },
                     })}
@@ -500,7 +500,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                   to={action.route}
                   variant={
                     action.color === "white" || action.color === "default"
-                      ? "contained"
+                      ? "outlined"
                       : "gradient"
                   }
                   color={action.color ? action.color : "info"}
