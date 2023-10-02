@@ -11,12 +11,6 @@ import {
   Typography,
 } from "@mui/material";
 
-// Material Kit 2 React components
-import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
-import MKInput from "components/MKInput";
-
 import React from "react";
 
 import { makeStyles } from "@mui/styles";
@@ -27,10 +21,12 @@ import Q3 from "./Q3";
 import Q4 from "./Q4";
 
 import { ArrowDropDown } from "@mui/icons-material";
+import MKButton from "components/MKButton";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     [theme.breakpoints.down("xs")]: {
       padding: theme.spacing(1),
     },
@@ -51,7 +47,9 @@ export const QuoteForm = () => {
 
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-
+  const [details, setDetails] = useState("");
+  const [errorName, setErrorName] =  useState()
+  const [errorEmail, setErrorEmail] =  useState()
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -62,22 +60,62 @@ export const QuoteForm = () => {
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
-  const sendContactEmail = ()=>{
-    console.log("CONTACT FORM ONLY")
-  }
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+    const sendEmail = async()=>{
+
+    if(userName.length === 0) {
+      setErrorName('Name is required')
+    } 
+    if(userName.length > 0) {
+      setErrorName('')
+    } 
+     if(!validateEmail(userEmail)){
+      setErrorEmail('Email Invalid')
+    } 
+    if(validateEmail(userEmail)){
+      setErrorEmail('')
+    }
+    if(validateEmail(userEmail) && errorName.length ===0) {
+
+      let allDetails = {
+        name:userName,
+        email:userEmail,
+        Details:details
+      }
+      const response = await axios.post('http://localhost:3000/send-email', allDetails);
+      console.log(response.data.message)
+      if(response.data.message === 'Email sent successfully') {
+          //redirect to thank you page
+         
+      }
+      console.log(allDetails)
+      setErrorEmail('')
+      setErrorName('')
+    }
+
+   
+
+
+
+}
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
-      <MKBox sx={{ display: "flex", background: "" }}>
+      <Box sx={{ display: "flex", background: "" }}>
+        
         <FormControl
           className={classes.formControl}
           variant="outlined"
           fullWidth
           sx={{ color: "white" }}
         >
-          <MKTypography style={{ color: "white", textAlign: "center" }}>
+          <Typography style={{ color: "white", textAlign: "center" }}>
             Instant Quote Form
-          </MKTypography>
+          </Typography>
           {/* <InputLabel htmlFor="age">I am looking for</InputLabel> */}
           <Select
             value={selectedOption}
@@ -112,23 +150,35 @@ export const QuoteForm = () => {
             <MenuItem value={"3D Animation"}>3D Animation</MenuItem>
           </Select>
         </FormControl>
-      </MKBox>
+      </Box>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
 
-        <MKBox sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
+        <Box sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
         <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
       <>
-            <MKInput 
-            label="Your Name"
+      {
+        errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
+      }
+       {
+        errorEmail && <Typography sx={{color:'red',fontSize:'1rem'}}>*{errorEmail}</Typography>
+      }
+
+
+{
+
+selectedOption === 0 &&
+      <>
+  
+            <TextField
+              label="Your Name"
               variant="outlined"
               fullWidth
               value={userName}
               onChange={handleUserNameChange}
-              sx={{mb:'1rem'}} 
-              size="large"
-              />
-            <MKInput
+              sx={{mb:'1rem'}}
+            />
+            <TextField
               label="Your Email"
               variant="outlined"
               fullWidth
@@ -137,24 +187,48 @@ export const QuoteForm = () => {
 
               onChange={handleUserEmailChange}
             />
-            <MKInput fullWidth label="More Info" multiline rows={5} />
-            {/* <MKButton
-              variant="contained"
-              color="primary"
-              onClick={sendContactEmail}
-            >
-              Submit
-            </MKButton> */}
+
+              <TextField
+            label="Details"
+            multiline
+            rows={4}
+            variant="outlined"
+            fullWidth
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            />
+                </>
+
+}
+                {
+                  selectedOption === 0   && <MKButton
+                  variant="contained"
+                  color="primary"
+                  onClick={sendEmail}
+                  style={{marginTop:'1rem'}}
+                 
+                >
+                  Submit
+                </MKButton>
+                }
           </>
 
-          {(selectedOption === "Company Brand Video" || selectedOption === "Customer Testimonial" || selectedOption === "Site Video") && <Q1 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
-          {selectedOption === "Talking Heads" && <Q2 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+           { selectedOption!== 0 &&
+<>
+          {(selectedOption === "Company Brand Video" || selectedOption === "Customer Testimonial" || selectedOption === "Site Video") && 
+          <Q1   selected={selectedOption}/>}
 
-          {selectedOption === "2D Animation" && <Q3 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+          {selectedOption === "Talking Heads" && <Q2   selected={selectedOption}/>}
 
-          {selectedOption === "3D Animation" && <Q4 userName={userName} userEmail={userEmail}  selected={selectedOption}/>}
+          {selectedOption === "2D Animation" && <Q3   selected={selectedOption}/>}
+
+          {selectedOption === "3D Animation" && <Q4   selected={selectedOption}/>}
+          </>
+
+          }
+
           </Paper>
-        </MKBox>
+        </Box>
        
       </Grid>
     </Grid>

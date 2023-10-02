@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import MKButton from "components/MKButton";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = ({userName,userEmail,selected}) => {
+const MultiStepForm = ({selected}) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -58,7 +59,8 @@ const MultiStepForm = ({userName,userEmail,selected}) => {
     "Do you need a voice over artist?", // New question 2
     "Do you need a script written?", // New question 3
     "Do you have a descriptive storyboard?", // New question 4
-    "Can you share any video links you like the style of"
+    "Can you share any video links you like the style of",
+    "Details"
   ];
   const [videoLength, setVideoLength] = useState("");
   const [needVoiceOverArtist, setNeedVoiceOverArtist] = useState("");
@@ -67,8 +69,12 @@ const MultiStepForm = ({userName,userEmail,selected}) => {
   //   const [descriptiveStoryboard, setDescriptiveStoryboard] = useState('Yes');
   const [videoStyle, setVideoStyle] = useState("");
   const [userSelections, setUserSelections] = useState({}); // Store user selections
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [errorName, setErrorName] =  useState()
   const [errorEmail, setErrorEmail] =  useState()
+  const [details, setDetails] = useState("");
+
   useEffect(() => {
     const calculatedPrice = calculatePrice();
     setTotalPrice(calculatedPrice);
@@ -157,7 +163,7 @@ const MultiStepForm = ({userName,userEmail,selected}) => {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
   };
-  const sendEmail = ()=>{
+  const sendEmail = async()=>{
 
     if(userName.length === 0) {
       setErrorName('Name is required')
@@ -189,8 +195,16 @@ const MultiStepForm = ({userName,userEmail,selected}) => {
       let allDetails = {
         name:userName,
         email:userEmail,
+        details:details,
         selected:selected,
-        Details:simplifiedObject
+        Details:simplifiedObject,
+        totalPrice:totalPrice
+      }
+      const response = await axios.post('http://localhost:3000/send-email', allDetails);
+      console.log(response.data.message)
+      if(response.data.message === 'Email sent successfully') {
+          //redirect to thank you page
+         
       }
       console.log(allDetails)
       setErrorEmail('')
@@ -282,7 +296,36 @@ const MultiStepForm = ({userName,userEmail,selected}) => {
         )}
 
         {activeStep === 5 && (
-      <></>
+      <>
+        <TextField
+              label="Your Name"
+              variant="outlined"
+              fullWidth
+              value={userName}
+              onChange={handleUserNameChange}
+              sx={{mb:'1rem'}}
+            />
+            <TextField
+              label="Your Email"
+              variant="outlined"
+              fullWidth
+              value={userEmail}
+              sx={{mb:'1rem'}}
+
+              onChange={handleUserEmailChange}
+            />
+
+              <TextField
+            label="Details"
+            multiline
+            rows={4}
+            variant="outlined"
+            fullWidth
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            />
+      
+      </>
         )}
         <Box mt={2}>
           <div>

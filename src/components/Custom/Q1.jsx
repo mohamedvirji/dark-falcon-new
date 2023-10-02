@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import MKButton from "components/MKButton";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -48,19 +49,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = ({userName,userEmail, selected}) => {
+const MultiStepForm = ({ selected}) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [errorName, setErrorName] =  useState()
   const [errorEmail, setErrorEmail] =  useState()
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [details, setDetails] = useState("");
+
+  const [success, setSuccess] = useState(false);
+
 
   const steps = [
     "Do you require interviews to be filmed?",
     "Do you require B-roll footage?",
     "How long do you want your video to be?",
     "Do you need any of the extras?",
-    "Can you share any video links you like the style of?"
+    "Can you share any video links you like the style of?",
+    "Details"
   ];
 
   const [requireFilmed, setRequireFilmed] = useState("No");
@@ -190,7 +198,7 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
   };
 
 
-  const sendEmail = ()=>{
+  const sendEmail = async ()=>{
 
       if(userName.length === 0) {
         setErrorName('Name is required')
@@ -223,9 +231,15 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
           name:userName,
           email:userEmail,
           selected:selected,
-          Details:simplifiedObject
+          details:details,
+          Details:simplifiedObject,
+          totalPrice:totalPrice
         }
-        console.log(allDetails)
+        const response = await axios.post('http://localhost:3000/send-email', allDetails);
+        console.log(response.data.message)
+        if(response.data.message === 'Email sent successfully') {
+          setSuccess(true)
+        }
         setErrorEmail('')
         setErrorName('')
       }
@@ -238,6 +252,8 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
 
   return (
     <Container>
+
+      
       {
         errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
       }
@@ -397,10 +413,33 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
 
         {activeStep === 5 && (
           <>
-            <Typography variant="body1" align="center">
-            {JSON.stringify(userSelections, null, 2)}
-          </Typography>
-          <h1>Total Price: £{totalPrice} </h1>
+  <TextField
+              label="Your Name"
+              variant="outlined"
+              fullWidth
+              value={userName}
+              onChange={handleUserNameChange}
+              sx={{mb:'1rem'}}
+            />
+            <TextField
+              label="Your Email"
+              variant="outlined"
+              fullWidth
+              value={userEmail}
+              sx={{mb:'1rem'}}
+
+              onChange={handleUserEmailChange}
+            />
+
+              <TextField
+            label="Details"
+            multiline
+            rows={4}
+            variant="outlined"
+            fullWidth
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            />
     
           </>
         )}
