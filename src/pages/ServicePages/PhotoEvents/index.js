@@ -30,6 +30,7 @@ import DefaultFooter from "layouts/DefaultFooter";
 // Main Components
 import DesignBlocks from "pages/ServicePages/PhotoEvents/sections/DesignBlocks";
 import ThreeSteps from "components/Custom/ThreeSteps";
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 // Routes
 import routes from "routes";
@@ -90,7 +91,7 @@ function PhotoEvents() {
                 },
               })}
             >
-              PHOTOGRAPHY EVENTS
+              EVENT PHOTOGRAPHY
             </MKTypography>
             {/* <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
               
@@ -120,6 +121,7 @@ function PhotoEvents() {
           </Grid>
         </Container>
       </MKBox>
+      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
       <ThreeSteps/>
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
