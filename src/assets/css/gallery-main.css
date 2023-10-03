@@ -1149,6 +1149,7 @@ a.tp-caption h2:hover span:after {
     -moz-transform: translate3d(55px,-55px,0);
     -ms-transform: translate3d(55px,-55px,0);
     transform: translate3d(55px,-55px,0);
+
 }
 .portfolio-img {
     position: absolute;
@@ -1162,8 +1163,13 @@ a.tp-caption h2:hover span:after {
 }
 .portfolio-img img {
     width: 100%;
+    filter: brightness(50%);
+}
+.portfolio-img img:hover {
+    filter: brightness(100%);
 }
 .portfolio-item-title {
+    color: white !important;
     position: absolute;
     top: 0;
     width: 100%;
@@ -1190,7 +1196,8 @@ a.tp-caption h2:hover span:after {
     margin-bottom: 15px;
 }
 .portfolio-item.dark .portfolio-item-title .meta-categories {
-    color: rgba(32,32,32,0.5);
+    /* color: rgba(32,32,32,0.5); */
+    color: white !important;
 }
 .portfolio-item-title .meta-categories a {
     color: inherit;

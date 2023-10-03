@@ -16,7 +16,7 @@ section#three-step-method {
 
     /* 16. three step method */
     .three-step-method-heading {
-        font-family: 'Anton', sans-serif;
+        font-family: 'Koulen', cursive;
         font-size: 15px;
         font-style: normal;
         font-weight: 700;
@@ -24,6 +24,7 @@ section#three-step-method {
         margin: 3px 0 15px 0;
         text-align: left;
         color: #fff;
+        letter-spacing: 0.1em;
         }
         
         .three-step-method-number {
@@ -34,7 +35,7 @@ section#three-step-method {
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: -0.04em;
-        color: rgba(255, 255, 255, .45);
+        color: #ec407a;
         z-index: -1;
         }
         
@@ -159,7 +160,7 @@ section#three-step-method {
 /* 7. heading */
 h2.section-heading {
     position: relative;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Koulen', cursive;
     font-style: normal;
     font-weight: 700;
     font-size: 75px;
@@ -206,7 +207,7 @@ h2.section-heading {
     }
     
     h2.section-heading span {
-    color: #e91e63;
+    color: #ec407a;
     }
     
     h2.section-heading.section-heading-small {
@@ -229,7 +230,7 @@ h2.section-heading {
         margin: 0 auto;
         text-align: center;
         letter-spacing: 0.05em;
-        color: #e91e63;
+        color: #ec407a;
         }
         
         h2.section-subheading span {

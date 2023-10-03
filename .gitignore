@@ -28,3 +28,8 @@ package-lock.json
 yarn.lock
 
 commit.sh
+
+/image-convert-2/
+/image-convert-2.zip
+/image-convert.zip
+/image-convert/

@@ -28,10 +28,11 @@ import pxToRem from "assets/theme/functions/pxToRem";
 const { dark } = colors;
 
 const baseProperties = {
-  //fontFamily2: '"Exo", sans-serif;',
-  //fontFamily: '"Exo", sans-serif;',
-  fontFamily: '"Anton", sans-serif;',
+  anton: '"Anton", sans-serif;',
+  koulen: '"Koulen", cursive;',
+  poppins: '"Poppins", sans-serif',
   fontFamily2: '"Anton", sans-serif;',
+  fontFamily: '"Anton", sans-serif;',
   // fontFamily: '"Roboto Slab", sans-serif',
   fontWeightLighter: 100,
   fontWeightLight: 300,
@@ -69,10 +70,19 @@ const typography = {
   fontWeightBold: baseProperties.fontWeightBold,
 
   h1: {
-    fontFamily: baseProperties.fontFamily2,
+    fontFamily: baseProperties.anton,
     fontSize: pxToRem(48),
     lineHeight: 1.25,
     ...baseHeadingProperties,
+    textTransform: "uppercase",
+  },
+
+  h1Alt: {
+    fontFamily: baseProperties.koulen,
+    fontSize: pxToRem(48),
+    lineHeight: 1.25,
+    ...baseHeadingProperties,
+    textTransform: "uppercase",
   },
 
   h2: {
@@ -139,8 +149,8 @@ const typography = {
   },
 
   button: {
-    fontFamily: baseProperties.fontFamily,
-    fontSize: baseProperties.fontSizeSM,
+    fontFamily: baseProperties.koulen,
+    fontSize: baseProperties.fontSizeMD,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.5,
     textTransform: "uppercase",

@@ -84,7 +84,7 @@ function Creative() {
             sx={{ mx: "auto", textAlign: "center" }}
           >
             <MKTypography
-              variant="h1"
+              variant="h1Alt"
               color="white"
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
@@ -122,7 +122,7 @@ function Creative() {
           </Grid>
         </Container>
       </MKBox>
-      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
+      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
       <ThreeSteps/>
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">

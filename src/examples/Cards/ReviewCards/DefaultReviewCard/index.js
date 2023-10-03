@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import 'assets/css/App.css'
 // prop-types is library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -124,6 +124,7 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
           fontWeight="bold"
           color={color === "transparent" || color === "light" ? "dark" : "white"}
           mb={0.5}
+          className="letterSpacing"
         >
           {name}
         </MKTypography>
@@ -134,7 +135,7 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
           color={color === "transparent" || color === "light" ? "text" : "white"}
           sx={{ display: "flex", alignItems: "center" }}
         >
-          <Icon>business</Icon>&nbsp;
+          {/* <Icon>business</Icon>&nbsp; */}
           {date}
         </MKTypography>
       </MKBox>

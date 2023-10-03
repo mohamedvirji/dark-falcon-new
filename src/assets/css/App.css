@@ -7,3 +7,27 @@
     background: linear-gradient(to right, rgb(11, 202, 212), #D81B60);
     padding: 3px;
   }
+  .letterSpacing{
+    letter-spacing: 0.5px !important;
+  }
+  .animated{
+    animation: left_to_right 3s ease;
+  }
+  @keyframes left_to_right {
+    0% {
+      margin-left: -100%;
+      
+    }
+    25%{
+      
+      transform: translateY(0em);
+    }
+    60%{
+      
+      transform: translateY(-0.6em);
+    }
+    100% {
+      margin-left: 5;
+      transform: translateY(0em);
+    }
+  }

@@ -13,7 +13,7 @@ import MKTypography from "components/MKTypography";
 
 // Images
 // import logoCT from "assets/images/logo-ct-dark.png";
-import dfLogo from "assets/images/df-logo_4.png";
+import dfLogo from "assets/images/df-logo_5.png";
 
 const date = new Date().getFullYear();
 

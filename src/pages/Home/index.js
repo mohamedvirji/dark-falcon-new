@@ -13,6 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import 'assets/css/App.css'
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -33,7 +34,9 @@ import DefaultFooter from "layouts/DefaultFooter";
 import Information from "pages/Home/sections/Information";
 import Testimonials from "pages/Home/sections/Testimonials";
 import Counters from "pages/Home/sections/Counters";
-import Gallery from "components/Custom/Gallery";
+// import Gallery from "components/Custom/Gallery/Gallery";
+import GallerySelector from "components/Custom/Gallery/GallerySelector";
+// import GalleryMobile from "components/Custom/Gallery/GalleryMobile";
 import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
@@ -90,13 +93,14 @@ function Home() {
               variant="h1"
               color="white"
               mt={25}
-              ml={40}
+              ml={5}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
                 },
               })}
+              className="animated"
             >
               Discover The <br/>Falcon
             </MKTypography>
@@ -116,11 +120,12 @@ function Home() {
           backgroundColor: "#212529 !important"
         }}
       >
-        <a href="#count"><h1 style={{textAlign:"center", color:"#e91e63", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
+        <a href="#count"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
         
         <Counters/>
         <Testimonials/>
-        <Gallery/>
+        <GallerySelector/>
+        {/* <GalleryMobile/> */}
         <ThreeSteps/>
         {/* <Information/> */}
       </Card>

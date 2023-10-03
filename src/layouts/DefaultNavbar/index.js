@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "layouts/DefaultNavbar/DefaultNavbarMobile";
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-import brandImage from 'assets/images/df-logo_4.png'
+import brandImage from 'assets/images/df-logo_5.png'
 
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");

@@ -83,6 +83,7 @@ function DefaultFooter({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="lowercase"
+                        color="white"
                       >
                         {name}
                       </MKTypography>
@@ -93,6 +94,7 @@ function DefaultFooter({ content }) {
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
+                        color="white"
                       >
                         {name}
                       </MKTypography>

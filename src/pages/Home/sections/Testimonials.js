@@ -97,25 +97,28 @@ function Information() {
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        {/* <h1 style={{textAlign:"center", color:"#e91e63"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1> */}
+        {/* <h1 style={{textAlign:"center", color:"#ec407a"}}>CAN PUT YOUR CLIENT LOGOS HERE</h1> */}
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/TE-t.png`} alt="TotalEnergies" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/TE-t.png`} alt="TotalEnergies Logo" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/IVG.png`} alt="IVG" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/LastPass-t.png`} alt="LastPass Logo" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/LastPass.png`} alt="LastPass" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/NHS-t.png`} alt="NHS Logo" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/NHS-t.png`} alt="NHS" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/RC2-t.png`} alt="Ring Central Logo" width="100%" opacity={1} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/R-t.png`} alt="R" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/GoTo-t.png`} alt="GoTo Logo" width="100%" opacity={1} />
           </Grid>
+          {/* <Grid item xs={6} md={4} lg={2}>
+            <MKBox component="img" src={`${imagesPrefix}/maritime-t.png`} alt="Maritime UK Logo" width="100%" opacity={1} />
+          </Grid> */}
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={`${imagesPrefix}/RC-t.png`} alt="RC" width="100%" opacity={1} />
+            <MKBox component="img" src={`${imagesPrefix}/profitero-t.png`} alt="Profitero Logo" width="100%" opacity={1} />
           </Grid>
         </Grid>
       </Container>

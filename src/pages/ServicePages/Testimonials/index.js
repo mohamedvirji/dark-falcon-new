@@ -82,7 +82,7 @@ function Testimonials() {
             sx={{ mx: "auto", textAlign: "center" }}
           >
             <MKTypography
-              variant="h1"
+              variant="h1Alt"
               color="white"
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
