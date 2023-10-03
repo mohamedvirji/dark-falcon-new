@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import 'assets/css/App.css'
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -91,7 +91,7 @@ function ThumbnailCard({ image, name, count, pro, ...rest }) {
       {name || count > 0 ? (
         <MKBox mt={1} ml={1} lineHeight={1}>
           {name && (
-            <MKTypography variant="h6" fontWeight="bold">
+            <MKTypography variant="h6" fontWeight="bold" className="letterSpacing">
               {name}
             </MKTypography>
           )}

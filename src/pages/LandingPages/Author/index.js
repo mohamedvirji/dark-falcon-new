@@ -152,14 +152,14 @@ function Author() {
           alignItems="center"
           sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
         >
-          <MKTypography variant="h2" fontWeight="bold" color="primary">
+          <MKTypography variant="h2Alt" fontWeight="bold" color="primary">
             Our Commitment
           </MKTypography>
           <MKTypography variant="body2" color="white">
           With a wealth of experience working alongside industry leaders, Dark Falcon Productions brings you compelling content that elevates your business. We understand that your vision drives our mission, and during our consultation sessions, we lend an attentive ear to your ideas. Together, we refine and develop your concepts into tangible masterpieces.
           </MKTypography>
 <br/>
-          <MKTypography variant="h2" fontWeight="bold" color="primary">
+          <MKTypography variant="h2Alt" fontWeight="bold" color="primary">
           Client-Centric Approach
           </MKTypography>
           <MKTypography variant="body2" color="white">
@@ -168,21 +168,21 @@ function Author() {
 Our approach revolves around more than just turning ideas into visuals – it's a journey of collaboration and ingenuity. We recognize the distinctiveness of each client's vision and the value of their input. Rather than just listening, we actively engage in a creative dialogue. This interactive process becomes the heartbeat of every project, fueling our determination to craft something truly extraordinary.
           </MKTypography>
           <br/>
-          <MKTypography variant="h2" fontWeight="bold" color="primary">
+          <MKTypography variant="h2Alt" fontWeight="bold" color="primary">
           Building Rapport
           </MKTypography>
           <MKTypography variant="body2" color="white">
           The recognition of our production team's dedication and hard work speaks for itself. Our clients, ranging from global leaders to local businesses, have acknowledged our commitment, resulting in repeat partnerships. This rapport is a testament to our dedication to delivering excellence every step of the way.
           </MKTypography>
           <br/>
-          <MKTypography variant="h2" fontWeight="bold" color="primary">
+          <MKTypography variant="h2Alt" fontWeight="bold" color="primary">
           Our Creative Team
           </MKTypography>
           <MKTypography variant="body2" color="white">
           Behind Dark Falcon Productions is a team that seamlessly blends top-notch equipment with approachable creativity. Our passionate media professionals possess the expertise and resources to meet deadlines without compromising quality. With each project we undertake, we deliver on our promises, exceeding expectations.
           </MKTypography>
           <br/>
-          <MKTypography variant="h2" fontWeight="bold" color="primary">
+          <MKTypography variant="h2Alt" fontWeight="bold" color="primary">
           Why Choose Dark Falcon Productions?
           </MKTypography>
           <MKTypography variant="body2" color="white">

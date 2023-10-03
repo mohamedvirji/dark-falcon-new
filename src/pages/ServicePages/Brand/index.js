@@ -37,7 +37,7 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/bg-about-us.jpg";
+import bgImage from "assets/images/BrandHeader.png";
 
 // import { useAuth } from "auth-context/auth.context";
 

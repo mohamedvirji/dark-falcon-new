@@ -146,10 +146,10 @@ function Gallery() {
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
 <time>The Change Foundation</time>
-<a href="/2D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
+<a href="/animation/2D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
-<a href="/2D">
+<a href="/animation/2D">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">WEBSITE</div> */}
     <br/>
@@ -214,10 +214,10 @@ function Gallery() {
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
 <time>3D Pearl Yachts</time>
-<a href="/3D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
+<a href="/animation/3D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
-<a href="/3D">
+<a href="/animation/3D">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">WEBSITE</div> */}
     <br/>

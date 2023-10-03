@@ -91,6 +91,12 @@ const typography = {
     lineHeight: 1.3,
     ...baseHeadingProperties,
   },
+  h2Alt: {
+    fontFamily: baseProperties.anton,
+    fontSize: pxToRem(36),
+    lineHeight: 1.3,
+    ...baseHeadingProperties,
+  },
 
   h3: {
     fontFamily: baseProperties.fontFamily2,
@@ -118,6 +124,7 @@ const typography = {
     fontSize: pxToRem(16),
     lineHeight: 1.625,
     ...baseHeadingProperties,
+    letterSpacing: "10px"
   },
 
   subtitle1: {
@@ -142,8 +149,8 @@ const typography = {
   },
 
   body2: {
-    fontFamily: baseProperties.fontFamily,
-    fontSize: baseProperties.fontSizeMD,
+    fontFamily: baseProperties.anton,
+    fontSize: baseProperties.fontSizeLG,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.6,
   },

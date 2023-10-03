@@ -16,49 +16,49 @@ Coded by www.creative-tim.com
 const imagesPrefix =
   "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/thumbnails/headshots";
 
-import placeholder from "assets/images/placeholder-thumb.jpg";
+import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
 export default [
   {
     title: "Design Blocks",
     description: "A selection of 45 page sections that fit perfectly in any combination",
     items: [
       {
-        image: `${imagesPrefix}/_RJB9632.JPG`,
+        image: `${imagesPrefix}/_RJB9632.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/_RJB9839.JPG`,
+        image: `${imagesPrefix}/_RJB9839.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/11b.jpg`,
+        image: `${imagesPrefix}/11b.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/12b.jpg`,
+        image: `${imagesPrefix}/12b.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/21b.jpg`,
+        image: `${imagesPrefix}/21b.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/22b.jpg`,
+        image: `${imagesPrefix}/22b.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/3E8A0097.JPG`,
+        image: `${imagesPrefix}/3E8A0097.jpg?format=webp`,
         name: "",
         count: "",
       },
       {
-        image: `${imagesPrefix}/3E8A0808.JPG`,
+        image: `${imagesPrefix}/3E8A0808.jpg?format=webp`,
         name: "",
         count: "",
       },
