@@ -33,6 +33,7 @@ import footerRoutes from "footer.routes";
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 import { QuoteForm } from "components/Custom/QuoteForm";
+import ContactAlt from "components/Custom/ContactAlt";
 import { Box } from "@mui/material";
 
 function ContactUs() {
@@ -80,7 +81,7 @@ function ContactUs() {
         >
                 <MKBox pt={6} px={1} mt={6}>
           <QuoteForm/>
-
+          <ContactAlt/>
         </MKBox>
         </Grid>
 

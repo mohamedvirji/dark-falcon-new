@@ -22,6 +22,7 @@ import Q4 from "./Q4";
 
 import { ArrowDropDown } from "@mui/icons-material";
 import MKButton from "components/MKButton";
+import MKBox from "components/MKBox";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -105,7 +106,7 @@ export const QuoteForm = () => {
 
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
-      <Box sx={{ display: "flex", background: "" }}>
+      <MKBox sx={{ display: "flex", background: "" }}>
         
         <FormControl
           className={classes.formControl}
@@ -150,11 +151,11 @@ export const QuoteForm = () => {
             <MenuItem value={"3D Animation"}>3D Animation</MenuItem>
           </Select>
         </FormControl>
-      </Box>
+      </MKBox>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
 
-        <Box sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
+        <MKBox sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
         <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
       <>
       {
@@ -228,7 +229,7 @@ selectedOption === 0 &&
           }
 
           </Paper>
-        </Box>
+        </MKBox>
        
       </Grid>
     </Grid>
