@@ -98,7 +98,7 @@ function Home() {
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
-                },
+                }
               })}
               className="animated"
             >

@@ -37,7 +37,7 @@ import vodafoneLogo from "assets/images/logos/gray-logos/logo-vodafone.svg";
 import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.svg";
 
 const imagesPrefix =
-  "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/logos";
+  "https://d17kgkt7t2bpo9.cloudfront.net/logos";
 
   // `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+72-01.jpg`
 

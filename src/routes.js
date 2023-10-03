@@ -99,12 +99,12 @@ const routes = [
             component: <TalkingHeads />,
             protected: false,
           },
-          {
-            name: "testimonial videos",
-            route: "/testimonials",
-            component: <Testimonials />,
-            protected: false,
-          },
+          // {
+          //   name: "testimonial videos",
+          //   route: "/testimonials",
+          //   component: <Testimonials />,
+          //   protected: false,
+          // },
           {
             name: "product videos",
             route: "/product",
@@ -173,8 +173,7 @@ const routes = [
                 name: "",
                 route: "/contact",
                 component: <ContactUs/>,
-              }
-            ,
+              },
   //     // {
   //     //   name: "account",
   //     //   collapse: [

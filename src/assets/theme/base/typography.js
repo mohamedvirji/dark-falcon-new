@@ -31,6 +31,9 @@ const baseProperties = {
   anton: '"Anton", sans-serif;',
   koulen: '"Koulen", cursive;',
   poppins: '"Poppins", sans-serif',
+  roboto:'"Roboto",sans-serif',
+  exo:'"Exo",sans-serif',
+  montserrat:'"Montserrat", sans-serif',
   fontFamily2: '"Anton", sans-serif;',
   fontFamily: '"Anton", sans-serif;',
   // fontFamily: '"Roboto Slab", sans-serif',
@@ -83,6 +86,8 @@ const typography = {
     lineHeight: 1.25,
     ...baseHeadingProperties,
     textTransform: "uppercase",
+    border:"3px solid white",
+    padding: "0.25em"
   },
 
   h2: {

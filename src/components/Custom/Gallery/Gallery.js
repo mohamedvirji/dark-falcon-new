@@ -33,7 +33,7 @@ function Gallery() {
           <a href="#" className="portfolio-like">
             <i className="ion-ios-heart-outline"></i>
           </a>
-          <time>Pearl Yacht 72</time>
+          <time>CREATIVE</time>
           <a href="/creative" className="portfolio-item-more">
             <i className="ion-ios-arrow-right"></i>
           </a>
@@ -42,11 +42,11 @@ function Gallery() {
           <a href="/creative">
             <div className="portfolio-item-title">
               {/* <div className="meta-categories">APP, WEBSITE</div> */}
-              <h3>CREATIVE</h3>
+              {/* <h3>CREATIVE</h3> */}
             </div>
             <figure className="portfolio-img">
               <img
-                src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/1.png"
+                src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/1.png"
                 alt="portfolio item 1"
                 className="featured-image"
               />
@@ -58,24 +58,24 @@ function Gallery() {
       <Grid item className="portfolio-item width-2x">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>BIMA</time>
+<time>EVENTS</time>
 <a href="/events" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/events">
   <div className="portfolio-item-title">
+    {/* <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <br/>
+    <br/> */}
     {/* <div className="meta-categories">Events</div> */}
-    <h3>EVENTS</h3>
+    {/* <h3>EVENTS</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/2.png" alt="portfolio item 2" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/2.png" alt="portfolio item 2" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -84,17 +84,17 @@ function Gallery() {
 <Grid item className="portfolio-item dark">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>TotalEnergies</time>
+<time>BRAND VIDEOS</time>
 <a href="/brand" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/brand">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">LOGO</div> */}
-    <h3>BRAND VIDEOS</h3>
+    {/* <h3>BRAND VIDEOS</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/3.png" alt="portfolio item 3" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/3.png" alt="portfolio item 3" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -103,17 +103,17 @@ function Gallery() {
 <Grid item className="portfolio-item dark">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>TotalEnergies</time>
+<time>TALKING HEADS</time>
 <a href="/talking-heads" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/talking-heads">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">CONCEPT</div> */}
-    <h3>TALKING HEADS</h3>
+    {/* <h3>TALKING HEADS</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/4.png" alt="portfolio item 4" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/4.png" alt="portfolio item 4" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -122,21 +122,21 @@ function Gallery() {
 <Grid item className="portfolio-item">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>LBPC</time>
+<time>PODCAST</time>
 <a href="/podcast" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/podcast">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">LOGO</div> */}
+    {/* <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <h3>PODCAST</h3>
+    <h3>PODCAST</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/5-1.png" alt="portfolio item 5" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/5-1.png" alt="portfolio item 5" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -145,23 +145,23 @@ function Gallery() {
 <Grid item className="portfolio-item dark">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>The Change Foundation</time>
+<time>2D ANIMATION</time>
 <a href="/animation/2D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/animation/2D">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">WEBSITE</div> */}
+    {/* <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <h3>2D Animation</h3>
+    <h3>2D Animation</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/6.png" alt="portfolio item 6" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/6.png" alt="portfolio item 6" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -188,23 +188,23 @@ function Gallery() {
 <Grid item className="portfolio-item width-2x">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>Cosun Beet</time>
+<time>EVENTS</time>
 <a href="/events" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/events">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">PHOTOGRAPHY</div> */}
+    {/* <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <h3>EVENTS</h3>
+    <h3>EVENTS</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/7.png" alt="portfolio item 7" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/7.png" alt="portfolio item 7" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -213,23 +213,23 @@ function Gallery() {
 <Grid item className="portfolio-item">
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-<time>3D Pearl Yachts</time>
+<time>3D ANIMATION</time>
 <a href="/animation/3D" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
 </div>
 <header className="portfolio-header">
 <a href="/animation/3D">
   <div className="portfolio-item-title">
     {/* <div className="meta-categories">WEBSITE</div> */}
+    {/* <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <h3>3D Animation</h3>
+    <h3>3D Animation</h3> */}
   </div>
   <figure className="portfolio-img">
-    <img src="https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/gallery/8.png" alt="portfolio item 6" className="featured-image" />
+    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/8.png" alt="portfolio item 6" className="featured-image" />
   </figure>
 </a>
 </header>

@@ -105,7 +105,7 @@ export const QuoteForm = () => {
 }
 
   return (
-    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
+    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"} mb={10}>
       <MKBox sx={{ display: "flex", background: "" }}>
         
         <FormControl

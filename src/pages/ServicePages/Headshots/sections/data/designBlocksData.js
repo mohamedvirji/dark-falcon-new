@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 const imagesPrefix =
-  "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/thumbnails/headshots";
+  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/headshots";
 
 import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
 export default [
@@ -23,7 +23,7 @@ export default [
     description: "A selection of 45 page sections that fit perfectly in any combination",
     items: [
       {
-        image: `${imagesPrefix}/_RJB9632.jpg?format=webp`,
+        image: `${imagesPrefix}/_RJB9632.jpg`,
         name: "",
         count: "",
       },

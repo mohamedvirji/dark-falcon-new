@@ -1163,10 +1163,6 @@ a.tp-caption h2:hover span:after {
 }
 .portfolio-img img {
     width: 100%;
-    filter: brightness(50%);
-}
-.portfolio-img img:hover {
-    filter: brightness(100%);
 }
 .portfolio-item-title {
     color: white !important;

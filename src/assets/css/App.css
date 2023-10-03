@@ -16,23 +16,19 @@
   @keyframes left_to_right {
     0% {
       margin-left: -100%;
-      color: white
-    }
-    25%{
-      transform: translateY(0em);
-      transform: scale(150%);
-      color: white
-    }
-    60%{
       transform: translateY(-0.6em);
       color: white
     }
-    95%{
-      color: #ec407a;
+    25%{
+      transform: scale(150%);
+      color: white
     }
     100% {
       margin-left: 5;
       transform: translateY(0em);
       color: white;
     }
+  }
+  .behind{
+    z-index: -999 !important;
   }

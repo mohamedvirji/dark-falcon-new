@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+import 'assets/css/App.css'
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -30,7 +30,7 @@ import { QuoteForm } from "components/Custom/QuoteForm";
 
 function ContactAlt() {
   return (
-    <MKBox component="section" py={{ xs: 0, lg: 6 }}>
+    <MKBox className="behind" component="section" py={{ xs: 0, lg: 6 }} mt={5}>
       <Container>
         <Grid container item px={6}>
           <MKBox
@@ -43,6 +43,14 @@ function ContactAlt() {
           >
             <Grid container spacing={3}>
               <Grid item xs={12} lg={7}>
+              <MKBox py={6} pl={6} pr={{ xs: 6, sm: 12 }} my="auto">
+                    <MKTypography variant="h3" color="dark" mb={1}>
+                      Contact Information
+                    </MKTypography>
+                    <MKTypography variant="body2" color="dark" opacity={0.8} mb={3}>
+                    Select a quote form from the dropdown or fill out the contact form and a project manager will be in touch
+                    </MKTypography>
+                  </MKBox>
                 <QuoteForm/>
                 {/* <MKBox component="form" p={2} method="post">
                   <MKBox px={3} py={{ xs: 2, sm: 6 }}>
@@ -101,7 +109,7 @@ function ContactAlt() {
                   </MKBox>
                 </MKBox> */}
               </Grid>
-              <Grid
+              {/* <Grid
                 item
                 xs={12}
                 lg={5}
@@ -123,10 +131,10 @@ function ContactAlt() {
                   height="100%"
                 >
                   <MKBox py={6} pl={6} pr={{ xs: 6, sm: 12 }} my="auto">
-                    <MKTypography variant="h3" color="white" mb={1}>
+                    <MKTypography variant="h3" color="dark" mb={1}>
                       Contact Information
                     </MKTypography>
-                    <MKTypography variant="body2" color="white" opacity={0.8} mb={3}>
+                    <MKTypography variant="body2" color="dark" opacity={0.8} mb={3}>
                     Select a quote form from the dropdown or fill out the contact form and a project manager will be in touch
                     </MKTypography>
                     <MKBox display="flex" p={1}>
@@ -175,7 +183,7 @@ function ContactAlt() {
                     </MKBox>
                   </MKBox>
                 </MKBox>
-              </Grid>
+              </Grid> */}
             </Grid>
           </MKBox>
         </Grid>

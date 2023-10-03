@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 const imagesPrefix =
-  "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/thumbnails/event-photos";
+  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/event-photos";
 
 import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
 export default [

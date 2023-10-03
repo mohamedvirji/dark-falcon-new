@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 const imagesPrefix =
-  "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/thumbnails/testimonials";
+  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/testimonials";
 
   import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
 

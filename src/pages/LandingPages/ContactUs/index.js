@@ -80,7 +80,7 @@ function ContactUs() {
         
         >
                 <MKBox pt={6} px={1} mt={6}>
-          <QuoteForm/>
+          {/* <QuoteForm/> */}
           <ContactAlt/>
         </MKBox>
         </Grid>
