@@ -19,6 +19,7 @@ import {
 import { makeStyles } from "@mui/styles";
 import { useEffect } from "react";
 import MKButton from "components/MKButton";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiStepForm = ({userName,userEmail, selected}) => {
+const MultiStepForm = ({selected}) => {
   const classes = useStyles();
 
   const steps = [
@@ -57,14 +58,18 @@ const MultiStepForm = ({userName,userEmail, selected}) => {
     "How many cameras do you need?",
     "Do you require B-roll footage?",
     "Do you require any extras?",
-    "How many Talking Head videos do you want produced?"
+    "How many Talking Head videos do you want produced?",
+    "Details"
   ];
 
   const [activeStep, setActiveStep] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [filmLocation, setFilmLocation] = useState("");
   const [numberOfCameras, setNumberOfCameras] = useState("");
+  const [details, setDetails] = useState("");
+
   const [bRollOptions, setBRollOptions] = useState({
     filmed: false,
     stockVideo: false,
@@ -209,7 +214,7 @@ const validateEmail = (email) => {
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
 };
-const sendEmail = ()=>{
+const sendEmail = async()=>{
 
   if(userName.length === 0) {
     setErrorName('Name is required')
@@ -241,8 +246,16 @@ const sendEmail = ()=>{
     let allDetails = {
       name:userName,
       email:userEmail,
+      details:details,
       selected:selected,
-      Details:simplifiedObject
+      Details:simplifiedObject,
+      totalPrice:totalPrice
+    }
+    const response = await axios.post('http://localhost:3000/send-email', allDetails);
+    console.log(response.data.message)
+    if(response.data.message === 'Email sent successfully') {
+        //redirect to thank you page
+       
     }
     console.log(allDetails)
     setErrorEmail('')
@@ -433,6 +446,33 @@ const sendEmail = ()=>{
 
         {activeStep === 5 && (
           <>
+            <TextField
+              label="Your Name"
+              variant="outlined"
+              fullWidth
+              value={userName}
+              onChange={handleUserNameChange}
+              sx={{mb:'1rem'}}
+            />
+            <TextField
+              label="Your Email"
+              variant="outlined"
+              fullWidth
+              value={userEmail}
+              sx={{mb:'1rem'}}
+
+              onChange={handleUserEmailChange}
+            />
+
+              <TextField
+            label="Details"
+            multiline
+            rows={4}
+            variant="outlined"
+            fullWidth
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            />
           </>
         )}
         <Box mt={2}>

@@ -52,6 +52,7 @@ import VirtualTours from "layouts/pages/service-pages/virtual-tours";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import Author from "layouts/pages/landing-pages/author";
+// import Thankyou from "layouts/pages/landing-pages/thank-you";
 // import GalleryPage from "layouts/pages/gallery";
 // import Presentation from "layouts/pages/presentation";
 
@@ -82,6 +83,7 @@ const routes = [
     route: "/creative",
     component: <Creative/>,
   },
+  
   {
     name: "branded",
         collapse: [
@@ -171,7 +173,8 @@ const routes = [
                 name: "",
                 route: "/contact",
                 component: <ContactUs/>,
-              },
+              }
+            ,
   //     // {
   //     //   name: "account",
   //     //   collapse: [

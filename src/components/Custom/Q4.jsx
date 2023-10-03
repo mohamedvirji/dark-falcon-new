@@ -17,6 +17,8 @@ import {
   TextField,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import MKButton from "components/MKButton";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -47,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoOptionsForm = ({userName,userEmail,selected}) => {
+const VideoOptionsForm = ({selected}) => {
   const classes = useStyles();
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -56,11 +58,14 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
   const [scriptWritten, setScriptWritten] = useState();
   const [descriptiveStoryboard, setDescriptiveStoryboard] = useState();
   const [activeStep, setActiveStep] = useState(0);
-
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   const [userSelections, setUserSelections] = useState({}); // Store user selections
   const [errorName, setErrorName] =  useState()
   const [errorEmail, setErrorEmail] =  useState()
+  const [details, setDetails] = useState("");
+
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -72,7 +77,8 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
     "How long do you want your video to be?",
     "Do you need a voice over artist",
     "Do you need a script written?",
-    "Do you have a descriptive storyboard"
+    "Do you have a descriptive storyboard",
+    "Details"
   ];
 
   const calculatePrice = () => {
@@ -123,8 +129,7 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
         return scriptWritten;
       case 3:
         return descriptiveStoryboard;
-      case 4:
-        return extras;
+
       default:
         return null;
     }
@@ -147,14 +152,21 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
   };
-  const sendEmail = ()=>{
+  const sendEmail = async()=>{
 
     if(userName.length === 0) {
       setErrorName('Name is required')
     } 
-    else if(!validateEmail(userEmail)){
+    if(userName.length > 0) {
+      setErrorName('')
+    } 
+     if(!validateEmail(userEmail)){
       setErrorEmail('Email Invalid')
-    } else {
+    } 
+    if(validateEmail(userEmail)){
+      setErrorEmail('')
+    }
+    if(validateEmail(userEmail) && errorName.length ===0) {
       function simplifyObject(obj) {
         for (const key in obj) {
           if (typeof obj[key] === 'object' && obj[key] !== null) {
@@ -172,19 +184,27 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
       let allDetails = {
         name:userName,
         email:userEmail,
+        details:details,
         selected:selected,
-        Details:simplifiedObject
+        Details:simplifiedObject,
+        totalPrice:totalPrice
       }
-      console.log(allDetails)
+      const response = await axios.post('http://localhost:3000/send-email', allDetails);
+      console.log(response.data.message)
+      if(response.data.message === 'Email sent successfully') {
+          //redirect to thank you page
+         
+      }
+      console.log(JSON.stringify(allDetails))
+      setErrorEmail('')
+      setErrorName('')
     }
 
-    setErrorName('')
-    setErrorEmail('')
+   
 
 
 
 }
-
   return (
     <Container>
        {
@@ -254,7 +274,33 @@ const VideoOptionsForm = ({userName,userEmail,selected}) => {
         )}
         {activeStep === 4 && (
           <>
-       
+         <TextField
+              label="Your Name"
+              variant="outlined"
+              fullWidth
+              value={userName}
+              onChange={handleUserNameChange}
+              sx={{mb:'1rem'}}
+            />
+            <TextField
+              label="Your Email"
+              variant="outlined"
+              fullWidth
+              value={userEmail}
+              sx={{mb:'1rem'}}
+
+              onChange={handleUserEmailChange}
+            />
+
+              <TextField
+            label="Details"
+            multiline
+            rows={4}
+            variant="outlined"
+            fullWidth
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            />
           </>
         )}
 
