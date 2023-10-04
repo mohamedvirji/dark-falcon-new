@@ -1,10 +1,11 @@
 {
-  "name": "material-kit-2-react",
-  "version": "2.0.0",
+  "name": "df-material-kit-2-react",
+  "homepage": "https://darkfalconproductions.com/",
+  "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
+  "author": "The Web & Social LTD",
   "license": "See license in https://www.creative-tim.com/license",
-  "description": "React version of Material Kit 2 by Creative Tim",
+  "description": "Dark Falcon Productions",
   "bugs": {
     "url": "https://github.com/creativetimofficial/ct-material-kit-react/issues"
   },
@@ -82,6 +83,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "prettier": "2.3.2"
+    "prettier": "2.3.2",
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11"
   }
 }
