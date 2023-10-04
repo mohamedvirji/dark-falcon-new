@@ -63,7 +63,7 @@ function DefaultNavbarDropdown({
           fontWeight="regular"
           textTransform="capitalize"
           color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: -3, mr: "-69%", p: "1px" }}
+          sx={{ fontWeight: "100%", ml: -3, mr: "-70%", p: "1px" }}
         >
           {name}
         </MKTypography>

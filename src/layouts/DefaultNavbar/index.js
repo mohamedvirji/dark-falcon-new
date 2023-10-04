@@ -460,12 +460,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             component={Link}
             to="/"
             lineHeight={1}
-            py={transparent ? 1 : 1.75}
-            pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+            py={transparent ? 0 : 0.625}
+            pl={relative || transparent ? -5 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
               {/* {brand} */}
-              <img src={brandImage} width={"60%"} sx={{minWidth: "150px"}} />
+              <img src={brandImage} width={"100%"} className="brandImage" />
             </MKTypography>
           </MKBox>
           <MKBox

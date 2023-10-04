@@ -38,6 +38,7 @@ import ContactUs from "layouts/pages/landing-pages/contact-us";
 import OurMission from "layouts/pages/landing-pages/ourmission";
 
 const routes = [
+
   {
     name: "creative",
     route: "/creative",
@@ -122,17 +123,17 @@ const routes = [
                     component: <Headshots />,
                     protected: false,
                   },
+                  {
+                    name: "",
+                    route: "/contact",
+                    component: <ContactUs/>,
+                  },
                 ],
               },
               {
                 name: "our mission",
                 route: "/our-mission",
                 component: <OurMission />,
-              },
-              {
-                name: "",
-                route: "/contact",
-                component: <ContactUs/>,
               },
 ];
 
