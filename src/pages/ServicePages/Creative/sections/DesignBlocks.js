@@ -1,17 +1,5 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+import { useState } from "react";
+import YouTube from 'react-youtube';
 
 // react-router-dom components
 import { Link } from "react-router-dom";
@@ -19,38 +7,72 @@ import { Link } from "react-router-dom";
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Modal from "@mui/material/Modal";
+import Divider from "@mui/material/Divider";
+import Slide from "@mui/material/Slide";
 
-// Material Kit 2 React components
+import CloseIcon from "@mui/icons-material/Close";
+
+// Template components
 import MKBox from "components/MKBox";
 import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
-// Presentation page components
+// Custom components
 import ThumbnailCard from "components/Custom/ThumbnailCard";
 
 // Data
 import data from "pages/ServicePages/Creative/sections/data/designBlocksData";
 
 function DesignBlocks() {
+  const opts = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    }}
+  const [openModalId, setOpenModalId] = useState(null);
+
+  const toggleModal = (videoId) => {
+    if (openModalId === videoId) {
+      // If the clicked modal is already open, close it.
+      setOpenModalId(null);
+    } else {
+      // Otherwise, open the clicked modal.
+      setOpenModalId(videoId);
+    }
+  };
+
   const renderData = data.map(({ title, description, items }) => (
     <Grid container spacing={3} sx={{ mb: 25 }} key={title}>
-      {/* <Grid item xs={12} lg={3}>
-        <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-          <MKTypography variant="h3" fontWeight="bold" mb={1}>
-            {title}
-          </MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-            {description}
-          </MKTypography>
-        </MKBox>
-      </Grid> */}
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
+        {items.map(({ image, name, count, route, pro, videoId }) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <a href={route} target="_blank">
-                <ThumbnailCard image={image} name={name} count={count} pro={pro} />
-              </a>
+                <ThumbnailCard image={image} name={name} count={count} pro={pro} sx={{ cursor: "pointer" }} onClick={() => toggleModal(videoId)} />
+              <Modal open={openModalId === videoId} onClose={() => toggleModal(videoId)} sx={{ display: "grid", placeItems: "center" }}>
+          <Slide direction="down" in={openModalId === videoId} timeout={500}>
+            <MKBox
+              position="relative"
+              width="640px"
+              height="475px"
+              display="flex"
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="#212529"
+              shadow="xl"
+            >
+              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+                <MKTypography variant="h5">{name}</MKTypography>
+                <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModal} />
+              </MKBox>
+              <Divider sx={{ my: 0 }} />
+              <YouTube videoId={videoId} opts={opts} />
+              <Divider sx={{ my: 0 }} />
+            </MKBox>
+          </Slide>
+        </Modal>
             </Grid>
           ))}
         </Grid>
