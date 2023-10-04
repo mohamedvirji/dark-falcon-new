@@ -2,6 +2,7 @@ import 'assets/css/App.css'
 import 'assets/css/three-steps.css'
 import 'assets/css/gallery-main.css'
 import './config.js';
+
 import { useEffect } from "react";
 
 // react-router components
@@ -11,17 +12,13 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-// Material Kit 2 React themes
+// Template themes
 import theme from "assets/theme";
 import Home from "layouts/pages/home";
-// import Gallery from "layouts/pages/gallery";
 
-// Material Kit 2 React routes
 import routes from "routes";
 // import { ProtectedRoute } from "./ProtectedRoute";
 
-//Custom Components
-import 'assets/css/App.css'
 
 export default function App() {
   const { pathname } = useLocation();
