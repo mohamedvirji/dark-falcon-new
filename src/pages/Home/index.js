@@ -23,7 +23,6 @@ import Counters from "pages/Home/sections/Counters";
 import Testimonials from "pages/Home/sections/Testimonials";
 import GallerySelector from "components/Custom/Gallery/GallerySelector";
 import ThreeSteps from "components/Custom/ThreeSteps";
-import TestModal from "components/Custom/Modals/2D";
 
 // Routes
 import routes from "routes";
