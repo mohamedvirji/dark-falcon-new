@@ -107,7 +107,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
       }, []);
 
       template = (
-        <Grid key={name} container spacing={3} py={1} px={1.5}>
+        <Grid key={name} container spacing={1} py={1} px={1}>
           {calculateColumns.map((cols, key) => {
             const gridKey = `grid-${key}`;
             const dividerKey = `divider-${key}`;
@@ -460,12 +460,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             component={Link}
             to="/"
             lineHeight={1}
-            py={transparent ? 1.5 : 0.75}
+            py={transparent ? 1 : 1.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
               {/* {brand} */}
-              <img src={brandImage} width={"50%"} />
+              <img src={brandImage} width={"60%"} sx={{minWidth: "150px"}} />
             </MKTypography>
           </MKBox>
           <MKBox
@@ -476,7 +476,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox ml={{ xs: "auto", lg: 5 }}>
             {action &&
               (action.type === "internal" ? (
                 

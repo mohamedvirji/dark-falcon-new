@@ -90,6 +90,16 @@ const typography = {
     padding: "0.25em"
   },
 
+  h1AltVideo: {
+    fontFamily: baseProperties.koulen,
+    fontSize: pxToRem(60),
+    lineHeight: 1.25,
+    ...baseHeadingProperties,
+    textTransform: "uppercase",
+    border:"3px solid white",
+    padding: "0.25em",
+  },
+
   h1Alt2: {
     fontFamily: baseProperties.koulen,
     fontSize: pxToRem(72),

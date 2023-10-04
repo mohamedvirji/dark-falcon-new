@@ -45,7 +45,7 @@ function Product() {
           sticky
         />
       <MKBox
-        minHeight="75vh"
+        minHeight="85vh"
         width="100%"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>

@@ -41,7 +41,7 @@ function DefaultNavbarDropdown({
         {...rest}
         mx={2.5}
         ml={6}
-        p={1}
+        p={2}
         display="flex"
         alignItems="baseline"
         color={light ? "white" : "dark"}
@@ -63,7 +63,7 @@ function DefaultNavbarDropdown({
           fontWeight="regular"
           textTransform="capitalize"
           color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: -3, mr: "-69%" }}
+          sx={{ fontWeight: "100%", ml: -3, mr: "-69%", p: "1px" }}
         >
           {name}
         </MKTypography>
