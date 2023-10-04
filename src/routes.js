@@ -129,6 +129,11 @@ const routes = [
                 route: "/our-mission",
                 component: <OurMission />,
               },
+              {
+                name: "",
+                route: "/contact",
+                component: <ContactUs/>,
+              },
 ];
 
 export default routes;
