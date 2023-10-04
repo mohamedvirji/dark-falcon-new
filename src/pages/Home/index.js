@@ -1,42 +1,27 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
+// import { dark } from "@mui/material/styles/createPalette";
+// import { useAuth } from "auth-context/auth.context";
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-import 'assets/css/App.css'
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
+// @mui material icons
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
-// Material Kit 2 React components
+// Template components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 React examples
+// Template layout components
 import DefaultNavbar from "layouts/DefaultNavbar";
 import DefaultFooter from "layouts/DefaultFooter";
 
-// About Us page sections
-import Information from "pages/Home/sections/Information";
-import Testimonials from "pages/Home/sections/Testimonials";
+// Home page sections
 import Counters from "pages/Home/sections/Counters";
-// import Gallery from "components/Custom/Gallery/Gallery";
+import Testimonials from "pages/Home/sections/Testimonials";
 import GallerySelector from "components/Custom/Gallery/GallerySelector";
-// import GalleryMobile from "components/Custom/Gallery/GalleryMobile";
 import ThreeSteps from "components/Custom/ThreeSteps";
 
 // Routes
@@ -44,10 +29,7 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/df-bg.jpeg"
-// import { dark } from "@mui/material/styles/createPalette";
-
-// import { useAuth } from "auth-context/auth.context";
+import bgImage from "assets/images/headers/df-bg.jpeg"
 
 function Home() {
   return (
@@ -90,7 +72,7 @@ function Home() {
             flexDirection="column"
           >
             <MKTypography
-              variant="h1"
+              variant="h1Alt2"
               color="white"
               mt={25}
               ml={5}
@@ -104,9 +86,6 @@ function Home() {
             >
               Discover The <br/>Falcon
             </MKTypography>
-            {/* <MKButton color="primary" style={{width:'15%'}} sx={{ color: ({ palette: { light } }) => light.main }}>
-              quick quote
-            </MKButton> */}
           </Grid>
         </Container>
       </MKBox>
@@ -125,9 +104,7 @@ function Home() {
         <Counters/>
         <Testimonials/>
         <GallerySelector/>
-        {/* <GalleryMobile/> */}
         <ThreeSteps/>
-        {/* <Information/> */}
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

@@ -1,45 +1,33 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 import { Link } from "react-router-dom";
+// import { useAuth } from "auth-context/auth.context";
+
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
-// Material Kit 2 React components
+// @mui material icons
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+
+// Template components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 React examples
+// Template layout components
 import DefaultNavbar from "layouts/DefaultNavbar";
 import DefaultFooter from "layouts/DefaultFooter";
 
-// Main Components
+// Creative page sections
 import DesignBlocks from "pages/ServicePages/Podcasts/sections/DesignBlocks";
 import ThreeSteps from "components/Custom/ThreeSteps";
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/PodcastHeader.png";
-
-// import { useAuth } from "auth-context/auth.context";
+import bgImage from "assets/images/headers/PodcastHeader.png";
 
 function Podcasts() {
   return (
@@ -52,9 +40,9 @@ function Podcasts() {
             label: "quick quote",
             color: "white",
           }}
-          
-          transparent
           light
+          transparent
+          sticky
         />
       <MKBox
         minHeight="75vh"
@@ -93,31 +81,6 @@ function Podcasts() {
             >
               PODCAST VIDEOS
             </MKTypography>
-            {/* <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              
-            </MKTypography> */}
-            {/* <Link to="/contact">
-            <MKButton variant="gradient" color="primary" sx={{ color: ({ palette: { light } }) => light.main }}>
-              quick quote
-            </MKButton>
-            </Link> */}
-            {/* <MKTypography variant="h6" color="white" mt={8} mb={1}>
-              Find us on
-            </MKTypography>
-            <MKBox display="flex" justifyContent="center" alignItems="center">
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-facebook" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-instagram" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-twitter" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#">
-                <i className="fab fa-google-plus" />
-              </MKTypography>
-            </MKBox> */}
           </Grid>
         </Container>
       </MKBox>

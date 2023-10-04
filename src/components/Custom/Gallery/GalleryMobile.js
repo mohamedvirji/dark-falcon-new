@@ -1,27 +1,11 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 // @mui material components
 import Grid from "@mui/material/Grid";
-
 import { dark } from "@mui/material/styles/createPalette";
 
-import 'assets/css/gallery-main.css'
-
-
 function GalleryMobile() {
+  const imagesPrefix =
+  "https://d17kgkt7t2bpo9.cloudfront.net/gallery";
   return (
     <>
         <section
@@ -44,13 +28,9 @@ function GalleryMobile() {
         </div>
         <header className="portfolio-header">
           <a href="/creative">
-            <div className="portfolio-item-title">
-              {/* <div className="meta-categories">APP, WEBSITE</div> */}
-              {/* <h3>CREATIVE</h3> */}
-            </div>
             <figure className="portfolio-img">
               <img
-                src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/1.png"
+                src={`${imagesPrefix}/1.png`}
                 alt="portfolio item 1"
                 className="featured-image"
               />
@@ -66,19 +46,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/events">
-  <div className="portfolio-item-title">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    {/* <div className="meta-categories">Events</div> */}
-    {/* <h3>EVENTS</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/2.png" alt="portfolio item 2" className="featured-image" />
+    <img src={`${imagesPrefix}/2.png`} alt="portfolio item 2" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -91,12 +60,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/brand">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">LOGO</div> */}
-    {/* <h3>BRAND VIDEOS</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/3.png" alt="portfolio item 3" className="featured-image" />
+    <img src={`${imagesPrefix}/3.png`} alt="portfolio item 3" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -109,12 +74,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/talking-heads">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">CONCEPT</div> */}
-    {/* <h3>TALKING HEADS</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/4.png" alt="portfolio item 4" className="featured-image" />
+    <img src={`${imagesPrefix}/9.png`} alt="portfolio item 4" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -127,16 +88,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/podcast">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">LOGO</div> */}
-    {/* <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h3>PODCAST</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/5-1.png" alt="portfolio item 5" className="featured-image" />
+    <img src={`${imagesPrefix}/5-1.png`} alt="portfolio item 5" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -149,40 +102,12 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/animation/2D">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">WEBSITE</div> */}
-    {/* <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h3>2D Animation</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/6.png" alt="portfolio item 6" className="featured-image" />
+    <img src={`${imagesPrefix}/6.png`} alt="portfolio item 6" className="featured-image" />
   </figure>
 </a>
 </header>
 </Grid>
-{/* <Grid item xs={12} md={2} className="portfolio-item width-2x dark">
-  <div className="portfolio-meta">
-    <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
-    <time dateTime="15.02.2017">Name of Production</time>
-    <a href="project-details-8.html" className="portfolio-item-more"><i className="ion-ios-arrow-right"></i></a>
-  </div>
-  <header className="portfolio-header">
-    <a href="project-details-8.html">
-      <div className="portfolio-item-title">
-        <div className="meta-categories">PHOTOGRAPHY</div>
-        <h3>ALIKE MORE</h3>
-      </div>
-      <figure className="portfolio-img">
-        <img src="http://wythe.artstudioworks.net/site-template/images/project-img6.jpg" alt="portfolio item 7" className="featured-image" />
-      </figure>
-    </a>
-  </header>
-</Grid> */}
 <Grid item xs={12} md={4} className="portfolio-item width-2x dark" >
 <div className="portfolio-meta">
 <a href="#" className="portfolio-like"><i className="ion-ios-heart-outline"></i></a>
@@ -191,18 +116,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/events">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">PHOTOGRAPHY</div> */}
-    {/* <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h3>EVENTS</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/7.png" alt="portfolio item 7" className="featured-image" />
+    <img src={`${imagesPrefix}/7.png`} alt="portfolio item 7" className="featured-image" />
   </figure>
 </a>
 </header>
@@ -215,18 +130,8 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
 <a href="/animation/3D">
-  <div className="portfolio-item-title">
-    {/* <div className="meta-categories">WEBSITE</div> */}
-    {/* <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h3>3D Animation</h3> */}
-  </div>
   <figure className="portfolio-img">
-    <img src="https://d17kgkt7t2bpo9.cloudfront.net/gallery/8.png" alt="portfolio item 6" className="featured-image" />
+    <img src={`${imagesPrefix}/8.png`} alt="portfolio item 6" className="featured-image" />
   </figure>
 </a>
 </header>

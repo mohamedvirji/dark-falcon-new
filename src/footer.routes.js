@@ -4,15 +4,14 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-
+// Template layout components
 import ContactUs from "layouts/pages/landing-pages/contact-us";
-import Author from "layouts/pages/landing-pages/author";
+import OurMission from "layouts/pages/landing-pages/ourmission";
 
-// Material Kit 2 React components
+// Template components components
 import MKTypography from "components/MKTypography";
 
 // Images
-// import logoCT from "assets/images/logo-ct-dark.png";
 import dfLogo from "assets/images/df-logo_5.png";
 
 const date = new Date().getFullYear();
@@ -57,7 +56,7 @@ export default {
     {
       name: "more",
       items: [
-        { name: "our mission", route: "/about", component: <Author/>},
+        { name: "our mission", route: "/about", component: <OurMission/>},
         { name: "message us", route: "/contact", component: <ContactUs/>},
       ],
       route: "/contact"

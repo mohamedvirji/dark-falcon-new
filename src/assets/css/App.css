@@ -11,7 +11,7 @@
     letter-spacing:1.5px !important;
   }
   .animated{
-    animation: left_to_right 3s ease;
+    animation: left_to_right 2s ease;
   }
   @keyframes left_to_right {
     0% {
@@ -30,5 +30,5 @@
     }
   }
   .behind{
-    /* z-index: -1 !important; */
+    z-index: -10 !important;
   }

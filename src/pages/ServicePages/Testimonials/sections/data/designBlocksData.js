@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 const imagesPrefix =
   "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/testimonials";
 
-  import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
+  import placeholder from "assets/images/placeholder-thumb.jpg";
 
 export default [
   {
@@ -24,19 +24,19 @@ export default [
     description: "A selection of 45 page sections that fit perfectly in any combination",
     items: [
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT+-+log+me+in-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT+-+log+me+in-01.jpg`,
         name: "Logmein",
         count: "",
         route: "https://youtu.be/eZysL94gZZQ",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT+-PROFITERO-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT+-PROFITERO-01.jpg`,
         name: "Profitero 2023",
         count: "",
         route: "https://youtu.be/j8RYbbxhT7c",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT-+Bold+360-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT-+Bold+360-01.jpg`,
         name: "Bold 360",
         count: "",
         route: "https://youtu.be/afQp8ZM3PW8",

@@ -16,10 +16,10 @@ section#three-step-method {
 
     /* 16. three step method */
     .three-step-method-heading {
-        font-family: 'Koulen', cursive;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 700;
+        font-family: 'Poppins', cursive;
+        font-size: 20px;
+        /* font-style: normal; */
+        font-weight:600;
         text-transform: uppercase;
         margin: 3px 0 15px 0;
         text-align: left;
@@ -43,6 +43,7 @@ section#three-step-method {
         padding-left: 100px;
         text-align: left;
         color: #fff;
+        font-family: "Poppins", sans-serif;
         }
         
         @media only screen and (max-width: 880px) {

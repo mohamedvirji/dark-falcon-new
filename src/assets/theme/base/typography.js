@@ -82,12 +82,20 @@ const typography = {
 
   h1Alt: {
     fontFamily: baseProperties.koulen,
-    fontSize: pxToRem(48),
+    fontSize: pxToRem(60),
     lineHeight: 1.25,
     ...baseHeadingProperties,
     textTransform: "uppercase",
     border:"3px solid white",
     padding: "0.25em"
+  },
+
+  h1Alt2: {
+    fontFamily: baseProperties.koulen,
+    fontSize: pxToRem(72),
+    lineHeight: 1.25,
+    ...baseHeadingProperties,
+    textTransform: "uppercase",
   },
 
   h2: {
@@ -123,6 +131,12 @@ const typography = {
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
+  h5Alt: {
+    fontFamily: baseProperties.poppins,
+    fontSize: pxToRem(20),
+    lineHeight: 1.375,
+    ...baseHeadingProperties,
+  },
 
   h6: {
     fontFamily: baseProperties.fontFamily,
@@ -154,7 +168,7 @@ const typography = {
   },
 
   body2: {
-    fontFamily: baseProperties.anton,
+    fontFamily: baseProperties.poppins,
     fontSize: baseProperties.fontSizeLG,
     fontWeight: baseProperties.fontWeightLight,
     lineHeight: 1.6,

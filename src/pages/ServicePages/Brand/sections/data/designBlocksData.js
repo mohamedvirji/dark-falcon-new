@@ -1,96 +1,81 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 const imagesPrefix =
-  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/brand";
+  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails";
 
-  import placeholder from "assets/images/placeholder-thumb.jpg?format=webp";
+  import placeholder from "assets/images/placeholder-thumb.jpg";
 
 export default [
   {
-    title: "Design Blocks",
-    description: "A selection of 45 page sections that fit perfectly in any combination",
+    title: "Our Work",
+    description: "Our Work Thumbnails",
     items: [
       {
-        image: `${imagesPrefix}/dfp-thumbnails_Total+energy+vd+3-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_Total+energy+vd+3-01.jpg`,
         name: "TotalEnergies",
         count: "",
         route: "https://youtu.be/egU-X3ha7Q8",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_Smart+Gas+Utilities+Brand+Video-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_Smart+Gas+Utilities+Brand+Video-01.jpg`,
         name: "Smart Gas Utilities",
         count: "",
         route: "https://youtu.be/6wK2gAPgPCQ",
       },
       {
-        image: `${imagesPrefix}/1+-++infor+graphics.png?format=webp`,
+        image: `${imagesPrefix}/1+-++infor+graphics.png`,
         name: "Grayce",
         count: "",
         route: "https://youtu.be/GshUVHtZbZQ",
       },
       {
-        image: `${imagesPrefix}/2+-+RING+CENTRAL+OFFICE+.png?format=webp`,
+        image: `${imagesPrefix}/2+-+RING+CENTRAL+OFFICE+.png`,
         name: "RingCentral",
         count: "",
         route: "https://youtu.be/oPQw9mMc1hM",
       },
       {
-        image: `${imagesPrefix}/3+-+GREEEN.png?format=webp`,
+        image: `${imagesPrefix}/3+-+GREEEN.png`,
         name: "Green Social Prescribing",
         count: "",
         route: "https://youtu.be/7oo2VgO3_A0",
       },
       {
-        image: `${imagesPrefix}/03566.png?format=webp`,
+        image: `${imagesPrefix}/03566.png`,
         name: "Madressa",
         count: "",
         route: "https://youtu.be/3Knszp0R3dA",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+Yatch+82-01.jpg?format=webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+Yatch+82-01.jpg`,
         name: "Pearl Yachts 82",
         count: "",
         route: "https://youtu.be/X_Q2ons4KvM",
       },
       {
-        image: `${imagesPrefix}/SA+Logo.png?format=webp`,
+        image: `${imagesPrefix}/SA+Logo.png`,
         name: "Specialist Advisors",
         count: "",
         route: "https://youtu.be/jnIACBmwGns",
       },
       {
-        image: `${imagesPrefix}/SB+Sussex+Logo+2.png?format=webp`,
+        image: `${imagesPrefix}/SB+Sussex+Logo+2.png`,
         name: "Simply Beds Sussex",
         count: "",
         route: "https://youtu.be/1LQBb3IOPuU",
       },
       {
-        image: `${imagesPrefix}/4+-+ASPIRE.png?format=webp`,
+        image: `${imagesPrefix}/4+-+ASPIRE.png`,
         name: "Aspire Monitoring Solutions",
         count: "",
         route: "https://youtu.be/N_umMYZOoYQ",
       },
       {
-        image: `${imagesPrefix}/5+-+SUNMARK.png?format=webp`,
+        image: `${imagesPrefix}/5+-+SUNMARK.png`,
         name: "Sun Mark",
         count: "",
         route: "https://youtu.be/y6uuCIwK4Jc",
       },
       {
-        image: `${imagesPrefix}/3+birdseyes.png?format=webp`,
+        image: `${imagesPrefix}/3+birdseyes.png`,
         name: "Flawless Distro",
         count: "",
         route: "https://youtu.be/qFdwybLOZNg",
