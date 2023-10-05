@@ -265,18 +265,12 @@ const MultiStepForm = ({ selected}) => {
       </Typography>
       <Box className={classes.formContainer}>
         {activeStep === 0 && (
-          <FormControl className={classes.formControl}>
-            {/* <Typography>Do you require interviews to be filmed?</Typography> */}
-            {/* <InputLabel sx={{color:'white'}}>Do you require interviews to be filmed?</InputLabel> */}
-            <Select
-              value={requireFilmed}
-              onChange={(e) => setRequireFilmed(e.target.value)}
-              sx={{ padding: "1rem" }}
-            >
-              <MenuItem value="Yes">Yes</MenuItem>
-              <MenuItem value="No">No</MenuItem>
-            </Select>
-          </FormControl>
+               <FormControl component="fieldset" className={classes.formControl}>
+               <RadioGroup value={requireFilmed} onChange={(e) => setRequireFilmed(e.target.value)}>
+                 <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                 <FormControlLabel value="No" control={<Radio />} label="No" />
+               </RadioGroup>
+             </FormControl>
         )}
         {activeStep === 1 && (
           <FormGroup>
