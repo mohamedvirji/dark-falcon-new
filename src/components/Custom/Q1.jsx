@@ -238,7 +238,7 @@ const MultiStepForm = ({ selected}) => {
         const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
         console.log(response.data.message)
         if(response.data.message === 'Email sent successfully') {
-          setSuccess(true)
+          //redirect to thank you page
         }
         setErrorEmail('')
         setErrorName('')
