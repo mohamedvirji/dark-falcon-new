@@ -212,7 +212,7 @@ const MultiStepForm = ({ selected}) => {
       if(validateEmail(userEmail)){
         setErrorEmail('')
       }
-      if(validateEmail(userEmail) && errorName.length ===0) {
+      if(validateEmail(userEmail) && !errorName) {
         function simplifyObject(obj) {
           for (const key in obj) {
             if (typeof obj[key] === 'object' && obj[key] !== null) {
@@ -238,7 +238,7 @@ const MultiStepForm = ({ selected}) => {
         const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
         console.log(response.data.message)
         if(response.data.message === 'Email sent successfully') {
-          //redirect to thank you page
+          // setSuccess(true)
         }
         setErrorEmail('')
         setErrorName('')

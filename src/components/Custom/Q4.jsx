@@ -166,7 +166,7 @@ const VideoOptionsForm = ({selected}) => {
     if(validateEmail(userEmail)){
       setErrorEmail('')
     }
-    if(validateEmail(userEmail) && errorName.length ===0) {
+    if(validateEmail(userEmail) && !errorName) {
       function simplifyObject(obj) {
         for (const key in obj) {
           if (typeof obj[key] === 'object' && obj[key] !== null) {

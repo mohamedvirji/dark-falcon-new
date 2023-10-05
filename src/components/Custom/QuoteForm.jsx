@@ -80,14 +80,14 @@ export const QuoteForm = () => {
     if(validateEmail(userEmail)){
       setErrorEmail('')
     }
-    if(validateEmail(userEmail) && errorName.length ===0) {
+    if(validateEmail(userEmail) && !errorName) {
 
       let allDetails = {
         name:userName,
         email:userEmail,
         Details:details
       }
-      const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
+      const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email-form', allDetails);
       console.log(response.data.message)
       if(response.data.message === 'Email sent successfully') {
           //redirect to thank you page
