@@ -1,0 +1,74 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy
+
+on:
+  push:
+    branches: [darkfalcon]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+        matrix:
+          node-version: [16.x]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: NPM Install and Build
+        run: |
+          npm cache clean --force
+          rm -rf node_modules package-lock.json build
+          npm install
+      # Runs a single command using the runners shell
+      - name: Build Assets
+        run: CI= npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build/
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # needs build
+    needs: build
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+      - name: "Uploading..."
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.DF_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DF_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DF_SECRET_ACCESS_KEY }}
+          
+          AWS_REGION: "eu-west-2" # optional: defaults to us-east-1
+          #SOURCE_DIR: "build" # optional: defaults to entire repository
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: "eu-west-2"
+      # - name: Invalidate cache
+      #   env:
+      #     AWS_DEFAULT_REGION: "eu-west-2"
+      #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths '/*'

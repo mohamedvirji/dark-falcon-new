@@ -24,3 +24,5 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 commit.sh
+gallery-wythe.html
+CHANGELOG.md
