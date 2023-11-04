@@ -58,7 +58,7 @@ const MultiStepForm = ({ selected}) => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [details, setDetails] = useState("");
-
+  const [phone, setPhone] = useState("");
   const [success, setSuccess] = useState(false);
 
 
@@ -72,12 +72,14 @@ const MultiStepForm = ({ selected}) => {
   ];
 
   const [requireFilmed, setRequireFilmed] = useState("No");
-  const [bRollOptions, setBRollOptions] = useState({
-    filmed: false,
-    stockVideo: false,
-    filmedAndStockVideo: false,
-  });
-  const [videoLength, setVideoLength] = useState("");
+  // const [bRollOptions, setBRollOptions] = useState({
+  //   filmed: false,
+  //   stockVideo: false,
+  //   filmedAndStockVideo: false,
+  // });
+
+  const [bRollOptions, setBRollOptions] = useState("none");
+  const [videoLength, setVideoLength] = useState("Under 1 Minute");
   const [extras, setExtras] = useState({
     shortVideoReels: false,
     voiceOverArtist: false,
@@ -230,15 +232,16 @@ const MultiStepForm = ({ selected}) => {
         let allDetails = {
           name:userName,
           email:userEmail,
+          phone:phone,
           selected:selected,
           details:details,
           Details:simplifiedObject,
           totalPrice:totalPrice
         }
         const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
-        console.log(response.data.message)
+        // console.log('allDetails', allDetails)
         if(response.data.message === 'Email sent successfully') {
-          // setSuccess(true)
+          setSuccess(true)
         }
         setErrorEmail('')
         setErrorName('')
@@ -273,42 +276,52 @@ const MultiStepForm = ({ selected}) => {
              </FormControl>
         )}
         {activeStep === 1 && (
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.filmed}
-                  onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
-                />
-              }
-              label="Filmed"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.stockVideo}
-                  onChange={(e) =>
-                    setBRollOptions({ ...bRollOptions, stockVideo: e.target.checked })
-                  }
-                />
-              }
-              label="Stock Video"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.filmedAndStockVideo}
-                  onChange={(e) =>
-                    setBRollOptions({ ...bRollOptions, filmedAndStockVideo: e.target.checked })
-                  }
-                />
-              }
-              label="Filmed & Stock Video"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-          </FormGroup>
+          // <FormGroup>
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.filmed}
+          //         onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
+          //       />
+          //     }
+          //     label="Filmed"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.stockVideo}
+          //         onChange={(e) =>
+          //           setBRollOptions({ ...bRollOptions, stockVideo: e.target.checked })
+          //         }
+          //       />
+          //     }
+          //     label="Stock Video"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.filmedAndStockVideo}
+          //         onChange={(e) =>
+          //           setBRollOptions({ ...bRollOptions, filmedAndStockVideo: e.target.checked })
+          //         }
+          //       />
+          //     }
+          //     label="Filmed & Stock Video"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          // </FormGroup>
+
+              <FormControl component="fieldset" className={classes.formControl}>
+            <RadioGroup value={bRollOptions} onChange={(e) => setBRollOptions(e.target.value)}>
+              <FormControlLabel value="flimed" control={<Radio />} label="flimed" />
+              <FormControlLabel value="stockVideo" control={<Radio />} label="stockVideo" />
+              <FormControlLabel value="filmedAndStockVideo" control={<Radio />} label="filmedAndStockVideo" />
+              <FormControlLabel value="none" control={<Radio />} label="none" />
+
+            </RadioGroup>
+          </FormControl>
         )}
         {activeStep === 2 && (
           <FormControl component="fieldset" className={classes.formControl}>
@@ -425,6 +438,8 @@ const MultiStepForm = ({ selected}) => {
               onChange={handleUserEmailChange}
             />
 
+
+
               <TextField
             label="Details"
             multiline
@@ -432,7 +447,24 @@ const MultiStepForm = ({ selected}) => {
             variant="outlined"
             fullWidth
             value={details}
+            
             onChange={(e) => setDetails(e.target.value)}
+            />
+
+<TextField
+          label="Phone"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
     
           </>

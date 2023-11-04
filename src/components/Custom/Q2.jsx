@@ -66,10 +66,10 @@ const MultiStepForm = ({selected}) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [filmLocation, setFilmLocation] = useState("");
-  const [numberOfCameras, setNumberOfCameras] = useState("");
+  const [filmLocation, setFilmLocation] = useState("My site");
+  const [numberOfCameras, setNumberOfCameras] = useState("1 camera");
   const [details, setDetails] = useState("");
-
+  const [phone, setPhone] = useState("");
   const [bRollOptions, setBRollOptions] = useState({
     filmed: false,
     stockVideo: false,
@@ -81,7 +81,7 @@ const MultiStepForm = ({selected}) => {
     subtitles: false,
     animationGraphics: false,
   });
-  const [numberOfTalkingHeadVideos, setNumberOfTalkingHeadVideos] = useState("");
+  const [numberOfTalkingHeadVideos, setNumberOfTalkingHeadVideos] = useState("1");
 
  
   const [userSelections, setUserSelections] = useState({}); // Store user selections
@@ -131,7 +131,7 @@ const MultiStepForm = ({selected}) => {
       case "2 cameras":
         price += 900;
         break;
-      case "Includes electronic slider":
+      case "3 cameras (inc. electronic slider)":
         price += 1200;
         break;
       default:
@@ -246,13 +246,15 @@ const sendEmail = async()=>{
     let allDetails = {
       name:userName,
       email:userEmail,
+      phone:phone,
+
       details:details,
       selected:selected,
       Details:simplifiedObject,
       totalPrice:totalPrice
     }
     const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
-    console.log(response.data.message)
+    console.log(response)
     if(response.data.message === 'Email sent successfully') {
         //redirect to thank you page
        
@@ -307,9 +309,9 @@ const sendEmail = async()=>{
                 label="2 cameras"
               />
               <FormControlLabel
-                value="Includes electronic slider"
+                value="3 cameras (inc. electronic slider)"
                 control={<Radio />}
-                label="Includes electronic slider"
+                label="3 cameras (inc. electronic slider)"
               />
             </RadioGroup>
           </FormControl>
@@ -419,29 +421,37 @@ const sendEmail = async()=>{
           </FormGroup>
         )}
         {activeStep === 4 && (
-          <FormControl component="fieldset" className={classes.formControl}>
-            {/* Question 5: How many Talking Head videos do you want produced? */}
-            <RadioGroup
-              value={numberOfTalkingHeadVideos}
-              onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
-            >
-              <FormControlLabel
-                value="1"
-                control={<Radio />}
-                label="1"
-              />
-              <FormControlLabel
-                value="2"
-                control={<Radio />}
-                label="2"
-              />
-              <FormControlLabel
-                value="3"
-                control={<Radio />}
-                label="3"
-              />
-            </RadioGroup>
-          </FormControl>
+          <TextField
+          type="number"
+          value={numberOfTalkingHeadVideos}
+          onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
+          inputProps={{
+            min: 0,
+          }}
+        />
+          // <FormControl component="fieldset" className={classes.formControl}>
+          //   {/* Question 5: How many Talking Head videos do you want produced? */}
+          //   <RadioGroup
+          //     value={numberOfTalkingHeadVideos}
+          //     onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
+          //   >
+          //     <FormControlLabel
+          //       value="1"
+          //       control={<Radio />}
+          //       label="1"
+          //     />
+          //     <FormControlLabel
+          //       value="2"
+          //       control={<Radio />}
+          //       label="2"
+          //     />
+          //     <FormControlLabel
+          //       value="3"
+          //       control={<Radio />}
+          //       label="3"
+          //     />
+          //   </RadioGroup>
+          // </FormControl>
         )}
 
         {activeStep === 5 && (
@@ -472,6 +482,23 @@ const sendEmail = async()=>{
             fullWidth
             value={details}
             onChange={(e) => setDetails(e.target.value)}
+            />
+
+<TextField
+            label="Phone"
+            type="number"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
           </>
         )}

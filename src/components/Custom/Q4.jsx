@@ -65,7 +65,7 @@ const VideoOptionsForm = ({selected}) => {
   const [errorName, setErrorName] =  useState()
   const [errorEmail, setErrorEmail] =  useState()
   const [details, setDetails] = useState("");
-
+  const [phone, setPhone] = useState("");
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -184,6 +184,8 @@ const VideoOptionsForm = ({selected}) => {
       let allDetails = {
         name:userName,
         email:userEmail,
+        phone:phone,
+
         details:details,
         selected:selected,
         Details:simplifiedObject,
@@ -300,6 +302,23 @@ const VideoOptionsForm = ({selected}) => {
             fullWidth
             value={details}
             onChange={(e) => setDetails(e.target.value)}
+            />
+
+<TextField
+            label="Phone"
+            type="number"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
           </>
         )}
