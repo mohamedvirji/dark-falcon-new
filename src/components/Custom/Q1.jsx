@@ -74,8 +74,8 @@ const MultiStepForm = ({ selected}) => {
   const [requireFilmed, setRequireFilmed] = useState("No");
   // const [bRollOptions, setBRollOptions] = useState({
   //   filmed: false,
-  //   stockVideo: false,
-  //   filmedAndStockVideo: false,
+  //   Stock Video: false,
+  //   filmed And Stock Video: false,
   // });
 
   const [bRollOptions, setBRollOptions] = useState("none");
@@ -103,6 +103,7 @@ const MultiStepForm = ({ selected}) => {
   useEffect(() => {
     const calculatedPrice = calculatePrice();
     setTotalPrice(calculatedPrice);
+    console.log('useEffect',calculatedPrice, bRollOptions )
   }, [requireFilmed, bRollOptions, videoLength, extras, videoStyle]);
 
   const handleNext = () => {
@@ -117,29 +118,44 @@ const MultiStepForm = ({ selected}) => {
     let price = 0;
 
     if (requireFilmed === "Yes") {
-      console.log("price", price);
       price = 900;
+      console.log("price", price);
+
     }
 
-    if (bRollOptions.filmed) {
+    if (bRollOptions === 'filmed') {
       price += 500;
+      console.log("filmed", price);
+
     }
-    if (bRollOptions.stockVideo) {
+    if (bRollOptions === 'Stock Video') {
       price += 400;
+      console.log("Stock Video", price);
+
     }
-    if (bRollOptions.filmedAndStockVideo) {
+    if (bRollOptions === 'filmed And Stock Video') {
       price += 800;
+      console.log("filmed And Stock Video", price);
+
     }
 
     switch (videoLength) {
       case "Under 1 Minute":
         price *= 1.2;
+        console.log("price", price);
+
         break;
       case "1-2 Minutes":
         price *= 1.5;
+        console.log("price", price);
+
         break;
       case "2-3 Minutes":
-        price *= 2;
+        console.log("BEFORE 2-3 Minutes", price);
+
+        price = price * 2;
+        console.log("AFTER 2-3 Minutes", price);
+
         break;
       default:
         break;
@@ -147,24 +163,39 @@ const MultiStepForm = ({ selected}) => {
 
     if (extras.shortVideoReels) {
       price += 800;
+      console.log("price", price);
+
     }
     if (extras.voiceOverArtist) {
       price += 400;
+      console.log("price", price);
+
     }
     if (extras.locationScout) {
       price += 300;
+      console.log("price", price);
+
     }
     if (extras.teleprompter) {
       price += 150;
+      console.log("price", price);
+
     }
     if (extras.droneOperator) {
       price += 800;
+      console.log("price", price);
+
     }
     if (extras.makeUpArtist) {
       price += 400;
+
+      console.log("price", price);
+
     }
     if (extras.subtitles) {
       price += 200;
+      console.log("price", price);
+
     }
     const newUserSelections = {
       ...userSelections, // Preserve existing selections
@@ -239,6 +270,8 @@ const MultiStepForm = ({ selected}) => {
           totalPrice:totalPrice
         }
         const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
+
+        // const response = await axios.post('http://localhost:3000/send-email', allDetails);
         // console.log('allDetails', allDetails)
         if(response.data.message === 'Email sent successfully') {
           setSuccess(true)
@@ -290,9 +323,9 @@ const MultiStepForm = ({ selected}) => {
           //   <FormControlLabel
           //     control={
           //       <Checkbox
-          //         checked={bRollOptions.stockVideo}
+          //         checked={bRollOptions.Stock Video}
           //         onChange={(e) =>
-          //           setBRollOptions({ ...bRollOptions, stockVideo: e.target.checked })
+          //           setBRollOptions({ ...bRollOptions, Stock Video: e.target.checked })
           //         }
           //       />
           //     }
@@ -302,9 +335,9 @@ const MultiStepForm = ({ selected}) => {
           //   <FormControlLabel
           //     control={
           //       <Checkbox
-          //         checked={bRollOptions.filmedAndStockVideo}
+          //         checked={bRollOptions.filmed And Stock Video}
           //         onChange={(e) =>
-          //           setBRollOptions({ ...bRollOptions, filmedAndStockVideo: e.target.checked })
+          //           setBRollOptions({ ...bRollOptions, filmed And Stock Video: e.target.checked })
           //         }
           //       />
           //     }
@@ -316,8 +349,8 @@ const MultiStepForm = ({ selected}) => {
               <FormControl component="fieldset" className={classes.formControl}>
             <RadioGroup value={bRollOptions} onChange={(e) => setBRollOptions(e.target.value)}>
               <FormControlLabel value="flimed" control={<Radio />} label="flimed" />
-              <FormControlLabel value="stockVideo" control={<Radio />} label="stockVideo" />
-              <FormControlLabel value="filmedAndStockVideo" control={<Radio />} label="filmedAndStockVideo" />
+              <FormControlLabel value="Stock Video" control={<Radio />} label="Stock Video" />
+              <FormControlLabel value="filmed And Stock Video" control={<Radio />} label="filmed And Stock Video" />
               <FormControlLabel value="none" control={<Radio />} label="none" />
 
             </RadioGroup>

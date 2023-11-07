@@ -27,6 +27,7 @@ import { ArrowDropDown } from "@mui/icons-material";
 import MKButton from "components/MKButton";
 import MKBox from "components/MKBox";
 import axios from "axios";
+import { isMobile } from "react-device-detect";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -184,7 +185,7 @@ export const QuoteForm = () => {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
 
         <MKBox sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
-        <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
+        <Paper elevation={3} className={classes.formContainer} sx={{width: isMobile ?  '90vw':'40vw' }}>
       <>
       {
         errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>

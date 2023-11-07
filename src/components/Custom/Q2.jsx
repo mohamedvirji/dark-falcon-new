@@ -115,9 +115,13 @@ const MultiStepForm = ({selected}) => {
     switch (filmLocation) {
       case "My site":
         price += 0;
+        console.log("price", price);
+
         break;
       case "Your studio":
         price += 600;
+        console.log("price", price);
+
         break;
       default:
         break;
@@ -127,12 +131,18 @@ const MultiStepForm = ({selected}) => {
     switch (numberOfCameras) {
       case "1 camera":
         price += 500;
+        console.log("price", price);
+
         break;
       case "2 cameras":
         price += 900;
+        console.log("price", price);
+
         break;
       case "3 cameras (inc. electronic slider)":
         price += 1200;
+        console.log("price", price);
+
         break;
       default:
         break;
@@ -141,42 +151,65 @@ const MultiStepForm = ({selected}) => {
     // Question 3: Do you require B-roll footage?
     if (bRollOptions.filmed) {
       price += 500;
+      console.log("price", price);
+
     }
     if (bRollOptions.stockVideo) {
       price += 400;
+      console.log("price", price);
+
     }
     if (bRollOptions.filmedAndStockVideo) {
       price += 800;
+      console.log("price", price);
+
     }
 
     // Question 4: Do you require any extras?
     if (extras.teleprompter) {
       price += 150;
+      console.log("price", price);
+
     }
     if (extras.makeUpArtist) {
       price += 400;
+      console.log("price", price);
+
     }
     if (extras.subtitles) {
       price += 200;
+      console.log("price", price);
+
     }
     if (extras.animationGraphics) {
       price += 400;
+      console.log("price", price);
+
     }
 
     // Question 5: How many Talking Head videos do you want produced?
-    switch (numberOfTalkingHeadVideos) {
-      case "1":
-        price *= 1;
-        break;
-      case "2":
-        price *= 2;
-        break;
-      case "3":
-        price *= 3;
-        break;
-      default:
-        break;
-    }
+    // switch (numberOfTalkingHeadVideos) {
+
+      
+    //   case "1":
+    //     price *= 1;
+    //     break;
+    //   case "2":
+    //     price *= 2;
+    //     break;
+    //   case "3":
+    //     price *= 3;
+    //     break;
+    //   default:
+    //     break;
+    // }
+
+    const numberOfVideos = (numberOfTalkingHeadVideos);
+if (numberOfVideos >= 1) {
+  price *= 1 + (numberOfVideos - 1) * 0.2; // Increase the price based on the number of videos
+  console.log("price", price);
+
+}
     const newUserSelections = {
       ...userSelections, // Preserve existing selections
       [steps[activeStep]]: getUserSelectionForCurrentStep(), // Store current step's selection
@@ -185,7 +218,7 @@ const MultiStepForm = ({selected}) => {
     setUserSelections(newUserSelections);
   
 
-    return price;
+    return parseInt(price);
   };
 
 
@@ -254,6 +287,8 @@ const sendEmail = async()=>{
       totalPrice:totalPrice
     }
     const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
+    // const response = await axios.post('http://localhost:3000/send-email', allDetails);
+
     console.log(response)
     if(response.data.message === 'Email sent successfully') {
         //redirect to thank you page
