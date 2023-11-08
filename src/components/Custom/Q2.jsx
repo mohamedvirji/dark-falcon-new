@@ -66,10 +66,10 @@ const MultiStepForm = ({selected}) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [filmLocation, setFilmLocation] = useState("");
-  const [numberOfCameras, setNumberOfCameras] = useState("");
+  const [filmLocation, setFilmLocation] = useState("My site");
+  const [numberOfCameras, setNumberOfCameras] = useState("1 camera");
   const [details, setDetails] = useState("");
-
+  const [phone, setPhone] = useState("");
   const [bRollOptions, setBRollOptions] = useState({
     filmed: false,
     stockVideo: false,
@@ -81,7 +81,7 @@ const MultiStepForm = ({selected}) => {
     subtitles: false,
     animationGraphics: false,
   });
-  const [numberOfTalkingHeadVideos, setNumberOfTalkingHeadVideos] = useState("");
+  const [numberOfTalkingHeadVideos, setNumberOfTalkingHeadVideos] = useState("1");
 
  
   const [userSelections, setUserSelections] = useState({}); // Store user selections
@@ -115,9 +115,13 @@ const MultiStepForm = ({selected}) => {
     switch (filmLocation) {
       case "My site":
         price += 0;
+        console.log("price", price);
+
         break;
       case "Your studio":
         price += 600;
+        console.log("price", price);
+
         break;
       default:
         break;
@@ -127,12 +131,18 @@ const MultiStepForm = ({selected}) => {
     switch (numberOfCameras) {
       case "1 camera":
         price += 500;
+        console.log("price", price);
+
         break;
       case "2 cameras":
         price += 900;
+        console.log("price", price);
+
         break;
-      case "Includes electronic slider":
+      case "3 cameras (inc. electronic slider)":
         price += 1200;
+        console.log("price", price);
+
         break;
       default:
         break;
@@ -141,42 +151,65 @@ const MultiStepForm = ({selected}) => {
     // Question 3: Do you require B-roll footage?
     if (bRollOptions.filmed) {
       price += 500;
+      console.log("price", price);
+
     }
     if (bRollOptions.stockVideo) {
       price += 400;
+      console.log("price", price);
+
     }
     if (bRollOptions.filmedAndStockVideo) {
       price += 800;
+      console.log("price", price);
+
     }
 
     // Question 4: Do you require any extras?
     if (extras.teleprompter) {
       price += 150;
+      console.log("price", price);
+
     }
     if (extras.makeUpArtist) {
       price += 400;
+      console.log("price", price);
+
     }
     if (extras.subtitles) {
       price += 200;
+      console.log("price", price);
+
     }
     if (extras.animationGraphics) {
       price += 400;
+      console.log("price", price);
+
     }
 
     // Question 5: How many Talking Head videos do you want produced?
-    switch (numberOfTalkingHeadVideos) {
-      case "1":
-        price *= 1;
-        break;
-      case "2":
-        price *= 2;
-        break;
-      case "3":
-        price *= 3;
-        break;
-      default:
-        break;
-    }
+    // switch (numberOfTalkingHeadVideos) {
+
+      
+    //   case "1":
+    //     price *= 1;
+    //     break;
+    //   case "2":
+    //     price *= 2;
+    //     break;
+    //   case "3":
+    //     price *= 3;
+    //     break;
+    //   default:
+    //     break;
+    // }
+
+    const numberOfVideos = (numberOfTalkingHeadVideos);
+if (numberOfVideos >= 1) {
+  price *= 1 + (numberOfVideos - 1) * 0.2; // Increase the price based on the number of videos
+  console.log("price", price);
+
+}
     const newUserSelections = {
       ...userSelections, // Preserve existing selections
       [steps[activeStep]]: getUserSelectionForCurrentStep(), // Store current step's selection
@@ -185,7 +218,7 @@ const MultiStepForm = ({selected}) => {
     setUserSelections(newUserSelections);
   
 
-    return price;
+    return parseInt(price);
   };
 
 
@@ -246,13 +279,19 @@ const sendEmail = async()=>{
     let allDetails = {
       name:userName,
       email:userEmail,
+      phone:phone,
+
       details:details,
       selected:selected,
       Details:simplifiedObject,
       totalPrice:totalPrice
     }
     const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
-    console.log(response.data.message)
+    // const response = await axios.post('http://localhost:3000/send-email', allDetails);
+
+    console.log(response)
+    navigate('/thank-you-quote');
+    
     if(response.data.message === 'Email sent successfully') {
         //redirect to thank you page
        
@@ -307,9 +346,9 @@ const sendEmail = async()=>{
                 label="2 cameras"
               />
               <FormControlLabel
-                value="Includes electronic slider"
+                value="3 cameras (inc. electronic slider)"
                 control={<Radio />}
-                label="Includes electronic slider"
+                label="3 cameras (inc. electronic slider)"
               />
             </RadioGroup>
           </FormControl>
@@ -419,29 +458,37 @@ const sendEmail = async()=>{
           </FormGroup>
         )}
         {activeStep === 4 && (
-          <FormControl component="fieldset" className={classes.formControl}>
-            {/* Question 5: How many Talking Head videos do you want produced? */}
-            <RadioGroup
-              value={numberOfTalkingHeadVideos}
-              onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
-            >
-              <FormControlLabel
-                value="1"
-                control={<Radio />}
-                label="1"
-              />
-              <FormControlLabel
-                value="2"
-                control={<Radio />}
-                label="2"
-              />
-              <FormControlLabel
-                value="3"
-                control={<Radio />}
-                label="3"
-              />
-            </RadioGroup>
-          </FormControl>
+          <TextField
+          type="number"
+          value={numberOfTalkingHeadVideos}
+          onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
+          inputProps={{
+            min: 0,
+          }}
+        />
+          // <FormControl component="fieldset" className={classes.formControl}>
+          //   {/* Question 5: How many Talking Head videos do you want produced? */}
+          //   <RadioGroup
+          //     value={numberOfTalkingHeadVideos}
+          //     onChange={(e) => setNumberOfTalkingHeadVideos(e.target.value)}
+          //   >
+          //     <FormControlLabel
+          //       value="1"
+          //       control={<Radio />}
+          //       label="1"
+          //     />
+          //     <FormControlLabel
+          //       value="2"
+          //       control={<Radio />}
+          //       label="2"
+          //     />
+          //     <FormControlLabel
+          //       value="3"
+          //       control={<Radio />}
+          //       label="3"
+          //     />
+          //   </RadioGroup>
+          // </FormControl>
         )}
 
         {activeStep === 5 && (
@@ -472,6 +519,23 @@ const sendEmail = async()=>{
             fullWidth
             value={details}
             onChange={(e) => setDetails(e.target.value)}
+            />
+
+<TextField
+            label="Phone"
+            type="number"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
           </>
         )}

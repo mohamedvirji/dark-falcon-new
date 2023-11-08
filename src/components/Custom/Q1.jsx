@@ -58,7 +58,7 @@ const MultiStepForm = ({ selected}) => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [details, setDetails] = useState("");
-
+  const [phone, setPhone] = useState("");
   const [success, setSuccess] = useState(false);
 
 
@@ -72,12 +72,14 @@ const MultiStepForm = ({ selected}) => {
   ];
 
   const [requireFilmed, setRequireFilmed] = useState("No");
-  const [bRollOptions, setBRollOptions] = useState({
-    filmed: false,
-    stockVideo: false,
-    filmedAndStockVideo: false,
-  });
-  const [videoLength, setVideoLength] = useState("");
+  // const [bRollOptions, setBRollOptions] = useState({
+  //   filmed: false,
+  //   Stock Video: false,
+  //   Filmed And Stock Video: false,
+  // });
+
+  const [bRollOptions, setBRollOptions] = useState("none");
+  const [videoLength, setVideoLength] = useState("Under 1 Minute");
   const [extras, setExtras] = useState({
     shortVideoReels: false,
     voiceOverArtist: false,
@@ -101,6 +103,7 @@ const MultiStepForm = ({ selected}) => {
   useEffect(() => {
     const calculatedPrice = calculatePrice();
     setTotalPrice(calculatedPrice);
+    console.log('useEffect',calculatedPrice, bRollOptions )
   }, [requireFilmed, bRollOptions, videoLength, extras, videoStyle]);
 
   const handleNext = () => {
@@ -115,29 +118,44 @@ const MultiStepForm = ({ selected}) => {
     let price = 0;
 
     if (requireFilmed === "Yes") {
-      console.log("price", price);
       price = 900;
+      console.log("price", price);
+
     }
 
-    if (bRollOptions.filmed) {
+    if (bRollOptions === 'filmed') {
       price += 500;
+      console.log("filmed", price);
+
     }
-    if (bRollOptions.stockVideo) {
+    if (bRollOptions === 'Stock Video') {
       price += 400;
+      console.log("Stock Video", price);
+
     }
-    if (bRollOptions.filmedAndStockVideo) {
+    if (bRollOptions === 'Filmed And Stock Video') {
       price += 800;
+      console.log("Filmed And Stock Video", price);
+
     }
 
     switch (videoLength) {
       case "Under 1 Minute":
         price *= 1.2;
+        console.log("price", price);
+
         break;
       case "1-2 Minutes":
         price *= 1.5;
+        console.log("price", price);
+
         break;
       case "2-3 Minutes":
-        price *= 2;
+        console.log("BEFORE 2-3 Minutes", price);
+
+        price = price * 2;
+        console.log("AFTER 2-3 Minutes", price);
+
         break;
       default:
         break;
@@ -145,24 +163,39 @@ const MultiStepForm = ({ selected}) => {
 
     if (extras.shortVideoReels) {
       price += 800;
+      console.log("price", price);
+
     }
     if (extras.voiceOverArtist) {
       price += 400;
+      console.log("price", price);
+
     }
     if (extras.locationScout) {
       price += 300;
+      console.log("price", price);
+
     }
     if (extras.teleprompter) {
       price += 150;
+      console.log("price", price);
+
     }
     if (extras.droneOperator) {
       price += 800;
+      console.log("price", price);
+
     }
     if (extras.makeUpArtist) {
       price += 400;
+
+      console.log("price", price);
+
     }
     if (extras.subtitles) {
       price += 200;
+      console.log("price", price);
+
     }
     const newUserSelections = {
       ...userSelections, // Preserve existing selections
@@ -230,15 +263,20 @@ const MultiStepForm = ({ selected}) => {
         let allDetails = {
           name:userName,
           email:userEmail,
+          phone:phone,
           selected:selected,
           details:details,
           Details:simplifiedObject,
           totalPrice:totalPrice
         }
         const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
-        console.log(response.data.message)
+
+        // const response = await axios.post('http://localhost:3000/send-email', allDetails);
+        // console.log('allDetails', allDetails)
+        console.log(response)
+          navigate('/thank-you-quote');
         if(response.data.message === 'Email sent successfully') {
-          // setSuccess(true)
+          setSuccess(true)
         }
         setErrorEmail('')
         setErrorName('')
@@ -273,42 +311,52 @@ const MultiStepForm = ({ selected}) => {
              </FormControl>
         )}
         {activeStep === 1 && (
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.filmed}
-                  onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
-                />
-              }
-              label="Filmed"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.stockVideo}
-                  onChange={(e) =>
-                    setBRollOptions({ ...bRollOptions, stockVideo: e.target.checked })
-                  }
-                />
-              }
-              label="Stock Video"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={bRollOptions.filmedAndStockVideo}
-                  onChange={(e) =>
-                    setBRollOptions({ ...bRollOptions, filmedAndStockVideo: e.target.checked })
-                  }
-                />
-              }
-              label="Filmed & Stock Video"
-              classes={{ label: classes.checkBoxLabel }}
-            />
-          </FormGroup>
+          // <FormGroup>
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.filmed}
+          //         onChange={(e) => setBRollOptions({ ...bRollOptions, filmed: e.target.checked })}
+          //       />
+          //     }
+          //     label="Filmed"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.Stock Video}
+          //         onChange={(e) =>
+          //           setBRollOptions({ ...bRollOptions, Stock Video: e.target.checked })
+          //         }
+          //       />
+          //     }
+          //     label="Stock Video"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          //   <FormControlLabel
+          //     control={
+          //       <Checkbox
+          //         checked={bRollOptions.Filmed And Stock Video}
+          //         onChange={(e) =>
+          //           setBRollOptions({ ...bRollOptions, Filmed And Stock Video: e.target.checked })
+          //         }
+          //       />
+          //     }
+          //     label="Filmed & Stock Video"
+          //     classes={{ label: classes.checkBoxLabel }}
+          //   />
+          // </FormGroup>
+
+              <FormControl component="fieldset" className={classes.formControl}>
+            <RadioGroup value={bRollOptions} onChange={(e) => setBRollOptions(e.target.value)}>
+              <FormControlLabel value="flimed" control={<Radio />} label="flimed" />
+              <FormControlLabel value="Stock Video" control={<Radio />} label="Stock Video" />
+              <FormControlLabel value="Filmed And Stock Video" control={<Radio />} label="Filmed And Stock Video" />
+              <FormControlLabel value="none" control={<Radio />} label="none" />
+
+            </RadioGroup>
+          </FormControl>
         )}
         {activeStep === 2 && (
           <FormControl component="fieldset" className={classes.formControl}>
@@ -425,6 +473,8 @@ const MultiStepForm = ({ selected}) => {
               onChange={handleUserEmailChange}
             />
 
+
+
               <TextField
             label="Details"
             multiline
@@ -432,7 +482,24 @@ const MultiStepForm = ({ selected}) => {
             variant="outlined"
             fullWidth
             value={details}
+            
             onChange={(e) => setDetails(e.target.value)}
+            />
+
+<TextField
+          label="Phone"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
     
           </>

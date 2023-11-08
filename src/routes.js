@@ -36,6 +36,8 @@ import Testimonials from "layouts/pages/service-pages/testimonials";
 import VirtualTours from "layouts/pages/service-pages/virtual-tours";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import OurMission from "layouts/pages/landing-pages/ourmission";
+import Thankyou from "layouts/pages/landing-pages/thank-you";
+import ThankyouQuote from "layouts/pages/landing-pages/thank-you/quote.js";
 
 const routes = [
 
@@ -84,6 +86,11 @@ const routes = [
             component: <Podcasts />,
             protected: false,
           },
+          {
+            name: "",
+            route: "/thank-you-quote",
+            component: <ThankyouQuote/>,
+          },
         ],
       },
       {
@@ -105,6 +112,11 @@ const routes = [
                 route: "/animation/3D",
                 component: <ThreeD />,
                 protected: false,
+              },
+              {
+                name: "",
+                route: "/thank-you",
+                component: <Thankyou/>,
               },
             ],
           },

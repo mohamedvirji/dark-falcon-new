@@ -2,19 +2,23 @@ import {
   Box,
   FormControl,
   Grid,
+  IconButton,
   InputAdornment,
   InputLabel,
+  Menu,
   MenuItem,
   Paper,
   Select,
   TextField,
   Typography,
+  Button
 } from "@mui/material";
 
-import React from "react";
+import React, { useRef } from "react";
 
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Q1 from "./Q1";
 import Q2 from "./Q2";
 import Q3 from "./Q3";
@@ -24,6 +28,7 @@ import { ArrowDropDown } from "@mui/icons-material";
 import MKButton from "components/MKButton";
 import MKBox from "components/MKBox";
 import axios from "axios";
+import { isMobile } from "react-device-detect";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -43,14 +48,37 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const QuoteForm = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
   const [selectedOption, setSelectedOption] = useState(0);
+  const handleButtonClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    // setSelectedOption(event.currentTarget)
+  };
 
+  const handleMenuItemClick = (value) => {
+    console.log('3D Animation', value)
+    setSelectedOption(value);
+    setAnchorEl(null);
+  };
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [details, setDetails] = useState("");
+  const [phone, setPhone] = useState("");
+
   const [errorName, setErrorName] =  useState()
   const [errorEmail, setErrorEmail] =  useState()
+  const [errorPhone, setErrorPhone] =  useState()
+
+  const selectRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleAdornmentClick = () => {
+    const select = document.getElementById('my-select');
+    if (select) {
+      select.click();
+    }
+  };
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -85,14 +113,17 @@ export const QuoteForm = () => {
       let allDetails = {
         name:userName,
         email:userEmail,
+        phone:phone,
         Details:details
       }
       const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email-form', allDetails);
-      console.log(response.data.message)
-      if(response.data.message === 'Email sent successfully') {
-          //redirect to thank you page
-         
-      }
+      console.log(response)
+      navigate('/thank-you');
+      // if(response.data.message === 'Email sent successfully') {
+      //   console.log(response)
+      //     //redirect to thank you page
+      //     navigate('/thank-you');
+      // }
       console.log(allDetails)
       setErrorEmail('')
       setErrorName('')
@@ -118,45 +149,47 @@ export const QuoteForm = () => {
             Instant Quote Form
           </Typography>
           {/* <InputLabel htmlFor="age">I am looking for</InputLabel> */}
-          <Select
-            value={selectedOption}
-            onChange={handleChange}
-            endAdornment={
-              <InputAdornment position="end">
-                <ArrowDropDown />
-              </InputAdornment>
-            }
-            defaultChecked={true}
-            defaultValue={0}
-            // label="Age"
-            MenuProps={{
-              PaperProps: {
-                style: {
-                  //   color: 'white', // Background color of the dropdown menu
-                },
-              },
-            }}
-            style={{ color: "blue", fontWeight: "bold", padding: "1rem", background: "white" }}
-          >
+          <Button
+        aria-controls="custom-select-menu"
+        aria-haspopup="true"
+        onClick={handleButtonClick}
+        endIcon={<ArrowDropDown />}
+        style={{color:'black', fontSize:'1.2rem',}}
+        sx={{
+          background: 'white',
+          color: 'black',
+          '&:hover': {
+            background: 'lightgray', 
+          },
+        }}      >
+        {selectedOption || 'Select here'}
+      </Button>
+             <Menu
+        id="custom-select-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
+      >
             <MenuItem style={{ color: "primary" }} value={0}>
               Select here
             </MenuItem>
-            <MenuItem style={{ color: "primary" }} value={"Company Brand Video"}>
+            <MenuItem  style={{ color: "primary" }} onClick={() => handleMenuItemClick('Company Brand Video')}>
               Company Brand Video
             </MenuItem>
-            <MenuItem value={"Customer Testimonial"}>Customer Testimonial</MenuItem>
-            <MenuItem value={"Talking Heads"}>Talking Heads</MenuItem>
-            <MenuItem value={"Site Video"}>Site Video</MenuItem>
-            <MenuItem value={"2D Animation"}>2D Animation</MenuItem>
-            <MenuItem value={"3D Animation"}>3D Animation</MenuItem>
-          </Select>
+            <MenuItem onClick={() => handleMenuItemClick('Customer Testimonial')} value={"Customer Testimonial"}>Customer Testimonial</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick('Talking Heads')} value={"Talking Heads"}>Talking Heads</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick('Site Video')} value={"Site Video"}>Site Video</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick('2D Animation')} value={"2D Animation"}>2D Animation</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick('3D Animation')} value={"3D Animation"}>3D Animation</MenuItem>
+            </Menu>
+      
         </FormControl>
       </MKBox>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} container justifyContent={"center"}>
 
         <MKBox sx={{ display: "flex", background: "", height: "auto", flexDirection:'row'}}>
-        <Paper elevation={3} className={classes.formContainer} sx={{width:'40vw' }}>
+        <Paper elevation={3} className={classes.formContainer} sx={{width: isMobile ?  '90vw':'40vw' }}>
       <>
       {
         errorName && <Typography sx={{color:'red', fontSize:'1rem'}}>*{errorName}</Typography>
@@ -197,6 +230,21 @@ selectedOption === 0 &&
             fullWidth
             value={details}
             onChange={(e) => setDetails(e.target.value)}
+            />
+<TextField
+          label="Phone"
+            multiline
+            rows={1}
+            variant="outlined"
+            fullWidth
+            value={phone}
+            sx={{mt:'1rem'}}
+              onChange={(e) => {
+    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+    if (numericValue.length <= 11) {
+      setPhone(numericValue);
+    }
+  }}
             />
                 </>
 
