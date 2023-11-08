@@ -18,6 +18,7 @@ import React, { useRef } from "react";
 
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Q1 from "./Q1";
 import Q2 from "./Q2";
 import Q3 from "./Q3";
@@ -47,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const QuoteForm = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
   const [selectedOption, setSelectedOption] = useState(0);
   const handleButtonClick = (event) => {
@@ -115,11 +117,13 @@ export const QuoteForm = () => {
         Details:details
       }
       const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email-form', allDetails);
-      console.log(response.data.message)
-      if(response.data.message === 'Email sent successfully') {
-          //redirect to thank you page
-         
-      }
+      console.log(response)
+      navigate('/thank-you');
+      // if(response.data.message === 'Email sent successfully') {
+      //   console.log(response)
+      //     //redirect to thank you page
+      //     navigate('/thank-you');
+      // }
       console.log(allDetails)
       setErrorEmail('')
       setErrorName('')

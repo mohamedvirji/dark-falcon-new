@@ -290,6 +290,8 @@ const sendEmail = async()=>{
     // const response = await axios.post('http://localhost:3000/send-email', allDetails);
 
     console.log(response)
+    navigate('/thank-you-quote');
+    
     if(response.data.message === 'Email sent successfully') {
         //redirect to thank you page
        

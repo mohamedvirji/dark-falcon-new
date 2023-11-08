@@ -192,7 +192,9 @@ const VideoOptionsForm = ({selected}) => {
         totalPrice:totalPrice
       }
       const response = await axios.post('https://darkfalcon2023-c486af480b7a.herokuapp.com/send-email', allDetails);
-      console.log(response.data.message)
+      console.log(response)
+      navigate('/thank-you-quote');
+      // console.log(response.data.message)
       if(response.data.message === 'Email sent successfully') {
           //redirect to thank you page
          

@@ -75,7 +75,7 @@ const MultiStepForm = ({ selected}) => {
   // const [bRollOptions, setBRollOptions] = useState({
   //   filmed: false,
   //   Stock Video: false,
-  //   filmed And Stock Video: false,
+  //   Filmed And Stock Video: false,
   // });
 
   const [bRollOptions, setBRollOptions] = useState("none");
@@ -133,9 +133,9 @@ const MultiStepForm = ({ selected}) => {
       console.log("Stock Video", price);
 
     }
-    if (bRollOptions === 'filmed And Stock Video') {
+    if (bRollOptions === 'Filmed And Stock Video') {
       price += 800;
-      console.log("filmed And Stock Video", price);
+      console.log("Filmed And Stock Video", price);
 
     }
 
@@ -273,6 +273,8 @@ const MultiStepForm = ({ selected}) => {
 
         // const response = await axios.post('http://localhost:3000/send-email', allDetails);
         // console.log('allDetails', allDetails)
+        console.log(response)
+          navigate('/thank-you-quote');
         if(response.data.message === 'Email sent successfully') {
           setSuccess(true)
         }
@@ -335,9 +337,9 @@ const MultiStepForm = ({ selected}) => {
           //   <FormControlLabel
           //     control={
           //       <Checkbox
-          //         checked={bRollOptions.filmed And Stock Video}
+          //         checked={bRollOptions.Filmed And Stock Video}
           //         onChange={(e) =>
-          //           setBRollOptions({ ...bRollOptions, filmed And Stock Video: e.target.checked })
+          //           setBRollOptions({ ...bRollOptions, Filmed And Stock Video: e.target.checked })
           //         }
           //       />
           //     }
@@ -350,7 +352,7 @@ const MultiStepForm = ({ selected}) => {
             <RadioGroup value={bRollOptions} onChange={(e) => setBRollOptions(e.target.value)}>
               <FormControlLabel value="flimed" control={<Radio />} label="flimed" />
               <FormControlLabel value="Stock Video" control={<Radio />} label="Stock Video" />
-              <FormControlLabel value="filmed And Stock Video" control={<Radio />} label="filmed And Stock Video" />
+              <FormControlLabel value="Filmed And Stock Video" control={<Radio />} label="Filmed And Stock Video" />
               <FormControlLabel value="none" control={<Radio />} label="none" />
 
             </RadioGroup>
