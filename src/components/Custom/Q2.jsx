@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Button,
@@ -51,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MultiStepForm = ({selected}) => {
+  const navigate = useNavigate();
   const classes = useStyles();
-
   const steps = [
     "Where would you like to film?",
     "How many cameras do you need?",
