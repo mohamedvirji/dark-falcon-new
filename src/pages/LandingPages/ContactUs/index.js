@@ -17,7 +17,7 @@ import { QuoteForm } from "components/Custom/QuoteForm";
 function ContactUs() {
   return (
     <>
-      <MKBox position="fixed" top="0.5rem" width="100%">
+      <MKBox position="relative" mt="0.5rem" top="0.5rem" width="100%">
           <DefaultNavbar
             routes={routes}
             action={{

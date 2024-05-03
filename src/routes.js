@@ -32,7 +32,7 @@ import PhotoEvents from "layouts/pages/service-pages/photo-events";
 import Podcasts from "layouts/pages/service-pages/podcast";
 import Product from "layouts/pages/service-pages/product";
 import TalkingHeads from "layouts/pages/service-pages/talking-heads";
-import Testimonials from "layouts/pages/service-pages/testimonials";
+// import Testimonials from "layouts/pages/service-pages/testimonials";
 import VirtualTours from "layouts/pages/service-pages/virtual-tours";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import OurMission from "layouts/pages/landing-pages/ourmission";

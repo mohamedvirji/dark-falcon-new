@@ -42,7 +42,12 @@ function PhotoEvents() {
           transparent
           sticky
         />
-        <MKTypography
+        <BackgroundVideo
+          blur={2}
+          videoSource={videoSource}>
+          <div className='content'>
+            <div className='sub-content'>
+            <MKTypography
               variant="h1AltVideo"
               color="white"
               sx={({ breakpoints, typography: { size } }) => ({
@@ -54,14 +59,8 @@ function PhotoEvents() {
             >
               EVENT PHOTOGRAPHY
             </MKTypography>
-        <BackgroundVideo
-          blur={2}
-          videoSource={videoSource}>
-          {/* <div className='content'>
-            <div className='sub-content'>
-            
             </div>
-          </div> */}
+          </div>
          
         </BackgroundVideo>
         <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
