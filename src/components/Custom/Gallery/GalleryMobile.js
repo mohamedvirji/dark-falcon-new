@@ -13,10 +13,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 // Template components
 import MKBox from "components/MKBox";
-import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
-import { dark } from "@mui/material/styles/createPalette";
 
 function GalleryMobile() {
   const [showOne, setShowOne] = useState(false);
@@ -91,7 +89,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">Pearl Yacht 72</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalOne} />
               </MKBox>
@@ -123,7 +121,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">BIMA</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalTwo} />
               </MKBox>
@@ -155,7 +153,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">TotalEnergies</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalThree} />
               </MKBox>
@@ -187,7 +185,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">NJOY</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalFour} />
               </MKBox>
@@ -219,7 +217,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">LBPC</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalFive} />
               </MKBox>
@@ -251,7 +249,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">The Change Foundation</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalSix} />
               </MKBox>
@@ -283,7 +281,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">Cosun Beet</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalSeven} />
               </MKBox>
@@ -315,7 +313,7 @@ function GalleryMobile() {
               bgColor="#212529"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">3D Pearl Yachts</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer", color:"#EC407A" }} onClick={toggleModalEight} />
               </MKBox>

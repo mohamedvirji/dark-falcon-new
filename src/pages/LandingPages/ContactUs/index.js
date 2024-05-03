@@ -3,9 +3,6 @@ import Grid from "@mui/material/Grid";
 
 // Template components
 import MKBox from "components/MKBox";
-import MKInput from "components/MKInput";
-import MKButton from "components/MKButton";
-import MKTypography from "components/MKTypography";
 
 // Template layout components
 import DefaultNavbar from "layouts/DefaultNavbar";
@@ -15,10 +12,7 @@ import DefaultFooter from "layouts/DefaultFooter";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-// Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 import { QuoteForm } from "components/Custom/QuoteForm";
-import { Box } from "@mui/material";
 
 function ContactUs() {
   return (

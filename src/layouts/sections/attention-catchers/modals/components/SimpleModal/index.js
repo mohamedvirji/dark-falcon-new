@@ -1,17 +1,4 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { useState } from "react";
 
@@ -53,7 +40,7 @@ function SimpleModal() {
               bgColor="white"
               shadow="xl"
             >
-              <MKBox display="flex" alginItems="center" justifyContent="space-between" p={2}>
+              <MKBox display="flex" alignItems="center" justifyContent="space-between" p={2}>
                 <MKTypography variant="h5">Your modal title</MKTypography>
                 <CloseIcon fontSize="medium" sx={{ cursor: "pointer" }} onClick={toggleModal} />
               </MKBox>

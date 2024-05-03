@@ -10,7 +10,6 @@ import Grid from "@mui/material/Grid";
 
 // Template components
 import MKBox from "components/MKBox";
-import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 function DefaultFooter({ content }) {
