@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-
 // @mui material icons
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
@@ -27,8 +22,6 @@ import BackgroundVideo from "components/Custom/BackgroundVideo";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-// Images
-import bgImage from "assets/images/headers/bg-about-us.jpg";
 
 function Headshots() {
   const videoSource = "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/videos/Headshot+Photography.mp4";

@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 
 // @mui material icons
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';

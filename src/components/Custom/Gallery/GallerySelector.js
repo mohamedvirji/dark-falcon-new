@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 
-// @mui material components
-import Grid from "@mui/material/Grid";
-
 // Custom components
 import Gallery from "components/Custom/Gallery/Gallery";
 import GalleryMobile from "components/Custom/Gallery/GalleryMobile";
@@ -12,7 +9,6 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 function GallerySelector() {
   const [mobileGallery, setMobileGallery] = useState(false);
-  const [mobileView, setMobileView] = useState(false);
   useEffect(() => {
       // A function that sets the display state for the DefaultNavbarMobile.
       function displayMobileGallery() {

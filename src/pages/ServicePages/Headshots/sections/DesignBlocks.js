@@ -1,20 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// react-router-dom components
-import { Link } from "react-router-dom";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -22,8 +5,6 @@ import Grid from "@mui/material/Grid";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
-import MKBadge from "components/MKBadge";
-import MKTypography from "components/MKTypography";
 
 // Presentation page components
 import ThumbnailCard from "components/Custom/ThumbnailCard";
@@ -32,8 +13,8 @@ import ThumbnailCard from "components/Custom/ThumbnailCard";
 import data from "pages/ServicePages/Headshots/sections/data/designBlocksData";
 
 function DesignBlocks() {
-  const renderData = data.map(({ title, description, items }) => (
-    <Grid container spacing={3} sx={{ mb: 25 }} key={title}>
+  const renderData = data.map(({ key, items }) => (
+    <Grid container spacing={3} sx={{ mb: 25 }} key={key}>
       {/* <Grid item xs={12} lg={3}>
         <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
           <MKTypography variant="h3" fontWeight="bold" mb={1}>
@@ -46,11 +27,9 @@ function DesignBlocks() {
       </Grid> */}
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
-            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <a href={route} target="_blank">
-                <ThumbnailCard image={image} name={name} count={count} pro={pro} />
-              </a>
+          {items.map(({ image, name, key }) => (
+            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={key}>
+                <ThumbnailCard image={image} name={name} />
             </Grid>
           ))}
         </Grid>

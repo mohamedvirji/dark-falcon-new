@@ -4,12 +4,8 @@ import Grid from "@mui/material/Grid";
 
 // Template components
 import MKBox from "components/MKBox";
-import MKInput from "components/MKInput";
-import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
-// Images
-import bgImage from "assets/images/examples/blog2.jpg";
 
 // Custom components
 import { QuoteForm } from "components/Custom/QuoteForm";

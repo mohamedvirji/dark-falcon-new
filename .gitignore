@@ -25,4 +25,6 @@ package-lock.json
 yarn.lock
 commit.sh
 gallery-wythe.html
+build.zip
+gallery-wythe.html
 CHANGELOG.md
