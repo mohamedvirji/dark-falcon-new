@@ -41,7 +41,7 @@ function Events() {
             type: "internal",
             route: "/contact",
             label: "quick quote",
-            color: "primary",
+            color: "white",
           }}
           light
           transparent
