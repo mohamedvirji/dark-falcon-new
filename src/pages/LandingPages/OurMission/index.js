@@ -1,3 +1,4 @@
+import ReactGA from 'react-ga4';
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -20,6 +21,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/our-mission-bg.jpg";
 
 function OurMission() {
+  ReactGA.send({ hitType: "pageview", page: "/our-mission", title: "Our Mission" });
   return (
     <>
         <DefaultNavbar

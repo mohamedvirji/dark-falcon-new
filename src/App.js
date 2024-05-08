@@ -3,6 +3,9 @@ import 'assets/css/three-steps.css'
 import 'assets/css/gallery-main.css'
 import './config.js';
 
+import ReactGA from 'react-ga4';
+
+
 import { useEffect } from "react";
 
 // react-router components
@@ -21,6 +24,7 @@ import routes from "routes";
 
 
 export default function App() {
+  ReactGA.initialize('G-CFNNF052TT');
   const { pathname } = useLocation();
 
   // Setting page scroll to 0 when changing the route

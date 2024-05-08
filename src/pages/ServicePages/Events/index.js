@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
@@ -30,6 +32,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/EventsHeader.png";
 
 function Events() {
+  ReactGA.send({ hitType: "pageview", page: "/events", title: "Events Videos" });
   return (
     <>
         <DefaultNavbar
