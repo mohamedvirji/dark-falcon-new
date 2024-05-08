@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
 
 export default [
   {
@@ -8,35 +8,35 @@ export default [
     description: "Virtuak Tours Thumbnails",
     items: [
       {
-        image: `${imagesPrefix}/03566.png`,
+        image: `${imagesPrefix}/03566.webp`,
         name: "Madressa",
         
         route: "https://youtu.be/3Knszp0R3dA",
         videoId: "3Knszp0R3dA",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+WARESIDE-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+WARESIDE-01.webp`,
         name: "Wareside Primary School",
         
         route: "https://youtu.be/xh1qdPlsH3w",
         videoId: "xh1qdPlsH3w",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+Stork-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+Stork-01.webp`,
         name: "Stork Mayfair",
         
         route: "https://youtu.be/DqmIo2rnGWA",
         videoId: "DqmIo2rnGWA",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+STOPSLEY-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_VT+-+VT+-+STOPSLEY-01.webp`,
         name: "Stopsley Primary School",
         
         route: "https://youtu.be/4Ngo4f3_Sgg",
         videoId: "4Ngo4f3_Sgg",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_VT+-+CAE-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_VT+-+CAE-01.webp`,
         name: "CAE",
         
         route: "https://youtu.be/-TfS2OxqGdQ",
