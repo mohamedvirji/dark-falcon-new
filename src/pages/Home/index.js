@@ -1,6 +1,8 @@
 // import { dark } from "@mui/material/styles/createPalette";
 // import { useAuth } from "auth-context/auth.context";
 
+import ReactGA from 'react-ga4';
+
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -31,6 +33,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/df-bg.jpeg"
 
 function Home() {
+  ReactGA.send({ hitType: "pageview", page: "/", title: "Home" });
   return (
     <>
         <DefaultNavbar

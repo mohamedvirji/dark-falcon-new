@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
@@ -27,6 +29,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/bg-about-us.jpg";
 
 function PhotoEvents() {
+  ReactGA.send({ hitType: "pageview", page: "/photography/events", title: "Event Photography" });
   const videoSource = "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/videos/Photography+Showreel.mp4";
   return (
     <>

@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
@@ -29,6 +31,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/TalkingHeads.jpg";
 
 function TalkingHeads() {
+  ReactGA.send({ hitType: "pageview", page: "/talking-heads", title: "Talking Head Videos" });
   return (
     <>
         <DefaultNavbar

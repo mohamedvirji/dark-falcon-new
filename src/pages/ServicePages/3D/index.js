@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 import { Link } from "react-router-dom";
 // import { useAuth } from "auth-context/auth.context";
 
@@ -29,6 +31,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/3DAnimationHeader.png";
 
 function ThreeD() {
+  ReactGA.send({ hitType: "pageview", page: "/animation/3D", title: "3D Animation" });
   return (
     <>
         <DefaultNavbar

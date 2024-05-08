@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -15,6 +17,7 @@ import footerRoutes from "footer.routes";
 import { QuoteForm } from "components/Custom/QuoteForm";
 
 function ContactUs() {
+  ReactGA.send({ hitType: "pageview", page: "/contact", title: "Contact Us / Quote Form" });
   return (
     <>
       <MKBox position="relative" mt="1rem" top="0.5rem" width="100%">

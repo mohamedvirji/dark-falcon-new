@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga4';
+
 // @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -19,6 +21,7 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/headers/our-mission-bg.jpg";
 
 function ThankyouQuote() {
+  ReactGA.send({ hitType: "pageview", page: "/thank-you-quote", title: "Thank You - Quote" });
   return (
     <>
         <DefaultNavbar
