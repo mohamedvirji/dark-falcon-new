@@ -1,7 +1,7 @@
 const imagesPrefix =
-  "https://d17kgkt7t2bpo9.cloudfront.net/thumbnails/testimonials";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/testimonials";
 
-  import placeholder from "assets/images/placeholder-thumb.jpg";
+  import placeholder from "assets/images/placeholder-thumb.webp";
 
 export default [
   {
@@ -10,19 +10,19 @@ export default [
     description: "Testimonial Thumbnails",
     items: [
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT+-+log+me+in-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT+-+log+me+in-01.webp`,
         name: "Logmein",
         
         route: "https://youtu.be/eZysL94gZZQ",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT+-PROFITERO-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT+-PROFITERO-01.webp`,
         name: "Profitero 2023",
         
         route: "https://youtu.be/j8RYbbxhT7c",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_+CT-+Bold+360-01.jpg`,
+        image: `${imagesPrefix}/dfp-thumbnails_+CT-+Bold+360-01.webp`,
         name: "Bold 360",
         
         route: "https://youtu.be/afQp8ZM3PW8",

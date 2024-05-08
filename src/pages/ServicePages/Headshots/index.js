@@ -27,7 +27,7 @@ import footerRoutes from "footer.routes";
 
 function Headshots() {
   ReactGA.send({ hitType: "pageview", page: "/photography/headshots", title: "Headshot Photography" });
-  const videoSource = "https://darkfalcon-assets.s3.eu-west-2.amazonaws.com/videos/Headshot+Photography.mp4";
+  const videoSource = "https://darkfalcon-assets-main.s3.eu-west-2.amazonaws.com/webp/videos/Headshot+Photography.mp4";
   return (
     <>
         <DefaultNavbar

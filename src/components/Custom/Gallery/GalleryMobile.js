@@ -50,7 +50,7 @@ function GalleryMobile() {
     }}
 
   const imagesPrefix =
-  "https://d17kgkt7t2bpo9.cloudfront.net/gallery";
+  "https://d2u61031vokrmr.cloudfront.net/webp/gallery";
   return (
     <>
         <section
@@ -70,7 +70,7 @@ function GalleryMobile() {
         <header className="portfolio-header">
             <figure className="portfolio-img">
               <img
-                src={`${imagesPrefix}/1.png`}
+                src={`${imagesPrefix}/1.webp`}
                 alt="portfolio item 1"
                 className="featured-image"
               />
@@ -105,7 +105,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/2.png`} alt="portfolio item 2" className="featured-image" />
+    <img src={`${imagesPrefix}/2.webp`} alt="portfolio item 2" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -137,7 +137,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/3.png`} alt="portfolio item 3" className="featured-image" />
+    <img src={`${imagesPrefix}/3.webp`} alt="portfolio item 3" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -169,7 +169,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/9.png`} alt="portfolio item 4" className="featured-image" />
+    <img src={`${imagesPrefix}/9.webp`} alt="portfolio item 4" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -201,7 +201,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/5-1.png`} alt="portfolio item 5" className="featured-image" />
+    <img src={`${imagesPrefix}/5-1.webp`} alt="portfolio item 5" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -233,7 +233,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/6.png`} alt="portfolio item 6" className="featured-image" />
+    <img src={`${imagesPrefix}/6.webp`} alt="portfolio item 6" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -265,7 +265,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/7.png`} alt="portfolio item 7" className="featured-image" />
+    <img src={`${imagesPrefix}/7.webp`} alt="portfolio item 7" className="featured-image" />
   </figure>
 </header>
 </Grid>
@@ -297,7 +297,7 @@ function GalleryMobile() {
 </div>
 <header className="portfolio-header">
   <figure className="portfolio-img">
-    <img src={`${imagesPrefix}/8.png`} alt="portfolio item 6" className="featured-image" />
+    <img src={`${imagesPrefix}/8.webp`} alt="portfolio item 6" className="featured-image" />
   </figure>
 </header>
 </Grid>
