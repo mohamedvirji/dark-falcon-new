@@ -20,9 +20,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{matrix.node-version}}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node-version}}
       - name: NPM Install and Build
@@ -34,7 +34,7 @@ jobs:
       - name: Build Assets
         run: CI= npm run build
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build/
@@ -48,7 +48,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: build
       - name: "Uploading..."
@@ -63,7 +63,7 @@ jobs:
           AWS_REGION: "eu-west-2" # optional: defaults to us-east-1
           #SOURCE_DIR: "build" # optional: defaults to entire repository
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.DF_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.DF_SECRET_ACCESS_KEY }}
