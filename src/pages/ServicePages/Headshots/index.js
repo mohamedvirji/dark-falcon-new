@@ -27,7 +27,7 @@ import footerRoutes from "footer.routes";
 
 function Headshots() {
   ReactGA.send({ hitType: "pageview", page: "/photography/headshots", title: "Headshot Photography" });
-  const videoSource = "https://darkfalcon-assets-main.s3.eu-west-2.amazonaws.com/webp/videos/Headshot+Photography.mp4";
+  const videoSource = "https://d2u61031vokrmr.cloudfront.net/webp/videos/Headshot+Photography.mp4";
   return (
     <>
         <DefaultNavbar
@@ -64,7 +64,19 @@ function Headshots() {
           </div>
          
         </BackgroundVideo>
-        <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
+        <a href="#portfolio">
+        <div
+          style={{
+            textAlign: "center",
+            color: "#ec407a",
+            cursor: "pointer",
+            marginTop: "3%",
+            marginBottom: "10%",
+          }}
+        >
+          <KeyboardDoubleArrowDownIcon fontSize="large" />
+        </div>
+      </a>
       <ThreeSteps/>
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">

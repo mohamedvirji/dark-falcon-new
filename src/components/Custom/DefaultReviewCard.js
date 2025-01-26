@@ -84,13 +84,18 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
   };
 
   return (
-    <div className="testBorder">
+    <div className="testBorder" style={{ height: '475px', display: 'flex', flexDirection: 'column' }}>
     <MKBox
       variant={color}
       bgColor={color}
       borderRadius="0"
       shadow={color === "transparent" ? "none" : "md"}
       p={3}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+      }}
     >
       {image && (
         <MKAvatar
@@ -128,6 +133,10 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
         variant="body2"
         color={color === "transparent" || color === "light" ? "text" : "white"}
         my={4}
+        sx={{
+          flexGrow: 1,
+          overflow: 'auto'
+        }}
       >
         &quot;{review}&quot;
       </MKTypography>
@@ -138,7 +147,7 @@ function DefaultReviewCard({ color, image, name, date, review, rating }) {
           display: "flex",
           alignItems: "center",
           ml: 0.375,
-
+          mt: 'auto',
           "& .material-icons-round": {
             ml: -0.375,
           },

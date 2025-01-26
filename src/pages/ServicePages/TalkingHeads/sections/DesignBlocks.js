@@ -73,6 +73,7 @@ function DesignBlocks() {
   };
 
   const renderData = data.map(({ key, items }) => (
+    <div id="portfolio">
     <Grid container spacing={3} sx={{ mb: 25 }} key={key}>
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
@@ -106,37 +107,12 @@ function DesignBlocks() {
         </Grid>
       </Grid>
     </Grid>
+    </div>
   ));
 
   return (
-    <MKBox component="section" my={-20} py={6}>
-      <Container>
-        <Grid
-          container
-          item
-          xs={12}
-          lg={6}
-          flexDirection="column"
-          alignItems="center"
-          sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
-        >
-          {/* <MKBadge
-            variant="contained"
-            color="primary"
-            badgeContent="Our Work"
-            container
-            sx={{ mb: 2 }}
-            size="lg"
-          /> */}
-          {/* <MKTypography variant="h2" fontWeight="bold">
-            Thumbnails
-          </MKTypography>
-          <MKTypography variant="body1" color="text">
-            This is the layout for Thumbnails
-          </MKTypography> */}
-        </Grid>
-      </Container>
-      <Container sx={{ mt: 6 }}>{renderData}</Container>
+    <MKBox component="section">
+      <Container>{renderData}</Container>
     </MKBox>
   );
 }

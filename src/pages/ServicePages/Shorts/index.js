@@ -19,9 +19,9 @@ import MKButton from "components/MKButton";
 import DefaultNavbar from "layouts/DefaultNavbar";
 import DefaultFooter from "layouts/DefaultFooter";
 
-// Creative page sections
-import DesignBlocks from "pages/ServicePages/Podcasts/sections/DesignBlocks";
-// import ThreeSteps from "components/Custom/ThreeSteps";
+// Brand page sections
+import DesignBlocks from "pages/ServicePages/Shorts/sections/DesignBlocks";
+import ThreeSteps from "components/Custom/ThreeSteps";
 import BackgroundVideo from "components/Custom/BackgroundVideo";
 
 // Routes
@@ -29,11 +29,11 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-// import bgImage from "assets/images/headers/PodcastHeader.png";
+import bgImage from "assets/images/headers/BrandHeader.png";
 
-function Podcasts() {
-  ReactGA.send({ hitType: "pageview", page: "/podcast", title: "Podcast Videos" });
-  const videoSource = "https://d2u61031vokrmr.cloudfront.net/webp/videos/Podcast.mp4";
+function Shorts() {
+  ReactGA.send({ hitType: "pageview", page: "/shorts", title: "Shorts/Reels" });
+  const videoSource = "https://d2u61031vokrmr.cloudfront.net/webp/videos/Shorts+Reels.mp4";
   return (
     <>
       <DefaultNavbar
@@ -83,29 +83,33 @@ function Podcasts() {
                 },
               })}
             >
-              PODCAST VIDEOS
+              SHORTS / REELS
             </MKTypography>
           </Grid>
         </Container>
       </MKBox> */}
-      <BackgroundVideo blur={2} videoSource={videoSource}>
-        <div className="content">
-          <div className="sub-content">
+      <BackgroundVideo
+          blur={2}
+          videoSource={videoSource}>
+          <div className='content'>
+            <div className='sub-content'>
             <MKTypography
-              mt="45%"
+            mt="45%"
               variant="h1AltVideo"
               color="white"
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
                 },
-              })}
+              })
+            }
             >
-              PODCAST VIDEOS
+              SHORTS / REELS
             </MKTypography>
+            </div>
           </div>
-        </div>
-      </BackgroundVideo>
+         
+        </BackgroundVideo>
       <a href="#portfolio">
         <div
           style={{
@@ -151,4 +155,4 @@ function Podcasts() {
   );
 }
 
-export default Podcasts;
+export default Shorts;

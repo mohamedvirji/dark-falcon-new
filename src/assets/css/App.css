@@ -7,6 +7,14 @@
     background: linear-gradient(to right, rgb(11, 202, 212), #D81B60);
     padding: 3px;
   }
+  .testBorderCount {
+    /* max-width: 250px; */
+    padding: 0.5rem;
+    position: relative;
+    background: linear-gradient(to right,#D81B60, rgb(11, 202, 212));
+    padding: 3px;
+    margin: 3%;
+  }
   .letterSpacing{
     letter-spacing:1.5px !important;
   }

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import YouTube from 'react-youtube';
+
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -18,10 +19,9 @@ import MKTypography from "components/MKTypography";
 import ThumbnailCard from "components/Custom/ThumbnailCard";
 
 // Data
-import data from "pages/ServicePages/2D/sections/data/designBlocksData";
+import data from "pages/ServicePages/Shorts/sections/data/designBlocksData";
 
 import breakpoints from "assets/theme/base/breakpoints";
-
 
 function DesignBlocks() {
   const [opts, setOpts] = useState({
@@ -76,7 +76,7 @@ function DesignBlocks() {
     <Grid container spacing={3} sx={{ mb: 25 }} key={key}>
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, videoId }) => (
+        {items.map(({ image, name, videoId }) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={`${name}-${videoId}`}>
                 <ThumbnailCard image={image} name={name} sx={{ cursor: "pointer" }} onClick={() => toggleModal(videoId)} />
               <Modal open={openModalId === videoId} onClose={() => toggleModal(videoId)} sx={{ display: "grid", placeItems: "center" }}>
@@ -121,6 +121,20 @@ function DesignBlocks() {
           alignItems="center"
           sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
         >
+          {/* <MKBadge
+            variant="contained"
+            color="primary"
+            badgeContent="Our Work"
+            container
+            sx={{ mb: 2 }}
+            size="lg"
+          /> */}
+          {/* <MKTypography variant="h2" fontWeight="bold">
+            Our Work
+          </MKTypography>
+          <MKTypography variant="body1" color="text">
+            This is the layout for Thumbnails
+          </MKTypography> */}
         </Grid>
       </Container>
       <Container sx={{ mt: 6 }}>{renderData}</Container>

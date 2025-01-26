@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/events";
 
 
 export default [
@@ -8,6 +8,34 @@ export default [
     key:5,
     description: "Events Thumbnails",
     items: [
+      {
+        image: `${imagesPrefix}/CUSTOM.webp`,
+        name: "Custom",
+        
+        route: "https://youtu.be/ILAhyg6bYng",
+        videoId: "ILAhyg6bYng",
+      },
+      {
+        image: `${imagesPrefix}/ADESTRA+20TH+ANIVERSARY.webp`,
+        name: "Adestra",
+        
+        route: "https://youtu.be/FJwzSUlitp0",
+        videoId: "FJwzSUlitp0",
+      },
+      {
+        image: `${imagesPrefix}/SMI+MARATIME.webp`,
+        name: "Maritime",
+        
+        route: "https://youtu.be/7KfOm5vC9ak",
+        videoId: "7KfOm5vC9ak",
+      },
+      {
+        image: `${imagesPrefix}/VAPE+SHOW+DUBAI.webp`,
+        name: "Myle",
+        
+        route: "https://youtu.be/oN-7iJ7dINY",
+        videoId: "oN-7iJ7dINY",
+      },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-+Bima.webp`,
         name: "BIMA",
@@ -22,13 +50,13 @@ export default [
         route: "https://youtu.be/W-72WLps1mM",
         videoId: "W-72WLps1mM",
       },
-      {
-        image: `${imagesPrefix}/dfp-thumbnails_EV+-+MAritine-01.webp`,
-        name: "Maritime",
+      // {
+      //   image: `${imagesPrefix}/dfp-thumbnails_EV+-+MAritine-01.webp`,
+      //   name: "Maritime",
         
-        route: "https://youtu.be/_WpO3-QjINM",
-        videoId: "_WpO3-QjINM",
-      },
+      //   route: "https://youtu.be/_WpO3-QjINM",
+      //   videoId: "_WpO3-QjINM",
+      // },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-+Cosun-01.webp`,
         name: "Cosun Beet",
@@ -36,13 +64,13 @@ export default [
         route: "https://youtu.be/peRrOxSpmCY",
         videoId: "peRrOxSpmCY",
       },
-      {
-        image: `${imagesPrefix}/dfp-thumbnails_Myle+vape+vd+2-01.webp`,
-        name: "Myle Vape",
+      // {
+      //   image: `${imagesPrefix}/dfp-thumbnails_Myle+vape+vd+2-01.webp`,
+      //   name: "Myle Vape",
         
-        route: "https://youtu.be/hn68E6YO2sk",
-        videoId: "hn68E6YO2sk",
-      },
+      //   route: "https://youtu.be/hn68E6YO2sk",
+      //   videoId: "hn68E6YO2sk",
+      // },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-+Hackathon-01.webp`,
         name: "Hackathon",
@@ -57,13 +85,13 @@ export default [
         route: "https://youtu.be/II2u7I3jRfY",
         videoId: "II2u7I3jRfY",
       },
-      {
-        image: `${imagesPrefix}/dfp-thumbnails_EV+-Profit-01.webp`,
-        name: "Profitero",
+      // {
+      //   image: `${imagesPrefix}/dfp-thumbnails_EV+-Profit-01.webp`,
+      //   name: "Profitero",
         
-        route: "https://youtu.be/sKJxueEw6y0",
-        videoId: "sKJxueEw6y0",
-      },
+      //   route: "https://youtu.be/sKJxueEw6y0",
+      //   videoId: "sKJxueEw6y0",
+      // },
       {
         image: `${imagesPrefix}/dfp-thumbnails_EV+-+upland-01.webp`,
         name: "Upland",

@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/podcast";
 
 export default [
   {

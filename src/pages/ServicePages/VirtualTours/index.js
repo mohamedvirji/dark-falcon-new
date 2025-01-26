@@ -86,8 +86,20 @@ function VirtualTours() {
           </Grid>
         </Container>
       </MKBox>
-      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
-      <ThreeSteps/>
+      <a href="#portfolio">
+        <div
+          style={{
+            textAlign: "center",
+            color: "#ec407a",
+            cursor: "pointer",
+            marginTop: "3%",
+            marginBottom: "10%",
+          }}
+        >
+          <KeyboardDoubleArrowDownIcon fontSize="large" />
+        </div>
+      </a>
+      {/* <ThreeSteps/> */}
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
         <MKTypography

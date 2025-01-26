@@ -30,7 +30,7 @@ import bgImage from "assets/images/headers/bg-about-us.jpg";
 
 function PhotoEvents() {
   ReactGA.send({ hitType: "pageview", page: "/photography/events", title: "Event Photography" });
-  const videoSource = "https://darkfalcon-assets-main.s3.eu-west-2.amazonaws.com/webp/videos/Photography+Showreel.mp4";
+  const videoSource = "https://d2u61031vokrmr.cloudfront.net/webp/videos/Photography+Showreel.mp4";
   return (
     <>
         <DefaultNavbar
@@ -66,7 +66,19 @@ function PhotoEvents() {
           </div>
          
         </BackgroundVideo>
-        <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
+        <a href="#portfolio">
+        <div
+          style={{
+            textAlign: "center",
+            color: "#ec407a",
+            cursor: "pointer",
+            marginTop: "3%",
+            marginBottom: "10%",
+          }}
+        >
+          <KeyboardDoubleArrowDownIcon fontSize="large" />
+        </div>
+      </a>
       <ThreeSteps/>
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">

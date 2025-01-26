@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/2D";
 
 export default [
   {
@@ -7,6 +7,13 @@ export default [
     key:1,
     description: "2D Thumbnails",
     items: [
+      {
+        image: `${imagesPrefix}/BANK+OF+ST+LUCIA.webp`,
+        name: "Bank of Saint Lucia",
+        
+        route: "https://youtu.be/r5yichQT6tQ",
+        videoId: "r5yichQT6tQ",
+      },
       {
         image: `${imagesPrefix}/dfp-thumbnails_y2mate.is+-+Axcel+Finance+Easter+PromO-01.webp`,
         name: "Axcel Finance Easter",
