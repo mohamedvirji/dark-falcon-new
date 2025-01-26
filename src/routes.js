@@ -25,6 +25,7 @@
 import TwoD from "layouts/pages/service-pages/2D";
 import ThreeD from "layouts/pages/service-pages/3D";
 import Brand from "layouts/pages/service-pages/brand";
+import Shorts from "layouts/pages/service-pages/shorts";
 import Creative from "layouts/pages/service-pages/creative";
 import Events from "layouts/pages/service-pages/events";
 import Headshots from "layouts/pages/service-pages/headshots";
@@ -54,6 +55,12 @@ const routes = [
             name: "brand videos",
             route: "/brand",
             component: <Brand />,
+            protected: false,
+          },
+          {
+            name: "shorts/reels",
+            route: "/shorts",
+            component: <Shorts />,
             protected: false,
           },
           {

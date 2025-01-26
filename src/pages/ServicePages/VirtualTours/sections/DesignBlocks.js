@@ -74,6 +74,7 @@ function DesignBlocks() {
   };
 
   const renderData = data.map(({ key, items }) => (
+    <div id="portfolio">
     <Grid container spacing={3} sx={{ mb: 25 }} key={key}>
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
@@ -107,6 +108,7 @@ function DesignBlocks() {
         </Grid>
       </Grid>
     </Grid>
+    </div>
   ));
 
   return (

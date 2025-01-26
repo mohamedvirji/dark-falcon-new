@@ -22,9 +22,12 @@ import Home from "layouts/pages/home";
 import routes from "routes";
 // import { ProtectedRoute } from "./ProtectedRoute";
 
+import useHubSpotTracking from 'hooks/useHubSpotTracking.js';
+
 
 export default function App() {
   ReactGA.initialize('G-CFNNF052TT');
+  useHubSpotTracking();
   const { pathname } = useLocation();
 
   // Setting page scroll to 0 when changing the route
@@ -58,8 +61,8 @@ export default function App() {
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route key={1} path="/" element={<Home />} />
+        <Route key={2} path="*" element={<Navigate to="/" />} />
       </Routes>
     </ThemeProvider>
   );

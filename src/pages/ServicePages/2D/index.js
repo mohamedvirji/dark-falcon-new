@@ -21,17 +21,20 @@ import DefaultFooter from "layouts/DefaultFooter";
 
 // Creative page sections
 import DesignBlocks from "pages/ServicePages/2D/sections/DesignBlocks";
-import ThreeSteps from "components/Custom/ThreeSteps";
+// import ThreeSteps from "components/Custom/ThreeSteps";
+import BackgroundVideo from "components/Custom/BackgroundVideo";
+
 
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
-import bgImage from "assets/images/headers/2DAnimationHeader.png";
+// import bgImage from "assets/images/headers/2DAnimationHeader.png";
 
 function TwoD() {
   ReactGA.send({ hitType: "pageview", page: "/animation/2D", title: "2D Animation" });
+  const videoSource = "https://d2u61031vokrmr.cloudfront.net/webp/videos/2D.mp4";
   return (
     <>
         <DefaultNavbar
@@ -46,7 +49,7 @@ function TwoD() {
           transparent
           sticky
         />
-      <MKBox
+      {/* <MKBox
         minHeight="85vh"
         width="100%"
         sx={{
@@ -85,9 +88,39 @@ function TwoD() {
             </MKTypography>
           </Grid>
         </Container>
-      </MKBox>
-      <a href="#three-step-method"><h1 style={{textAlign:"center", color:"#ec407a", cursor:"pointer"}}><KeyboardDoubleArrowDownIcon fontSize="large"/></h1></a>
-      <ThreeSteps/>
+      </MKBox> */}
+      <BackgroundVideo blur={2} videoSource={videoSource}>
+        <div className="content">
+          <div className="sub-content">
+            <MKTypography
+              mt="45%"
+              variant="h1AltVideo"
+              color="white"
+              sx={({ breakpoints, typography: { size } }) => ({
+                [breakpoints.down("md")]: {
+                  fontSize: size["3xl"],
+                },
+              })}
+            >
+              2D ANIMATION
+            </MKTypography>
+          </div>
+        </div>
+      </BackgroundVideo>
+      <a href="#portfolio">
+        <div
+          style={{
+            textAlign: "center",
+            color: "#ec407a",
+            cursor: "pointer",
+            marginTop: "3%",
+            marginBottom: "10%",
+          }}
+        >
+          <KeyboardDoubleArrowDownIcon fontSize="large" />
+        </div>
+      </a>
+      {/* <ThreeSteps/> */}
       <DesignBlocks />
         <MKBox display="flex" justifyContent="center" alignItems="center" flexDirection="column">
         <MKTypography

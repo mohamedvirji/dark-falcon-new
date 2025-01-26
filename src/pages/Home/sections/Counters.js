@@ -21,14 +21,17 @@ function Counters() {
               suffix="+"
               title="Creatives"
               description=""
+              bgColor="#212529"
             />
           </Grid>
+          
           <Grid item xs={12} md={3} >
             <DefaultCounterCard
               count={115}
               suffix="+"
               title="Branded"
               description=""
+              bgColor="#212529"
             />
           </Grid>
           <Grid item xs={12} md={3}>
@@ -37,6 +40,7 @@ function Counters() {
               suffix="+"
               title="Events"
               description=""
+              bgColor="#212529"
             />
           </Grid>
           <Grid item xs={12} md={3}>
@@ -45,6 +49,7 @@ function Counters() {
               suffix="+"
               title="Animations"
               description=""
+              bgColor="#212529"
             />
           </Grid>
         </Grid>

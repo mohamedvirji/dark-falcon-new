@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/product";
 
 export default [
   {
@@ -15,7 +15,7 @@ export default [
         videoId: "x8I07lna1GM",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_aIR BRAKES-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_aIR+BRAKES-01.webp`,
         name: "Air Brakes",
         
         route: "https://youtu.be/3Vj0Kw6Z7YI",
@@ -29,7 +29,7 @@ export default [
         videoId: "U175HaHu5hE",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_IVG SHORT-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_IVG+SHORT-01.webp`,
         name: "IVG Regal",
         
         route: "https://youtube.com/shorts/0Xh1-b2_SMc",

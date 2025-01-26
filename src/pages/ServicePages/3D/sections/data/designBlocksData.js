@@ -1,5 +1,5 @@
 const imagesPrefix =
-  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails";
+  "https://d2u61031vokrmr.cloudfront.net/webp/thumbnails/3D";
 
 export default [
   {
@@ -15,21 +15,21 @@ export default [
         videoId:"3Vj0Kw6Z7YI",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl 3D-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_Premium-Pearl+3D-01.webp`,
         name: "3D Pearl Yachts",
         
         route: "https://youtu.be/KmIWUySR2k0",
         videoId:"KmIWUySR2k0",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_IVG SHORT-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_IVG+SHORT-01.webp`,
         name: "IVG Regal",
         
         route: "https://youtube.com/shorts/0Xh1-b2_SMc",
         videoId: "0Xh1-b2_SMc"
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_SANTA GROTTO-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_SANTA+GROTTO-01.webp`,
         name: "Santa Grotos",
         
         route: "https://youtu.be/nhUNFoJBAhk",
@@ -43,7 +43,7 @@ export default [
         videoId:"X_Q2ons4KvM",
       },
       {
-        image: `${imagesPrefix}/dfp-thumbnails_Easy Care-01.webp`,
+        image: `${imagesPrefix}/dfp-thumbnails_Easy+Care-01.webp`,
         name: "Easy Care Solutions",
         
         route: "https://youtu.be/sLhBYS_kkrs",

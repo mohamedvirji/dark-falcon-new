@@ -17,6 +17,7 @@ import data from "pages/ServicePages/Testimonials/sections/data/designBlocksData
 
 function DesignBlocks() {
   const renderData = data.map(({ key, items }) => (
+    <div id="portfolio">
     <Grid container spacing={3} sx={{ mb: 25 }} key={key}>
       {/* <Grid item xs={12} lg={3}>
         <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
@@ -40,6 +41,7 @@ function DesignBlocks() {
         </Grid>
       </Grid>
     </Grid>
+    </div>
   ));
 
   return (
